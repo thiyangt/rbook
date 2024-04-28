@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 book:
-  title: "Programming and Data ANalysis with R"
+  title: "Programming and Data Analysis with R"
   author: "Thiyanga S. Talagala"
   date: ""
   chapters:
