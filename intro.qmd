@@ -97,6 +97,10 @@ You must have R installed before installing RStudio. Double click on the the dow
 ## Download and Installing Rtools
 
 
+Windows users also require additional software known as Rtools, particularly for installing certain packages. Go to the website [https://cran.r-project.org/bin/windows/Rtools/](https://cran.r-project.org/bin/windows/Rtools/) and download the Rtools version that is compatible with your R version. 
+
+If you want to watch a step-by-step tutorial on how to install R for Windows, you can watch the video here.
+
 ## Familiarize with RStudio interface
 
 ## Creating and saving an RStudio project

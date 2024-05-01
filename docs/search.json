@@ -118,7 +118,7 @@
     "href": "intro.html#download-and-installing-rtools",
     "title": "1  Introduction to R and RStudio",
     "section": "1.7 Download and Installing Rtools",
-    "text": "1.7 Download and Installing Rtools",
+    "text": "1.7 Download and Installing Rtools\nWindows users also require additional software known as Rtools, particularly for installing certain packages. Go to the website https://cran.r-project.org/bin/windows/Rtools/ and download the Rtools version that is compatible with your R version.\nIf you want to watch a step-by-step tutorial on how to install R for Windows, you can watch the video here.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to R and RStudio</span>"
     ]
