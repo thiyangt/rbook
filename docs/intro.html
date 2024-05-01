@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -81,7 +81,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -90,6 +96,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -105,12 +112,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R and RStudio</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R and RStudio</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -120,7 +127,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Programming and Data Analysis with R</a> 
@@ -160,7 +167,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -172,10 +179,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#why-learn-r" id="toc-why-learn-r" class="nav-link" data-scroll-target="#why-learn-r"><span class="header-section-number">1.3</span> Why learn R?</a></li>
   <li><a href="#r-and-rstudio" id="toc-r-and-rstudio" class="nav-link" data-scroll-target="#r-and-rstudio"><span class="header-section-number">1.4</span> R and RStudio</a></li>
   <li><a href="#downloading-r-and-rstudio" id="toc-downloading-r-and-rstudio" class="nav-link" data-scroll-target="#downloading-r-and-rstudio"><span class="header-section-number">1.5</span> Downloading R and RStudio</a></li>
-  <li><a href="#installing-r-and-rstudio" id="toc-installing-r-and-rstudio" class="nav-link" data-scroll-target="#installing-r-and-rstudio"><span class="header-section-number">1.6</span> Installing R and Rstudio</a></li>
-  <li><a href="#familiarize-with-rstudio-interface" id="toc-familiarize-with-rstudio-interface" class="nav-link" data-scroll-target="#familiarize-with-rstudio-interface"><span class="header-section-number">1.7</span> Familiarize with RStudio interface</a></li>
-  <li><a href="#creating-and-saving-an-rstudio-project" id="toc-creating-and-saving-an-rstudio-project" class="nav-link" data-scroll-target="#creating-and-saving-an-rstudio-project"><span class="header-section-number">1.8</span> Creating and saving an RStudio project</a></li>
-  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">1.9</span> Exercise</a></li>
+  <li><a href="#installing-r-and-rstudio" id="toc-installing-r-and-rstudio" class="nav-link" data-scroll-target="#installing-r-and-rstudio"><span class="header-section-number">1.6</span> Installing R and Rstudio</a>
+  <ul class="collapse">
+  <li><a href="#installing-r" id="toc-installing-r" class="nav-link" data-scroll-target="#installing-r"><span class="header-section-number">1.6.1</span> Installing R</a></li>
+  <li><a href="#installing-rstudio" id="toc-installing-rstudio" class="nav-link" data-scroll-target="#installing-rstudio"><span class="header-section-number">1.6.2</span> Installing RStudio</a></li>
+  </ul></li>
+  <li><a href="#download-and-installing-rtools" id="toc-download-and-installing-rtools" class="nav-link" data-scroll-target="#download-and-installing-rtools"><span class="header-section-number">1.7</span> Download and Installing Rtools</a></li>
+  <li><a href="#familiarize-with-rstudio-interface" id="toc-familiarize-with-rstudio-interface" class="nav-link" data-scroll-target="#familiarize-with-rstudio-interface"><span class="header-section-number">1.8</span> Familiarize with RStudio interface</a></li>
+  <li><a href="#creating-and-saving-an-rstudio-project" id="toc-creating-and-saving-an-rstudio-project" class="nav-link" data-scroll-target="#creating-and-saving-an-rstudio-project"><span class="header-section-number">1.9</span> Creating and saving an RStudio project</a></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">1.10</span> Exercise</a></li>
   </ul>
 </nav>
     </div>
@@ -197,7 +209,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
+
 </header>
+
 
 <section id="chapter-roadmap" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="chapter-roadmap"><span class="header-section-number">1.1</span> Chapter Roadmap</h2>
@@ -207,6 +221,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>R and Rstudio</p></li>
 <li><p>Downloading R and RStudio</p></li>
 <li><p>Installing R and RStudio</p></li>
+<li><p>Download and Installing Rtools</p></li>
 <li><p>Familiarize with RStudio interface</p></li>
 <li><p>Creating and saving an RStudio project</p></li>
 </ol>
@@ -217,7 +232,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="why-learn-r" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="why-learn-r"><span class="header-section-number">1.3</span> Why learn R?</h2>
-<p>R is a free and open-source software package. Following are some steps that need to perform for your data analysis projects.</p>
+<p><strong>1. R is a free and open-source software package.</strong></p>
+<p><strong>2. R is a powerful software for data analysis and statistical computing.</strong></p>
+<p>Following are some steps that need to perform for your data analysis projects.</p>
 <ol type="1">
 <li>Import/ Export data</li>
 <li>Data cleaning</li>
@@ -228,13 +245,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Presentation and communication of results</li>
 </ol>
 <p>Additionally, ensuring the reproducibility of data analysis and modeling workflows is crucial for enhancing trustworthiness. R has packages to fulfill all these data analysis and modeling needs.</p>
-<p>Furthermore, here’s an expansion on how R can be utilized for tasks beyond traditional data analysis and modelling:</p>
+<p><strong>3. R can be utilized for tasks beyond traditional data analysis, modelling and statistical computing</strong></p>
 <ol type="1">
 <li><p>Scientific Writing Tools: R can be used for scientific writing, particularly through the use of packages like knitr rmarkdown, and Quarto. These packages allow you to integrate R code directly into documents alongside text and figures, which is highly useful for reproducible research and automated report generation. These are useful for thesis writing, book writing or any other documentation work. This book “Programming and Data Analysis with R” is written based on Quarto.</p></li>
 <li><p>Website Development: R can be used developed websites, particularly through the use of packages like knitr rmarkdown, blogdown and Quarto. For example, the website https://hellor.netlify.app/ is written based on blogdown and https://thiyangt.github.io/rprogramming/ is written based on quarto.</p></li>
 <li><p>Creating Presentations: R can generate dynamic and visually appealing presentations using rmarkdown, xaringan, quarto, etc. These packages enable you to embed R code, plots, and interactive elements directly into presentation slides. Here is an example presentation developed using xaringan https://thiyangt.github.io/whyR2021keynote/#1</p></li>
 <li><p>Creating Posters: R can be utilized to design scientific posters using packages such as posterdown. These packages provide templates for creating professional-looking posters directly from R Markdown documents. You can include plots, tables, formatted text and graphics in your poster design.</p></li>
 <li><p>Web Application Development: This capability is particularly useful for developing data-driven tools, simulations, and dashboards that can be accessed through web browsers without the need for users to install additional software.</p></li>
+</ol>
+<p><strong>4. There is a large community of users.</strong></p>
+<p>Learning a programming language with a large community of users is particularly important for several reasons:</p>
+<ol type="1">
+<li><p><strong>Support and Resources to learn:</strong> This means there are abundant resources available online, including tutorials, documentation, forums, and open-source libraries. When you encounter issues or need guidance, you’re more likely to find solutions quickly due to the active community.</p></li>
+<li><p><strong>Regular updates and improvements:</strong> Popular languages receive regular updates and improvements driven by community feedback and contributions.</p></li>
+<li><p><strong>Collaboration and Career opportunities:</strong> Since, there are many users you are very likely to find good job opportunities and colloboration opportunities.</p></li>
+<li><p><strong>Networking:</strong> Being part of a large programming community allows you to participate in hackathons, and attend meetups or conferences. One such a R community is “R Ladies”.</p></li>
 </ol>
 </section>
 <section id="r-and-rstudio" class="level2" data-number="1.4">
@@ -250,21 +275,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="downloading-r-and-rstudio" class="level2" data-number="1.5">
 <h2 data-number="1.5" class="anchored" data-anchor-id="downloading-r-and-rstudio"><span class="header-section-number">1.5</span> Downloading R and RStudio</h2>
 <p><strong>To download R:</strong></p>
-<p>Visit the link <a href="https://cran.r-project.org/">https://cran.r-project.org/</a> to download R. Choose the appropriate version depending on the operating system you are using.</p>
+<p>Visit the link <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a> to download R. Choose the appropriate version depending on the operating system you are using.</p>
 <p><strong>To download RStudio (This can also be used to download R as well):</strong></p>
-<p>Visit the link <a href="https://posit.co/download/rstudio-desktop/">https://posit.co/download/rstudio-desktop/</a> to download RStudio IDE. Make sure that you are downloading the appropriate version that matches your computer’s operating system. From the same link you can also download the R. Furthermore, RStudio requires a specific version of R. For example “RStudio requires R 3.3.0+”. To</p>
+<p>Visit the link <a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a> to download RStudio IDE. Make sure that you are downloading the appropriate version that matches your computer’s operating system. From the same link you can also download the R. Furthermore, RStudio requires a specific version of R. For example “RStudio requires R 3.3.0+”. Make sure you have the correct R version. The version of the R programming language is denoted using a format like “x.x.x”, where each “x” represents a number indicating the major version, minor version, and patch level respectively.</p>
 </section>
 <section id="installing-r-and-rstudio" class="level2" data-number="1.6">
 <h2 data-number="1.6" class="anchored" data-anchor-id="installing-r-and-rstudio"><span class="header-section-number">1.6</span> Installing R and Rstudio</h2>
+<p>First, you should install R. After installation R, you can install RStudio.</p>
+<section id="installing-r" class="level3" data-number="1.6.1">
+<h3 data-number="1.6.1" class="anchored" data-anchor-id="installing-r"><span class="header-section-number">1.6.1</span> Installing R</h3>
+<p>Double click on the the downloaded R installer file. This will start the install process. Usually the default options are fine. If you want to watch a step-by-step tutorial on how to install R for Windows, you can watch the video here.</p>
 </section>
-<section id="familiarize-with-rstudio-interface" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="familiarize-with-rstudio-interface"><span class="header-section-number">1.7</span> Familiarize with RStudio interface</h2>
+<section id="installing-rstudio" class="level3" data-number="1.6.2">
+<h3 data-number="1.6.2" class="anchored" data-anchor-id="installing-rstudio"><span class="header-section-number">1.6.2</span> Installing RStudio</h3>
+<p>You must have R installed before installing RStudio. Double click on the the downloaded RStudio installer file. This will start the install process. Usually the default options are fine. If you want to watch a step-by-step tutorial on how to install R for Windows, you can watch the video here.</p>
 </section>
-<section id="creating-and-saving-an-rstudio-project" class="level2" data-number="1.8">
-<h2 data-number="1.8" class="anchored" data-anchor-id="creating-and-saving-an-rstudio-project"><span class="header-section-number">1.8</span> Creating and saving an RStudio project</h2>
 </section>
-<section id="exercise" class="level2" data-number="1.9">
-<h2 data-number="1.9" class="anchored" data-anchor-id="exercise"><span class="header-section-number">1.9</span> Exercise</h2>
+<section id="download-and-installing-rtools" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="download-and-installing-rtools"><span class="header-section-number">1.7</span> Download and Installing Rtools</h2>
+</section>
+<section id="familiarize-with-rstudio-interface" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="familiarize-with-rstudio-interface"><span class="header-section-number">1.8</span> Familiarize with RStudio interface</h2>
+</section>
+<section id="creating-and-saving-an-rstudio-project" class="level2" data-number="1.9">
+<h2 data-number="1.9" class="anchored" data-anchor-id="creating-and-saving-an-rstudio-project"><span class="header-section-number">1.9</span> Creating and saving an RStudio project</h2>
+</section>
+<section id="exercise" class="level2" data-number="1.10">
+<h2 data-number="1.10" class="anchored" data-anchor-id="exercise"><span class="header-section-number">1.10</span> Exercise</h2>
 <p>The goal of this exercise is to help you become familiar with the R Studio environment and create and save projects.</p>
 <ol type="1">
 <li><p>Create a new project in the RStudio IDE. Name your project as lesson1.</p></li>
@@ -278,7 +315,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="ch1.png" class="img-fluid" width="686"></p>
+<div>
+<figure class="figure">
+<p><img src="ch1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <ol start="4" type="1">
@@ -445,10 +486,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -458,8 +516,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -471,7 +538,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -515,6 +705,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -540,6 +731,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -601,17 +818,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
+      <a href="./index.html" class="pagination-link" aria-label="Preface">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./summary.html" class="pagination-link">
+      <a href="./summary.html" class="pagination-link" aria-label="Summary">
         <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 
