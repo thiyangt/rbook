@@ -1,4 +1,4 @@
-# Introduction to R and R Studio
+# Introduction to R and RStudio
 
 ## Chapter Roadmap
 
@@ -8,21 +8,33 @@
 
 3.  R and Rstudio
 
-4.  Installing R and Rstudio
+4. Downloading R and RStudio
 
-5.  Familiarize with RStudio interface
+5.  Installing R and RStudio
 
-6.  Creating and saving an RStudio project
+6.  Familiarize with RStudio interface
+
+7.  Creating and saving an RStudio project
 
 ## What is R?
 
-R is a popular programming language and environment specifically designed for statistical computing, data analysis, and data visualisation. The language designers are **R**oss Ihaka and **R**obert Gentleman at the Department of Statistics, University of Auckland, New Zealand. The parent language is **S**.
+R is a popular programming language and environment specifically designed for statistical computing, data analysis, and data visualisation. The language designers are **R**oss Ihaka and **R**obert Gentleman at the Department of Statistics, University of Auckland, New Zealand. The parent language is **S**. R is primarily a functional programming language.
 
 ## Why learn R?
 
-R is a free and open-source software package.
+R is a free and open-source software package. Following are some steps that need to perform for your data analysis projects. 
 
-Here's an expansion on how R can be utilized for tasks beyond traditional statistical analysis:
+1. Import/ Export data
+2. Data cleaning
+3. Data visualisation
+4. Data modelling
+5. Model deployment
+6. Ensuring validity and interpretability of models
+7. Presentation and communication of results
+
+Additionally, ensuring the reproducibility of data analysis and modeling workflows is crucial for enhancing trustworthiness. R has packages to fulfill all these data analysis and modeling needs.
+
+Furthermore, here's an expansion on how R can be utilized for tasks beyond traditional data analysis and modelling:
 
 1.  Scientific Writing Tools: R can be used for scientific writing, particularly through the use of packages like knitr rmarkdown, and Quarto. These packages allow you to integrate R code directly into documents alongside text and figures, which is highly useful for reproducible research and automated report generation. These are useful for thesis writing, book writing or any other documentation work. This book "Programming and Data Analysis with R" is written based on Quarto.
 
@@ -35,6 +47,23 @@ Here's an expansion on how R can be utilized for tasks beyond traditional statis
 5.  Web Application Development: This capability is particularly useful for developing data-driven tools, simulations, and dashboards that can be accessed through web browsers without the need for users to install additional software.
 
 ## R and RStudio
+
+What is the difference between R and RStudio? **R is the programming language** that provides the statistical computing capabilities. **R Studio is an Integrated Development Environment(IDE) for R.** [Dr Julia  Lowndes](https://jules32.github.io/) illustrates the distinctions between R and RStudio using the analogy as follows:
+
+> "If R were an airplane, RStudio would be the airport, providing many, many supporting services that make it easier for you, the pilot, to take off and go to awesome places. Sure, you can fly an airplane without an airport, but having those runways and supporting infrastructure is a game-changer."
+
+> Julie Lowndes (https://jules32.github.io/2016-07-12-Oxford/R_RStudio/, accessed on May 1, 2024)
+
+## Downloading R and RStudio
+
+**To download R:**
+
+Visit the link [https://cran.r-project.org/](https://cran.r-project.org/) to download R. Choose the appropriate version depending on the operating system you are using.
+
+**To download RStudio (This can also be used to download R as well):**
+
+Visit the link [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/) to download RStudio IDE.  Make sure that you are downloading the appropriate version that matches your computer’s operating system. From the same link you can also download the R. Furthermore, RStudio requires a specific version of R. For example "RStudio requires R 3.3.0+". To 
+
 
 ## Installing R and Rstudio
 

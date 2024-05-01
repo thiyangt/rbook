@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Programming and Data Analysis with R - 1&nbsp; Introduction to R and R Studio</title>
+<title>Programming and Data Analysis with R - 1&nbsp; Introduction to R and RStudio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -108,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R and R Studio</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R and RStudio</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -142,7 +142,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./intro.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R and R Studio</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R and RStudio</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -171,10 +171,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#what-is-r" id="toc-what-is-r" class="nav-link" data-scroll-target="#what-is-r"><span class="header-section-number">1.2</span> What is R?</a></li>
   <li><a href="#why-learn-r" id="toc-why-learn-r" class="nav-link" data-scroll-target="#why-learn-r"><span class="header-section-number">1.3</span> Why learn R?</a></li>
   <li><a href="#r-and-rstudio" id="toc-r-and-rstudio" class="nav-link" data-scroll-target="#r-and-rstudio"><span class="header-section-number">1.4</span> R and RStudio</a></li>
-  <li><a href="#installing-r-and-rstudio" id="toc-installing-r-and-rstudio" class="nav-link" data-scroll-target="#installing-r-and-rstudio"><span class="header-section-number">1.5</span> Installing R and Rstudio</a></li>
-  <li><a href="#familiarize-with-rstudio-interface" id="toc-familiarize-with-rstudio-interface" class="nav-link" data-scroll-target="#familiarize-with-rstudio-interface"><span class="header-section-number">1.6</span> Familiarize with RStudio interface</a></li>
-  <li><a href="#creating-and-saving-an-rstudio-project" id="toc-creating-and-saving-an-rstudio-project" class="nav-link" data-scroll-target="#creating-and-saving-an-rstudio-project"><span class="header-section-number">1.7</span> Creating and saving an RStudio project</a></li>
-  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">1.8</span> Exercise</a></li>
+  <li><a href="#downloading-r-and-rstudio" id="toc-downloading-r-and-rstudio" class="nav-link" data-scroll-target="#downloading-r-and-rstudio"><span class="header-section-number">1.5</span> Downloading R and RStudio</a></li>
+  <li><a href="#installing-r-and-rstudio" id="toc-installing-r-and-rstudio" class="nav-link" data-scroll-target="#installing-r-and-rstudio"><span class="header-section-number">1.6</span> Installing R and Rstudio</a></li>
+  <li><a href="#familiarize-with-rstudio-interface" id="toc-familiarize-with-rstudio-interface" class="nav-link" data-scroll-target="#familiarize-with-rstudio-interface"><span class="header-section-number">1.7</span> Familiarize with RStudio interface</a></li>
+  <li><a href="#creating-and-saving-an-rstudio-project" id="toc-creating-and-saving-an-rstudio-project" class="nav-link" data-scroll-target="#creating-and-saving-an-rstudio-project"><span class="header-section-number">1.8</span> Creating and saving an RStudio project</a></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">1.9</span> Exercise</a></li>
   </ul>
 </nav>
     </div>
@@ -183,7 +184,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R and R Studio</span></h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R and RStudio</span></h1>
 </div>
 
 
@@ -204,19 +205,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>What is R?</p></li>
 <li><p>Why learn R?</p></li>
 <li><p>R and Rstudio</p></li>
-<li><p>Installing R and Rstudio</p></li>
+<li><p>Downloading R and RStudio</p></li>
+<li><p>Installing R and RStudio</p></li>
 <li><p>Familiarize with RStudio interface</p></li>
 <li><p>Creating and saving an RStudio project</p></li>
 </ol>
 </section>
 <section id="what-is-r" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="what-is-r"><span class="header-section-number">1.2</span> What is R?</h2>
-<p>R is a popular programming language and environment specifically designed for statistical computing, data analysis, and data visualisation. The language designers are <strong>R</strong>oss Ihaka and <strong>R</strong>obert Gentleman at the Department of Statistics, University of Auckland, New Zealand. The parent language is <strong>S</strong>.</p>
+<p>R is a popular programming language and environment specifically designed for statistical computing, data analysis, and data visualisation. The language designers are <strong>R</strong>oss Ihaka and <strong>R</strong>obert Gentleman at the Department of Statistics, University of Auckland, New Zealand. The parent language is <strong>S</strong>. R is primarily a functional programming language.</p>
 </section>
 <section id="why-learn-r" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="why-learn-r"><span class="header-section-number">1.3</span> Why learn R?</h2>
-<p>R is a free and open-source software package.</p>
-<p>Here’s an expansion on how R can be utilized for tasks beyond traditional statistical analysis:</p>
+<p>R is a free and open-source software package. Following are some steps that need to perform for your data analysis projects.</p>
+<ol type="1">
+<li>Import/ Export data</li>
+<li>Data cleaning</li>
+<li>Data visualisation</li>
+<li>Data modelling</li>
+<li>Model deployment</li>
+<li>Ensuring validity and interpretability of models</li>
+<li>Presentation and communication of results</li>
+</ol>
+<p>Additionally, ensuring the reproducibility of data analysis and modeling workflows is crucial for enhancing trustworthiness. R has packages to fulfill all these data analysis and modeling needs.</p>
+<p>Furthermore, here’s an expansion on how R can be utilized for tasks beyond traditional data analysis and modelling:</p>
 <ol type="1">
 <li><p>Scientific Writing Tools: R can be used for scientific writing, particularly through the use of packages like knitr rmarkdown, and Quarto. These packages allow you to integrate R code directly into documents alongside text and figures, which is highly useful for reproducible research and automated report generation. These are useful for thesis writing, book writing or any other documentation work. This book “Programming and Data Analysis with R” is written based on Quarto.</p></li>
 <li><p>Website Development: R can be used developed websites, particularly through the use of packages like knitr rmarkdown, blogdown and Quarto. For example, the website https://hellor.netlify.app/ is written based on blogdown and https://thiyangt.github.io/rprogramming/ is written based on quarto.</p></li>
@@ -227,18 +239,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="r-and-rstudio" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="r-and-rstudio"><span class="header-section-number">1.4</span> R and RStudio</h2>
+<p>What is the difference between R and RStudio? <strong>R is the programming language</strong> that provides the statistical computing capabilities. <strong>R Studio is an Integrated Development Environment(IDE) for R.</strong> <a href="https://jules32.github.io/">Dr Julia Lowndes</a> illustrates the distinctions between R and RStudio using the analogy as follows:</p>
+<blockquote class="blockquote">
+<p>“If R were an airplane, RStudio would be the airport, providing many, many supporting services that make it easier for you, the pilot, to take off and go to awesome places. Sure, you can fly an airplane without an airport, but having those runways and supporting infrastructure is a game-changer.”</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Julie Lowndes (https://jules32.github.io/2016-07-12-Oxford/R_RStudio/, accessed on May 1, 2024)</p>
+</blockquote>
 </section>
-<section id="installing-r-and-rstudio" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="installing-r-and-rstudio"><span class="header-section-number">1.5</span> Installing R and Rstudio</h2>
+<section id="downloading-r-and-rstudio" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="downloading-r-and-rstudio"><span class="header-section-number">1.5</span> Downloading R and RStudio</h2>
+<p><strong>To download R:</strong></p>
+<p>Visit the link <a href="https://cran.r-project.org/">https://cran.r-project.org/</a> to download R. Choose the appropriate version depending on the operating system you are using.</p>
+<p><strong>To download RStudio (This can also be used to download R as well):</strong></p>
+<p>Visit the link <a href="https://posit.co/download/rstudio-desktop/">https://posit.co/download/rstudio-desktop/</a> to download RStudio IDE. Make sure that you are downloading the appropriate version that matches your computer’s operating system. From the same link you can also download the R. Furthermore, RStudio requires a specific version of R. For example “RStudio requires R 3.3.0+”. To</p>
 </section>
-<section id="familiarize-with-rstudio-interface" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="familiarize-with-rstudio-interface"><span class="header-section-number">1.6</span> Familiarize with RStudio interface</h2>
+<section id="installing-r-and-rstudio" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="installing-r-and-rstudio"><span class="header-section-number">1.6</span> Installing R and Rstudio</h2>
 </section>
-<section id="creating-and-saving-an-rstudio-project" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="creating-and-saving-an-rstudio-project"><span class="header-section-number">1.7</span> Creating and saving an RStudio project</h2>
+<section id="familiarize-with-rstudio-interface" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="familiarize-with-rstudio-interface"><span class="header-section-number">1.7</span> Familiarize with RStudio interface</h2>
 </section>
-<section id="exercise" class="level2" data-number="1.8">
-<h2 data-number="1.8" class="anchored" data-anchor-id="exercise"><span class="header-section-number">1.8</span> Exercise</h2>
+<section id="creating-and-saving-an-rstudio-project" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="creating-and-saving-an-rstudio-project"><span class="header-section-number">1.8</span> Creating and saving an RStudio project</h2>
+</section>
+<section id="exercise" class="level2" data-number="1.9">
+<h2 data-number="1.9" class="anchored" data-anchor-id="exercise"><span class="header-section-number">1.9</span> Exercise</h2>
 <p>The goal of this exercise is to help you become familiar with the R Studio environment and create and save projects.</p>
 <ol type="1">
 <li><p>Create a new project in the RStudio IDE. Name your project as lesson1.</p></li>
