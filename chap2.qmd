@@ -1,0 +1,123 @@
+# Data Structures
+
+There are 5 main data structures in R. They are:
+
+1. vectors
+
+2. matrix
+
+3. array
+
+4. data frame
+
+5. list
+
+## Vectors
+
+1. One dimensional data object.
+
+2. Homogeneous data structure. That means data in a vector must only be one type or mode (numeric, character, or logical). You can not mix different types of data. If you try to mix different types of data, R will automatically convert them into one type.
+
+## Creating Vectors
+
+## Coercion
+
+When you try to include different types they will be coerced to the most flexible type. 
+
+
+
+## Creating vectors
+
+## Functions that can be used to inspect vectors
+
+## Exercise
+
+1. Write R codes to create following vectors. If you see pattern in the data, use vector simplification methods.
+
+i. 
+
+```{r, echo=FALSE}
+c(1990, 1992, 1934, 1957, 1970, 2000, 2005)
+```
+
+ii. 
+
+```{r, echo=FALSE}
+rep(c(3, 6, 9), times=5)
+```
+
+iii. 
+
+```{r, echo=FALSE}
+rep(c(3, 6, 9), each=5)
+```
+
+iv. 
+
+```{r, echo=FALSE}
+rep(c(3, 6, 9), each=5, times=2)
+```
+
+v.
+
+```{r, echo=FALSE}
+seq(1, 36, by=3)
+```
+
+vi.
+
+```{r, echo=FALSE}
+seq(0.1, 0.3, length=100)
+```
+
+vii. 
+
+```{r, echo=FALSE}
+-0.5:10.5
+
+```
+
+viii.
+
+```{r, echo=FALSE}
+seq(1, 36)*2
+```
+
+2. Use `typeof()` function to check the R storage mode of the following vectors and `class()` to check the class type of the vector.
+
+
+```{r}
+logical_vector <- c(TRUE, FALSE, TRUE, FALSE)
+integer_vector <- c(1L, 2L, 3L, 4L)
+double_vector <- c(1.1, 2.2, 3.3, 4.4)
+complex_vector <- c(1+1i, 2+2i, 3+3i, 4+4i)
+character_vector <- c("a", "b", "c", "d")
+null_vector <- NULL
+time_data <- 1996:2006
+time_series_data <- ts(1996:2006)
+```
+
+3. Create the vector (3, 3, 3, . . . 3, 6, 6, . . . 6, 9, 9, 9, . . . 9), where there are 10 occurrences of 3, 20 occurrences of 6 and 30 occurrences of 9.
+
+4. Find the value of the following expression.
+
+i. $\sum_{i=1}^{100}i$
+
+ii. $\sum_{i=1}^{100}i^2$
+
+5. Generate a sequence using the code seq(from=1, to=10, by=1). What other ways can you generate the same sequence?
+
+6. Create a vector to hold population values, and label each element with the corresponding province name. The plot will  display population values when hovered over.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(ceylon)
+library(ggplot2)
+library(viridis)
+library(plotly)
+library(sf)
+p1 <- ggplot(province) + 
+  geom_sf(mapping = aes(fill = population), show.legend = TRUE) +
+  scale_fill_viridis() 
+ 
+ggplotly(p1)
+```

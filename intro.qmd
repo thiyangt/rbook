@@ -12,7 +12,7 @@
 
 5.  Installing R and RStudio
 
-6. Download and Installing Rtools
+6.  Download and Installing Rtools
 
 7.  Familiarize with RStudio interface
 
@@ -40,7 +40,7 @@ Following are some steps that need to perform for your data analysis projects.
 
 Additionally, ensuring the reproducibility of data analysis and modeling workflows is crucial for enhancing trustworthiness. R has packages to fulfill all these data analysis and modeling needs.
 
-**3.  R can be utilized for tasks beyond traditional data analysis,  modelling and statistical computing**
+**3. R can be utilized for tasks beyond traditional data analysis, modelling and statistical computing**
 
 1.  Scientific Writing Tools: R can be used for scientific writing, particularly through the use of packages like knitr rmarkdown, and Quarto. These packages allow you to integrate R code directly into documents alongside text and figures, which is highly useful for reproducible research and automated report generation. These are useful for thesis writing, book writing or any other documentation work. This book "Programming and Data Analysis with R" is written based on Quarto.
 
@@ -56,13 +56,13 @@ Additionally, ensuring the reproducibility of data analysis and modeling workflo
 
 Learning a programming language with a large community of users is particularly important for several reasons:
 
-1. **Support and Resources to learn:** This means there are abundant resources available online, including tutorials, documentation, forums, and open-source libraries. When you encounter issues or need guidance, you're more likely to find solutions quickly due to the active community.
+1.  **Support and Resources to learn:** This means there are abundant resources available online, including tutorials, documentation, forums, and open-source libraries. When you encounter issues or need guidance, you're more likely to find solutions quickly due to the active community.
 
-2. **Regular updates and improvements:** Popular languages receive regular updates and improvements driven by community feedback and contributions.
+2.  **Regular updates and improvements:** Popular languages receive regular updates and improvements driven by community feedback and contributions.
 
-3. **Collaboration and Career opportunities:** Since, there are many users you are very likely to find good job opportunities and colloboration opportunities. 
+3.  **Collaboration and Career opportunities:** Since, there are many users you are very likely to find good job opportunities and colloboration opportunities.
 
-4. **Networking:** Being part of a large programming community allows you to participate in hackathons, and attend meetups or conferences. One such a R community is "R Ladies".  
+4.  **Networking:** Being part of a large programming community allows you to participate in hackathons, and attend meetups or conferences. One such a R community is "R Ladies".
 
 ## R and RStudio
 
@@ -88,16 +88,15 @@ First, you should install R. After installation R, you can install RStudio.
 
 ### Installing R
 
- Double click on the the downloaded R installer file. This will start the install process. Usually the default options are fine.  If you want to watch a step-by-step tutorial on how to install R for Windows, you can watch the video here.
- 
+Double click on the the downloaded R installer file. This will start the install process. Usually the default options are fine. If you want to watch a step-by-step tutorial on how to install R for Windows, you can watch the video here.
+
 ### Installing RStudio
 
-You must have R installed before installing RStudio. Double click on the the downloaded RStudio installer file. This will start the install process. Usually the default options are fine.  If you want to watch a step-by-step tutorial on how to install R for Windows, you can watch the video here.
+You must have R installed before installing RStudio. Double click on the the downloaded RStudio installer file. This will start the install process. Usually the default options are fine. If you want to watch a step-by-step tutorial on how to install R for Windows, you can watch the video here.
 
 ## Download and Installing Rtools
 
-
-Windows users also require additional software known as Rtools, particularly for installing certain packages. Go to the website [https://cran.r-project.org/bin/windows/Rtools/](https://cran.r-project.org/bin/windows/Rtools/) and download the Rtools version that is compatible with your R version. 
+Windows users also require additional software known as Rtools, particularly for installing certain packages. Go to the website <https://cran.r-project.org/bin/windows/Rtools/> and download the Rtools version that is compatible with your R version.
 
 If you want to watch a step-by-step tutorial on how to install R for Windows, you can watch the video here.
 
