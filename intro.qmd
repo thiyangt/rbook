@@ -60,9 +60,9 @@ Learning a programming language with a large community of users is particularly 
 
 2.  **Regular updates and improvements:** Popular languages receive regular updates and improvements driven by community feedback and contributions.
 
-3.  **Collaboration and Career opportunities:** Since, there are many users you are very likely to find good job opportunities and colloboration opportunities.
+3.  **Collaboration and Career opportunities:** Since, there are many users you are very likely to find good job opportunities and collaboration opportunities.
 
-4.  **Networking:** Being part of a large programming community allows you to participate in hackathons, and attend meetups or conferences. One such a R community is "R Ladies".
+4.  **Networking:** Being part of a large programming community allows you to participate in blackthorns, and attend meetups or conferences. One such a R community is "R Ladies".
 
 ## R and RStudio
 
@@ -88,11 +88,19 @@ First, you should install R. After installation R, you can install RStudio.
 
 ### Installing R
 
-Double click on the the downloaded R installer file. This will start the install process. Usually the default options are fine. If you want to watch a step-by-step tutorial on how to install R for Windows, you can watch the video here.
+Double click on the the downloaded R installer file. This will start the install process. Usually the default options are fine. If you want to watch a step-by-step tutorial on how to install R for Windows, you can watch the video [here](https://www.youtube.com/watch?v=aRwxsAEoRzs).
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aRwxsAEoRzs?si=K0a-BE2RIcwVGSib" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+
+</iframe>
 
 ### Installing RStudio
 
-You must have R installed before installing RStudio. Double click on the the downloaded RStudio installer file. This will start the install process. Usually the default options are fine. If you want to watch a step-by-step tutorial on how to install R for Windows, you can watch the video here.
+You must have R installed before installing RStudio. Double click on the the downloaded RStudio installer file. This will start the install process. Usually the default options are fine. If you want to watch a step-by-step tutorial on how to install R for Windows, you can watch the video [here](https://www.youtube.com/watch?v=Q1NRj2Dzdn0).
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Q1NRj2Dzdn0?si=a4Kl0R_xAy7qWQAj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+
+</iframe>
 
 ## Download and Installing Rtools
 
@@ -102,7 +110,104 @@ If you want to watch a step-by-step tutorial on how to install R for Windows, yo
 
 ## Familiarize with RStudio interface
 
-## Creating and saving an RStudio project
+Step 1: Double click RStudio icon. This will open an RStudio project window as follows:
+
+```{r, echo=FALSE}
+knitr::include_graphics(here::here("img", "chap1", "rw1.png"))
+
+
+```
+
+Step 2: To obtain the source or script editor use the following steps:
+
+File \> New File \> R Script
+
+```{r, echo=FALSE}
+knitr::include_graphics(here::here("img", "chap1", "rw2.png"))
+```
+
+Now we have four window. They are as follows:
+
+```{r, echo=FALSE}
+knitr::include_graphics(here::here("img", "chap1", "rw5.png"))
+```
+
+1.  Source window: Here you can write your R codes.
+2.  Console: This is where you execute your commands to obtain the outputs.
+3.  Environment, History, Connections, Tutorial: Out of the different tabs you see here, the most important ones are the environment and the history tab.
+    -   The Environment pane shows all the objects (like data frames, variables, functions, etc.) that are currently in your R session.
+
+    -   The History tab keeps a record of all the commands you have run in the Console.
+4.  File, Plots, Packages, Help, Viewer, Presentations:
+    -   Files allows you to navigate your files.
+
+    -   The graphical outputs are displayed here.
+
+    -   Allows users to install, update, load, unload packages
+
+    -   Help files corresponds to the functions are shown here. Help files provides function descriptions, examples and references for you to learn on your own. To access the help file of a function type "?" followed by the function name . For example, \`?ls\`.
+
+    -   Viewer/ Presentations: Useful when working with RMarkdown or Quarto documentations. We will look at this in Chapter 8.
+
+## Change the appearance of RStudio pane
+
+This is an optional step. To change the appearance, font size, RStudio theme colour follow the steps below:
+
+Step 1: Go to Tools \> Global Options. You will get the window below
+
+```{r, echo=FALSE}
+knitr::include_graphics(here::here("img", "chap1", "rw6.png"))
+```
+
+Step 2: Select Appearance tab
+
+```{r, echo=FALSE}
+knitr::include_graphics(here::here("img", "chap1", "rw7.png"))
+```
+
+Here, I select the theme to "Cobalt". Then the appearance of the window will change as below:
+
+```{r, echo=FALSE}
+knitr::include_graphics(here::here("img", "chap1", "rw12.png"))
+```
+
+## Creating an RStudio project
+
+To create an RStudio project, please follow the following steps
+
+Step 1: File \> New Projects
+
+```{r, echo=FALSE}
+knitr::include_graphics(here::here("img", "chap1", "rw8.png"))
+```
+
+Step 2: Click on the "New Directory" on the following window.
+
+```{r, echo=FALSE}
+knitr::include_graphics(here::here("img", "chap1", "rw9.png"))
+```
+
+Step 3: Click on "New Project"
+
+```{r, echo=FALSE}
+knitr::include_graphics(here::here("img", "chap1", "rw10.png"))
+```
+
+Step 4: Give a directory name and a path to save
+
+```{r, echo=FALSE}
+knitr::include_graphics(here::here("img", "chap1", "rw11.png"))
+```
+
+## To save an R Studio projects
+
+**Category 1:** If you have created a project using the steps shown in Section 1.10, you can save your R Script files by clicking on the floppy disk icon, as illustrated in the figure below:
+
+```{r, echo=FALSE}
+knitr::include_graphics(here::here("img", "chap1", "rw13.png"))
+```
+
+**Category 2:** If you started coding without creating a project and want to save your work, go to File \> Save As and follow the steps.
 
 ## Exercise
 
