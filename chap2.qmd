@@ -1,6 +1,6 @@
 # Data Structures
 
-There are 5 main data structures in R. They are:
+There are five main data structures in R. They are:
 
 1.  vectors
 
@@ -30,7 +30,8 @@ iii. using `seq` function
 
 iv. using `rep` function
 
-Methods ii-iv simplifies the vector creation. They are useful when there is a pattern in the data.
+
+Methods ii–iv simplify vector creation. They are useful when there is a pattern in data.
 
 ### Concatenate: `c()`
 
