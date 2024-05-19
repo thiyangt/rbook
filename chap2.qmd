@@ -20,7 +20,7 @@ There are five main data structures in R. They are:
 
 ## Creating Vectors
 
-There are five ways to create vectors.
+Vectors can be made in four primary ways. They are
 
 i.  using `c()` function
 
@@ -29,7 +29,6 @@ ii. using `:` function
 iii. using `seq` function
 
 iv. using `rep` function
-
 
 Methods ii–iv simplify vector creation. They are useful when there is a pattern in data.
 
@@ -47,7 +46,6 @@ c(1996, 1998, 2000, 2005)
 
 Assigning a name to vector:
 
-
 The advantage of assigning a name is that we can reuse the same set of values by calling the vector name.
 
 ```{r}
@@ -55,7 +53,7 @@ a <- c(1996, 1998, 2000, 2005)
 a
 ```
 
-###  Colon: `:`
+### Colon: `:`
 
 The `:` function can be used to create a regular decreasing or increasing sequence.
 
@@ -135,6 +133,7 @@ First, each element is repeated five times. After that, the whole sequence is re
 ```{r}
 rep(1:3, each=5, times=3)
 ```
+
 **Example 6**
 
 Same as before. Changing the ordering of `each` and `time` does not change the output.
@@ -168,19 +167,19 @@ Consider the vector below
 example.vec <- c(1,  2,  3, 4, 5, 6, 7, 8)
 ```
 
-1. To check the storage mode
+1.  To check the storage mode
 
 ```{r}
 typeof(example.vec)
 ```
 
-2. To check the class type
+2.  To check the class type
 
 ```{r}
 class(example.vec)
 ```
 
-3. Testing functions
+3.  Testing functions
 
 ```{r}
 is.character(example.vec)
@@ -189,7 +188,7 @@ is.logical(example.vec)
 is.double(example.vec)
 ```
 
-4. Mathematical and statistical functions
+4.  Mathematical and statistical functions
 
 ```{r}
 sum(example.vec)
@@ -198,7 +197,7 @@ summary(example.vec)
 
 ```
 
-5. To check if there are any missing values
+5.  To check if there are any missing values
 
 ```{r}
 is.na(example.vec)
@@ -208,7 +207,7 @@ There are many more functions that you can use with vectors. We will learn about
 
 ## Exercise
 
-1.  Write R codes to create following vectors. If you see pattern in the data, use vector simplification methods.
+1.  Write R codes to create the following vectors: If you see patterns in the data, use vector simplification methods.
 
 <!-- -->
 
@@ -261,7 +260,7 @@ viii.
 seq(1, 36)*2
 ```
 
-2.  Use `typeof()` function to check the R storage mode of the following vectors and `class()` to check the class type of the vector.
+2.  Use the `typeof()` function to check the R storage mode of the following vectors and `class()` to check the class type of the vector.
 
 ```{r}
 logical_vector <- c(TRUE, FALSE, TRUE, FALSE)
@@ -303,7 +302,6 @@ p1 <- ggplot(province) +
 ggplotly(p1)
 ```
 
-
 ## Vector Operations
 
-To be addd
+To be added
