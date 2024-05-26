@@ -305,3 +305,78 @@ ggplotly(p1)
 ## Vector Operations
 
 To be added
+
+## Creating Matrix
+
+## Matrix Operations
+
+## Exercise
+
+i. Write R codes to obtain following matrix outputs
+
+a.
+
+```{r, echo=FALSE}
+matrix(seq(10, 100, by=10), ncol=5)
+```
+
+b.
+
+```{r, echo=FALSE}
+matrix(seq(10, 100, by=10), ncol=5, byrow = TRUE)
+```
+
+c.
+
+```{r, echo=FALSE}
+matrix(1:20, ncol=4, dimnames = list(c("Row1", "Row2", "Row3", "Row4", "Row5"), c("C1", "C2", "C3", "C4")))
+```
+
+2. Mr. Perera who lives in Soratha Mawatha - Wijerama wants to sell his house. He wants to decide a price for his house to list it in the market. He believes that the size of the house is one likely determinant of price. He asked from 10 homes in the neighbourhood, "what price should you ask for your home? " and the house size (in square feet). The collected data are shown below:
+
+```{r, comment=NA, echo=FALSE}
+size_x <- seq(1000, 5500, 500)
+price_y <- c(810, 1210, 1450, 1610, 1690, 2010, 1490, 1690, 1890, 2410)
+data.frame(size_x, price_y)
+```
+
+(a) Write an R code to input `size_x` and `price_y` into two separate vectors.
+
+
+(b) Mr. Perera wants to compute the least squares estimates of the model $\hat{Y} = \hat{\beta_0} + \hat{\beta_1}X$. Write an R code to compute $\hat{\beta_0}$ and $\hat{\beta_1}$ using the matrix operation $\hat{\beta} = (X^TX)^{-1}X^TY$. Do not use the built-in function `lm`.
+
+Where,
+
+$\hat{\beta} =\begin{pmatrix}
+\hat{\beta_0} \\
+\hat{\beta_1} \\
+\end{pmatrix}$, $Y = 
+\begin{pmatrix}
+y_1 \\
+y_2 \\
+y_3 \\
+. \\
+. \\
+. \\
+y_n
+\end{pmatrix}$ and $X = 
+\begin{pmatrix}
+1 & x_1 \\
+1 & x_2 \\
+1 & x_3 \\
+. \\
+. \\
+. \\
+1 & x_n
+\end{pmatrix}$ 
+
+
+## Creating Arrays
+
+## Exercise
+
+1. Create a 3D array with 3 columns, 5 rows, and 2 layers in R, and enter the following values into it:
+
+```{r, echo=FALSE}
+1:30
+```
