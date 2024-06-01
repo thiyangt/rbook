@@ -284,7 +284,7 @@
     "href": "chap2.html#exercise-3",
     "title": "2  Data Structures",
     "section": "2.14 Exercise",
-    "text": "2.14 Exercise",
+    "text": "2.14 Exercise\nWrite a code to store the following values in a dataframe.\n\n\n\n\n\nGirth\nHeight\nVolume\n\n\n\n\n8.3\n70\n10.3\n\n\n8.6\n65\n10.3\n\n\n8.8\n63\n10.2\n\n\n10.5\n72\n16.4\n\n\n10.7\n81\n18.8\n\n\n10.8\n83\n19.7\n\n\n11.0\n66\n15.6\n\n\n11.0\n75\n18.2\n\n\n11.1\n80\n22.6\n\n\n11.2\n75\n19.9",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Data Structures</span>"
     ]

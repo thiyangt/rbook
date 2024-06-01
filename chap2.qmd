@@ -386,6 +386,12 @@ y_n
 
 ## Exercise
 
+Write a code to store the following values in a dataframe.
+
+```{r, echo=FALSE}
+trees |> head(10) |> knitr::kable()
+```
+
 ## Subsetting
 
 ## Exercise
