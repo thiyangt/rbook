@@ -21,8 +21,7 @@ me <- c(100, 115, 120, 132, 144, 154, 158, 160, 170, 180, 181, 190, 200, 210, 22
 sales <- round(5*me + 20 + error, 1)
 df <- data.frame(me = me, sales=sales)
 df |> knitr::kable( col.names = c("Marketing expenditures (USD)",
-                           "Number of Sales")) |>
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"),  align = "c") 
+                           "Number of Sales"), align = "c")  
 ```
 
 
