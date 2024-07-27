@@ -22,8 +22,7 @@ sales <- round(5*me + 20 + error, 1)
 df <- data.frame(me = me, sales=sales)
 df |> knitr::kable( col.names = c("Marketing expenditures (USD)",
                            "Number of Sales")) |>
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) |>
-  column_spec(1:2, text_align = "center")
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"),  align = "c") 
 ```
 
 
@@ -41,7 +40,5 @@ sales <- c(sales1, sales2)
 location <- c(rep("A", 20), rep("B", 20))
 df <- data.frame(me = me, sales=sales, location=location)
 df |> knitr::kable( col.names = c("Marketing expenditures (USD)",
-                           "Number of Sales", "Location")) |>
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) |>
-  column_spec(1:3, text_align = "center")
+                           "Number of Sales", "Location"),  align = "c") 
 ```
