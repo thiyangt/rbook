@@ -1,0 +1,45 @@
+# Regression Analysis
+
+## Introduction
+
+## Simple Linear Regression
+
+## Multiple Linear Regression
+
+## Regression with Dummy Variables
+
+## Exercise
+
+1. To understand the effectiveness of marketing investments, a manager of a company wants to analyze the relationship between marketing expenditures (USD) and the number of sales. By fitting a simple linear regression model with marketing spend as the independent variable and sales as the dependent variable. Interpret the outputs.
+
+```{r, echo=FALSE}
+library(kableExtra)
+set.seed(2024727)
+error <- rnorm(20, sd=2)
+me <- c(100, 115, 120, 132, 144, 154, 158, 160, 170, 180, 181, 190, 200, 210, 220, 230, 240, 250, 260, 270)
+sales <- round(5*me + 20 + error, 1)
+df <- data.frame(me = me, sales=sales)
+df |> knitr::kable( col.names = c("Marketing expenditures (USD)",
+                           "Number of Sales")) |>
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) |>
+  column_spec(1:2, text_align = "center")
+```
+
+
+2. To understand the effectiveness of marketing investments, a manager of a company wants to analyze the relationship between marketing expenditures (USD) and the number of sales in two locations. By fitting a multiplelinear regression model with marketing spend and location as the independent variables and sales as the dependent variable. Interpret the outputs.
+
+```{r, echo=FALSE}
+set.seed(2024727)
+error <- rnorm(20, sd=2)
+me1 <- c(100, 115, 120, 132, 144, 154, 158, 160, 170, 180, 181, 190, 200, 210, 220, 230, 240, 250, 260, 270)
+me2 <- c(101, 115, 122, 132, 145, 154, 158, 160, 170, 180, 181, 191, 200, 210, 220, 230, 240, 250, 260, 270) + 2
+sales1 <- round(5*me1 + 20 + error, 1)
+sales2 <- round(5*me1 + 20 + error, 1)
+sales <- c(sales1, sales2)
+location <- c(rep("A", 20), rep("B", 20))
+df <- data.frame(me = me, sales=sales, location=location)
+df |> knitr::kable( col.names = c("Marketing expenditures (USD)",
+                           "Number of Sales", "Location")) |>
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) |>
+  column_spec(1:3, text_align = "center")
+```
