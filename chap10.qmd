@@ -10,7 +10,8 @@
 
 ## Exercise
 
-1. To understand the effectiveness of marketing investments, a manager of a company wants to analyze the relationship between marketing expenditures (USD) and the number of sales. By fitting a simple linear regression model with marketing spend as the independent variable and sales as the dependent variable. Interpret the outputs.
+1. To understand the effectiveness of marketing investments, a manager of a company wants to analyze the relationship between marketing expenditures (USD) and the number of sales. Fit a simple linear regression model with marketing spend as the independent variable and sales as the dependent variable. Interpret the outputs. Note that, 
+before fitting a regression model, it is essential to conduct an exploratory analysis.
 
 ```{r, echo=FALSE}
 library(kableExtra)
@@ -26,7 +27,8 @@ df |> knitr::kable( col.names = c("Marketing expenditures (USD)",
 ```
 
 
-2. To understand the effectiveness of marketing investments, a manager of a company wants to analyze the relationship between marketing expenditures (USD) and the number of sales in two locations. By fitting a multiplelinear regression model with marketing spend and location as the independent variables and sales as the dependent variable. Interpret the outputs.
+
+2.To evaluate the association of marketing expenditures on sales, a company manager aims to analyze the relationship between marketing expenditures and sales across two different locations. Fit a multiple linear regression model with marketing expenditures and location as the independent variables and sales as the dependent variable. Interpret the outputs. Note that, before fitting a regression model, it is essential to conduct an exploratory analysis.
 
 ```{r, echo=FALSE}
 set.seed(2024727)
