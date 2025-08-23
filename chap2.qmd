@@ -18,7 +18,7 @@ There are five main data structures in R. They are:
 
 2.  Homogeneous data structure. That means data in a vector must only be one type or mode (numeric, character, or logical). You cannot mix different types of data. If you try to mix different types of data, R will automatically convert them into one type.
 
-## Creating Vectors
+### Creating Vectors
 
 Vectors can be made in four primary ways. They are
 
@@ -90,7 +90,7 @@ seq(1, 19, length.out=8)
 seq(1, 19, by = 3)
 ```
 
-## Repeat: `rep`
+### Repeat: `rep`
 
 The `rep` function can be used if there is a pattern of repetition in the data.
 
@@ -142,7 +142,7 @@ Same as before. Changing the ordering of `each` and `time` does not change the o
 rep(1:3, times=3, each=5)
 ```
 
-## Coercion
+### Coercion
 
 When you try to include different types they will be coerced to the most flexible type.
 
@@ -159,7 +159,7 @@ b
 as.integer(b)
 ```
 
-## Functions that can be used to inspect vectors
+### Functions that can be used to inspect vectors
 
 Consider the vector below
 
@@ -205,7 +205,7 @@ is.na(example.vec)
 
 There are many more functions that you can use with vectors. We will learn about them in the upcoming chapters.
 
-## Exercise
+### Exercise
 
 1.  Write R codes to create the following vectors: If you see patterns in the data, use vector simplification methods.
 
@@ -302,21 +302,128 @@ p1 <- ggplot(province) +
 ggplotly(p1)
 ```
 
-## Vector Operations
+### Vector Operations
 
-To be added
+```{r}
+a <- 1:10
+b <- rep(10:100, by=10)
+a + b
+a/b
+a*b
+a-b
+```
 
-## Creating Matrix
+## Matrix
 
-## Matrix Operations
+Matrix is a 2-dimentional and a homogeneous data structure
 
-## Exercise
+**Syntax to create a matrix**
+
+``` r
+matrix_name <- matrix(vector_of_elements, 
+                      nrow=number_of_rows,
+                      ncol=number_of_columns,
+                      byrow=logical_value, # If byrow=TRUE, then the matrix is filled in by row.
+                      dimnames=list(rnames, cnames)) # To assign row names and columns
+```
+
+**Example**
+
+```{r, comment=NA}
+matrix(1:6, nrow=2, ncol=3)
+matrix(1:6, nrow=2)
+matrix(1:6, ncol=3)
+
+```
+
+### Matrix fill by rows/ columns
+
+```{r, comment=NA}
+values <- c(10, 20, 30, 40)
+matrix1 <- matrix(values, nrow=2) # Matrix filled by columns (default option)
+matrix1
+matrix2 <- matrix(values, nrow=2, byrow=TRUE) # Matrix filled by rows
+matrix2
+```
+
+-   byrow=TRUE: matrix is filled in by row
+
+-   byrow=FALSE: matrix is filled in by column
+
+-   Default is by column
+
+### Naming matrix rows and columns
+
+```{r, comment=NA}
+rnames <- c("R1", "R2")
+cnames <- c("C1", "C2")
+matrix_with_names <- matrix(values, nrow=2, dimnames=list(rnames, cnames))
+matrix_with_names
+```
+
+### Matrix subscript
+
+`matraix_name[i, ]` gives the ith row of a matrix
+
+```{r, comment=NA}
+matrix1[1, ]
+```
+
+`matraix_name[, j]` gives the jth column of a matrix
+
+```{r, comment=NA}
+matrix1[, 2]
+```
+
+`matraix_name[i, j]` gives the ith row and jth column element
+
+```{r, comment=NA}
+matrix1[1, 2]
+```
+
+```{r, comment=NA}
+matrix1[1, c(1, 2)] 
+```
+
+### `cbind` and `rbind`
+
+Matrices can be created by column-binding and row-binding with `cbind()` and `rbind()`
+
+```{r, comment=NA}
+x <- 1:3
+y <- c(10, 100, 1000)
+cbind(x, y) # binds matrices horizontally
+rbind(x, y) #binds matrices vertically
+```
+
+### Matrix operations
+
+Transpose
+
+```{r, comment=NA}
+t(x)
+```
+
+Matrix multiplication
+
+```{r, comment=NA}
+y <- matrix(seq(10, 60, by=10), nrow=3)
+z <- x %*% y
+z
+```
+
+Find x in: m\*x=n
+
+``` r
+solve(m, n)
+```
+
+### Exercise
 
 i.  Write R codes to obtain following matrix outputs
 
-```{=html}
 <!-- -->
-```
+
 a.  
 
 ```{r, echo=FALSE}
@@ -372,19 +479,99 @@ y_n
 1 & x_n
 \end{pmatrix}$
 
-## Creating Arrays
+## 3. Array
 
-## Exercise
+-   data structures for storing **higher** dimensional data.
 
-1.  Create a 3D array with 3 columns, 5 rows, and 2 layers in R, and enter the following values into it:
+-   a **homogeneous** data structure.
+
+-   a special case of the array is the matrix.
+
+``` r
+array(vector, dimensions, dimnames) #dimnames-as a list
+```
+
+```{r, comment=NA}
+a <-  array(c(10, 20, 30, 40, 50, 60), c(1, 2, 3))
+a
+```
+
+### Subsetting arrays
+
+```{r, comment=NA}
+a
+```
+
+```{r, comment=NA}
+a[, , 1] # Extract first entry
+```
+
+```{r, comment=NA}
+a[1, ,] # All rows in each entry
+```
+
+### Exercise
+
+1.  Create the following matrix using the `array` function
+
+```{r, comment=NA}
+
+matrix(1:20, ncol=5)
+```
+
+### Array with dimnames
+
+```{r, comment=NA}
+dim1 <- c("A1", "A2"); dim2 <- c("B1", "B2", "B3"); dim3 <- c("c1", "c2", "c3", "c4")
+z <- array(1:24, c(2, 3, 4), dimnames = list(dim1, dim2, dim3))
+z
+```
+
+### Exercise
+
+Create a 3D array with 3 columns, 5 rows, and 2 layers in R, and enter the following values into it:
 
 ```{r, echo=FALSE}
 1:30
 ```
 
-## Creating data frames
+## 4. Data Frames
 
-## Exercise
+-   Rectangular arrangement of data with rows corresponding to observational units and columns corresponding to variables.
+
+-   More general than a matrix in that different columns can contain different modes of data.
+
+-   It’s similar to the datasets you’d typically see in SPSS and MINITAB.
+
+-   Data frames are the most common data structure you’ll deal with in R.
+
+### Create a dataframe
+
+**Syntax**
+
+``` r
+name_of_the_dataframe <- data.frame(
+                          var1_name=vector of values of the first variable,
+                          var2_names=vector of values of the second variable)
+```
+
+**Example**
+
+```{r, comment=NA}
+corona <- data.frame(ID=c("C001", "C002", "C003", "C004"),
+                     Location=c("Beijing", "Wuhan", "Shanghai", "Beijing"),
+                     Test_Results=c(FALSE, TRUE, FALSE, FALSE))
+corona
+```
+
+To check if it is a dataframe
+
+```{r, comment=NA}
+is.data.frame(corona)
+
+```
+
+### Exercise
 
 Write a code to store the following values in a dataframe.
 
@@ -392,13 +579,114 @@ Write a code to store the following values in a dataframe.
 trees |> head(10) |> knitr::kable()
 ```
 
-## Subsetting
+### Some useful functions with dataframes
 
-## Exercise
+```{r, comment=NA}
+colnames(corona)
+```
+
+```{r, comment=NA}
+length(corona)
+dim(corona)
+nrow(corona)
+ncol(corona)
+summary(corona)
+str(corona)
+```
+
+### Convert a matrix to a dataframe
+
+```{r, comment=NA}
+mat <- matrix(1:16, ncol=4)
+mat
+mat_df <- as.data.frame(mat)
+mat_df
+```
+
+### Subsetting data frames
+
+**Select rows**
+
+```{r, comment=NA}
+head(mat_df) # default it shows 5 rows
+
+head(mat_df, 3) # To extract only the first three rows 
+```
+
+```{r, comment=NA}
+tail(mat_df)
+```
+
+```{r, comment=NA}
+mat_df
+```
+
+**To select some specific rows**
+
+```{r, comment=NA}
+mat_df[4, ]
+index <- c(1, 3)
+mat_df[index, ]
+
+```
+
+**Select columns**
+
+1.  Select column(s) by variable names
+
+```{r, comment=NA}
+mat_df$V1 # Method 1
+
+mat_df[, "V1"] # Method 2
+```
+
+2.  Select column(s) by index
+
+```{r, comment=NA}
+mat_df[, 2]
+```
+
+### Built-in dataframes
+
+there are several built-in data frames (datasets) that you can use directly without needing to import external files.
+
+```{r}
+data(iris)
+```
+
+R comes with many datasets preloaded, mostly from the datasets package. You can see them by running:
+
+```{r}
+data()
+```
+
+### Exercise
+
+**Question 1**
+
+Use the R dataset “iris” to answer the following questions:
+
+1.  How many rows and columns does iris have?
+
+2.  Select the first 4 rows.
+
+3.  Select the last 6 rows.
+
+4.  Select rows 10 to 20, with all columns in the iris dataset.
+
+5.  Select rows 10 to 20 with only the Species, Petal.Width and Petal.Length.
+
+6.  Create a single vector (a new object) called ‘width’ that is the Sepal.Width column of iris.
+
+7.  What are the column names and data types of the different columns in iris?
+
+8.  How many rows in the iris dataset have `Petal.Length` larger than 5 and `Sepal.Width` smaller than 3?
+
+**Question 2**
 
 This exercise is based on `mtcars` built-in-dataset in R. Write R codes to obtain the answers for the followings.
 
-1. To obtain the help file of `mtcars`
+1.  To obtain the help file of `mtcars`
 
 ```{r, echo=FALSE, eval=FALSE}
 # Using the help function
@@ -408,49 +696,49 @@ help(mtcars)
 ?mtcars
 ```
 
-2. How many cars are in the mtcars dataset?
+2.  How many cars are in the mtcars dataset?
 
 ```{r, echo=FALSE, eval=FALSE}
 nrow(mtcars)
 ```
 
-3. How many variables are  in the mtcars dataset?
+3.  How many variables are in the mtcars dataset?
 
 ```{r, echo=FALSE, eval=FALSE}
 ncol(mtcars)
 ```
 
-4. What are the column names of the mtcars dataset?
+4.  What are the column names of the mtcars dataset?
 
 ```{r, echo=FALSE, eval=FALSE}
 colnames(mtcars)
 ```
 
-5. What is the mean miles per gallon (mpg) of the cars in the dataset?
+5.  What is the mean miles per gallon (mpg) of the cars in the dataset?
 
 ```{r, echo=FALSE, eval=FALSE}
 mean(mtcars$mpg)
 ```
 
-6. Which car has the highest horsepower (hp)?
+6.  Which car has the highest horsepower (hp)?
 
 ```{r, echo=FALSE, eval=FALSE}
 mtcars[which.max(mtcars$hp), ]
 ```
 
-7. What is the mean weight (wt) of the cars in the dataset?
+7.  What is the mean weight (wt) of the cars in the dataset?
 
 ```{r, echo=FALSE, eval=FALSE}
 mean(mtcars$wt)
 ```
 
-8. How many cars have 8 cylinders (cyl)?
+8.  How many cars have 8 cylinders (cyl)?
 
 ```{r, echo=FALSE, eval=FALSE}
 sum(mtcars$cyl == 8)
 ```
 
-9. What is the range of displacement (disp) values in the dataset?
+9.  What is the range of displacement (disp) values in the dataset?
 
 ```{r, echo=FALSE, eval=FALSE}
 range(mtcars$disp)
@@ -522,9 +810,68 @@ mean(mtcars$gear[mtcars$cyl == 6])
 sum(mtcars$hp > 100)
 ```
 
-
 21. What is the correlation between horsepower (hp) and miles per gallon (mpg)?
 
 ```{r, echo=FALSE, eval=FALSE}
 cor(mtcars$hp, mtcars$mpg)
 ```
+
+## 5. List
+
+-   Lists are heterogeneous
+
+**Syntax**
+
+``` r
+list_name <- list(entry1, entry2, entry3, ...)
+```
+
+**Example**
+
+```{r, comment=NA}
+first_list <-list(1:3, matrix(1:6, nrow=2), iris)
+first_list
+```
+
+### Structure of a list
+
+```{r, comment=NA}
+str(first_list)
+```
+
+### Extract elements from a list
+
+```{r, comment=NA}
+first_list[[1]]
+first_list[[3]]$Species
+```
+
+### Name entries in a list
+
+```{r, comment=NA}
+first_list_with_names <-list(a=1:3, b=matrix(1:6, nrow=2), c=iris)
+first_list_with_names
+```
+
+### Extract elements using names
+
+```{r, comment=NA}
+str(first_list_with_names)
+```
+
+```{r, comment=NA}
+first_list_with_names$a
+first_list_with_names$c$Species
+```
+
+### Exercise
+
+```{r, comment=NA}
+c("Jan","Feb","Mar")
+matrix(c(3,9,5,1,-2,8), nrow = 2)
+list("green",12.3)
+```
+
+1.  Create a list containing the above vector, matrix and the list.
+
+2.  Name the elements as `first`, `second` and `third`.

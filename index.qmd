@@ -3,5 +3,3 @@
 The goal of this book is to empower you with essential skills in R programming for statistical computing and data analysis.
 
 Each chapter of this book is designed to be hands-on and practical, with explanations, illustrative examples, and exercises to reinforce your understanding.
-
-This book is written from Quarto.

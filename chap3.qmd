@@ -1,1 +1,268 @@
-# Working with Built-in-Functions in R
+# Built-in-Functions in R
+
+## Built-in-Functions
+
+Built-in functions are predefined functions that come with R (or any programming language).
+You don’t need to define them yourself. They are available to use immediately after starting R.
+
+### How Built-in Functions Work
+
+A function call in R is always written as:
+
+```r
+function_name(arguments)
+```
+
+Parentheses () are always required.
+
+Inside the parentheses, you place the inputs (arguments) that the function needs to work.
+
+**Example**
+
+```{r}
+mean(1:10)
+```
+
+To obtain the help file of a function you can type
+
+```
+?mean
+```
+
+or
+
+```
+help(mean)
+```
+
+## Commonly used mathematical functions
+
+
+### Basic Arithmetic Functions
+
+```{r}
+sum(1, 2, 3, 4)        # Sum → 10
+prod(2, 3, 4)          # Product → 24
+abs(-7)                # Absolute value → 7
+sign(-15)              # Sign → -1
+sqrt(25)               # Square root → 5
+factorial(5)           # Factorial → 120
+cumsum(c(1,2,3,4))     # Cumulative sum → 1 3 6 10
+cumprod(c(1,2,3,4))    # Cumulative product → 1 2 6 24
+```
+
+### Exponentials and Logarithms
+
+```{r}
+exp(1)                 # e^1 → 2.718282
+log(10)                # Natural log → 2.302585
+log10(1000)            # Base-10 log → 3
+log2(8)                # Base-2 log → 3
+```
+
+### Rounding and Approximations
+
+```{r}
+round(3.14159, 2)      # Round to 2 decimal places → 3.14
+ceiling(3.2)           # Round up → 4
+floor(3.8)             # Round down → 3
+trunc(3.9)             # Remove decimal → 3
+signif(3.14159, 3)     # Significant digits → 3.14
+
+```
+
+### Trigonometric Functions
+
+```{r}
+sin(pi/2)              # Sine → 1
+cos(0)                 # Cosine → 1
+tan(pi/4)              # Tangent → 1
+asin(1)                # Inverse sine → π/2
+acos(0)                # Inverse cosine → π/2
+atan(1)                # Inverse tangent → π/4
+
+```
+
+
+### Hyperbolic Functions
+
+```{r}
+sinh(1)                # Hyperbolic sine
+cosh(1)                # Hyperbolic cosine
+tanh(1)                # Hyperbolic tangent
+
+```
+
+### Miscellaneous
+
+```{r}
+max(1,4,2,5)           # Maximum → 5
+min(1,4,2,5)           # Minimum → 1
+range(1,4,2,5)         # Range → 1 5
+
+```
+
+## Commonly used statistics functions
+
+
+
+**Sample data**
+
+```{r}
+x <- c(5, 7, 9, 10, 12, 15, 18)
+y <- c(2, 4, 6, 8, 10, 12, 14)
+```
+
+
+### Measures of Central Tendency 
+
+```{r}
+mean(x) # mean
+median(x) # median
+```
+
+
+### Measures of Spread
+
+```{r}
+var(x) # variance
+sd(x) # standard deviation
+range(x) # range
+IQR(x) # Inter Quartile Range
+```
+
+
+### Percentiles / Quantiles
+
+```{r}
+quantile(x, probs = c(0.25, 0.5, 0.75)) # quantiles
+quantile(x, probs = 0.9) # percentiles
+```
+
+
+### Correlation and Covariance 
+
+```{r}
+cov(x, y) # Covariance
+cor(x, y) # correlation
+```
+
+## Probability distribution functions
+
+- Each probability distribution in R is associated with four functions.
+
+- Naming convention for the four functions:
+
+    For each function there is a root name. For example, the **root name** for the normal distribution is `norm`. This root is prefixed by one of the letters `d`, `p`, `q`, `r`.
+    
+  - **d** prefix for the **distribution** function
+
+  - **p** prefix for the **cumulative probability**
+
+  - **q** prefix for the **quantile**
+
+  - **r** prefix for the **random** number generator
+
+- Example: `dnorm`, `pnorm`, `qnorm`, `rnorm`
+
+### Illustration with Standard normal distribution
+
+The general formula for the probability density function of the normal distribution with mean $\mu$ and variance $\sigma$ is given by
+
+
+$$
+f_X(x) = \frac{1}{\sigma\sqrt{(2\pi)}} e^{-(x-\mu)^2/2\sigma^2}
+$$
+
+If we let the mean $\mu=0$ and the standard deviation $\sigma=1$, we get the probability density function for the standard normal distribution.
+
+$$
+f_X(x) = \frac{1}{\sqrt{(2\pi)}} e^{-(x)^2/2}
+$$
+
+
+
+$$
+f_X(x) = \frac{1}{\sqrt{(2\pi)}} e^{-(x)^2/2}
+$$
+
+### dnorm
+
+```{r, comment=NA}
+
+dnorm(0)
+```
+
+
+```{r, echo=FALSE, fig.height=7, fig.cap="Standard normal probability density function: dnorm(0)", warning=FALSE, message=FALSE}
+
+library(ggplot2)
+x <- seq(-4, 4, length=200)
+y <- 1/sqrt(2*pi)*exp(-x^2/2)
+#plot(x, y, type="l", lwd=2, col="red")
+dat <- data.frame(x=x, y=y)
+ggplot(data = dat, mapping = aes(x = x, y = y)) +
+    geom_line()+labs(y = "density", title = "dnorm(0)")+
+    geom_segment(aes(x = 0, y = 0, xend = 0, yend = 0.398), size=1, color="red")+
+    geom_segment(aes(x = 0, y = 0.398, xend = -4, yend = 0.398), arrow = arrow(length = unit(0.5, "cm")), size=1, color="red") 
+    
+```
+
+
+
+### pnorm
+
+```{r, comment=NA}
+pnorm(0)
+```
+
+
+```{r, echo=FALSE, fig.cap="Standard normal probability density function: pnorm(0)", fig.height=7, warning=FALSE, message=FALSE}
+library(ggplot2)
+x <- seq(-4, 4, length=200)
+y <- 1/sqrt(2*pi)*exp(-x^2/2)
+#plot(x, y, type="l", lwd=2, col="red")
+dat <- data.frame(x=x, y=y)
+ggplot(data = dat, mapping = aes(x = x, y = y)) +
+    geom_line()+labs(y = "density", title = "pnorm(0)")+
+    geom_area(stat = "function", fun = dnorm, fill = "red", xlim = c(-4, 0))
+    
+```
+
+]
+
+### qnorm
+
+```{r, comment=NA}
+qnorm(0.5)
+```
+
+
+
+```{r, echo=FALSE, fig.cap="Standard normal probability density function: qnorm(0.5)",  fig.height=7, warning=FALSE, message=FALSE}
+library(ggplot2)
+x <- seq(-4, 4, length=200)
+y <- 1/sqrt(2*pi)*exp(-x^2/2)
+#plot(x, y, type="l", lwd=2, col="red")
+dat <- data.frame(x=x, y=y)
+ggplot(data = dat, mapping = aes(x = x, y = y)) +
+    geom_line()+labs(y = "density", title = "qnorm(0)")+
+    geom_area(stat = "function", fun = dnorm, fill = "blue", xlim = c(-4, 0))+
+   geom_segment(aes(x = 0, y = 0.398, xend = 0, yend = 0), size=1, color="red", arrow = arrow(length = unit(0.5, "cm")),)
+    
+```
+
+
+## Test and Type conversion functions
+
+|  Test | Convert  |
+|---|---|
+|<img width=400/>|<img width=400/>|
+|  is.numeric() | as.numeric()   |
+| is.character()  |  as.character() |
+|is.vector()| as.vector()|
+|is.matrix()|as.matrix()|
+|is.data.frame()| as.data.frame()|
+|is.factor()| as.factor()|
+|is.logical()|as.logical()|
+|is.na()||

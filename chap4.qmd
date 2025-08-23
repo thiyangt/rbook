@@ -1,1 +1,117 @@
 # Writing Your Own Functions
+
+Sometimes we need to create our own functions for a specific purpose. They are called user-defined functions.
+
+
+## Syntax
+
+Functions are created using the `function()`
+
+Main components of a function
+
+- Function name
+
+- Function inputs
+
+- Function body
+
+- Function output
+
+```r
+
+name <- function(arg1, aug2, ...){
+
+<FUNCTION BODY>
+
+return(value) 
+
+}
+
+```
+
+
+**Example**
+
+```{r}
+cal_power <- function(x){
+
+a <- x^2; b <- x^3
+out <- c(a, b)
+names(out) <- c("squared", "cubed")
+out # or return(out)
+
+}
+```
+
+In this case
+
+- Function name: `cal_power`
+
+- Function inputs: `x`
+
+- Function body:
+
+```r
+a <- x^2; b <- x^3
+out <- c(a, b)
+names(out) <- c("squared", "cubed")
+```
+
+- Function output: `out`
+
+**Evaluation**
+
+```{r, comment=NA}
+cal_power(2)
+```
+
+## Exercise
+
+1. What are the key factors to consider when selecting a function name in R?
+
+2. How should function argument names be chosen for clarity and usability?
+
+3. Is it necessary to explicitly use return() to output a value from a function in R?
+
+## Function with single line
+
+
+**Method 1: with { }**
+
+```r
+cal_sqrt <- function(x){
+
+x^2
+
+}
+```
+
+
+
+
+**Method 2: without { }**
+
+```r
+cal_sqrt <- function(x) x^2
+```
+
+
+
+
+## Exercise
+
+1. Write a function to calculate the median.
+
+help:
+
+```{r, comment=NA}
+5%%2
+
+4%%2
+```
+
+
+
+2. Write a function to calculate the correlation coefficient
+
+$$r=\frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}{\sqrt{\sum_{i=1}^n(x_i-\bar{x})^2\sum_{i=1}^n(y_i-\bar{y})^2}}$$
