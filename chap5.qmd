@@ -1,1 +1,171 @@
 # Control Structures
+
+Conditional executions control the flow of the execution.
+
+Examples
+
+if, else
+
+for
+
+while
+
+repeat
+
+break
+
+next
+
+switch
+
+## if, else
+
+Draw a star on star-shaped cookies and draw a heart on heart-shaped cookies.
+
+![](img/chap5/ifloop.jpeg)
+
+**Syntax**
+
+```r
+if (condition) {
+    # do something
+} else {
+    # do something else
+}
+
+```
+
+**Example**
+
+```{r, comment=FALSE}
+test_even_odd <- function(x){
+  if (x %% 2 == 0){
+    print("even number")
+  } else {
+    print("odd number")
+  }
+}
+
+```
+
+
+```{r, comment=NA}
+test_even_odd(5)
+test_even_odd(6)
+```
+
+## `ifelse`: vectorization with `ifelse`
+
+```r
+ifelse(condition, TRUE condition output, FALSE condition output)
+
+```
+
+Example
+
+```{r, comment=FALSE}
+test_even_odd_v2 <- function(x){
+  
+  ifelse(x %% 2 == 0, "even number", "odd number")
+  
+}
+```
+
+```{r, comment=FALSE}
+test_even_odd_v2(5)
+test_even_odd_v2(c(1,6))
+
+```
+
+
+### Difference between `if, else` and `ifelse`
+
+
+**`if, else`**
+
+```{r, comment=FALSE}
+test_even_odd <- function(x){
+  if (x %% 2 == 0) {
+    print("even number")
+  } else {
+    print("odd number")
+  }
+}
+```
+
+```{r, comment=FALSE}
+test_even_odd(5)
+
+```
+
+```{r, eval=FALSE}
+test_even_odd(c(1,6))
+# returns an error
+```
+
+**`ifelse`**
+
+```{r, comment=FALSE}
+test_even_odd_v2 <- function(x){
+  ifelse (x %% 2 == 0, "even number", "odd number")
+}
+
+test_even_odd_v2(5)
+test_even_odd_v2(c(1,6))
+
+```
+
+## Nested if-else
+
+- Multiple conditions
+
+
+```{r, comment=NA}
+grade_marks <- function(marks){
+  
+  if (marks < 20) {
+    "D"
+  } else if (marks <= 50) {
+    "C"
+  } else if (marks <= 60) {
+    "B"
+  } else {
+    "A"
+  }
+}
+
+grade_marks(75)
+```
+
+## if
+
+```{r, comment=NA}
+check.negative <- function(x){
+
+  if (x < 0 ) {
+  print("X is negative")
+  }
+
+}
+```
+
+```{r, comment=NA}
+check.negative(-10)
+check.negative(10)
+```
+
+## for
+
+For the first 50 cookies, fill the center of cookies with jam.
+
+
+
+## while
+
+## repeat
+
+## break
+
+## next
+
+## switch

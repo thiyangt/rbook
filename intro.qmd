@@ -88,19 +88,23 @@ First, you should install R. After installation R, you can install RStudio.
 
 ### Installing R
 
-Double click on the the downloaded R installer file. This will start the install process. Usually the default options are fine. If you want to watch a step-by-step tutorial on how to install R for Windows, you can watch the video [here](https://www.youtube.com/watch?v=aRwxsAEoRzs).
+Double click on the the downloaded R installer file. This will start the install process. Usually the default options are fine. 
+
+<!--If you want to watch a step-by-step tutorial on how to install R for Windows, you can watch the video [here](https://www.youtube.com/watch?v=aRwxsAEoRzs).
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/aRwxsAEoRzs?si=K0a-BE2RIcwVGSib" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 
-</iframe>
+</iframe> -->
 
 ### Installing RStudio
 
-You must have R installed before installing RStudio. Double click on the the downloaded RStudio installer file. This will start the install process. Usually the default options are fine. If you want to watch a step-by-step tutorial on how to install R for Windows, you can watch the video [here](https://www.youtube.com/watch?v=Q1NRj2Dzdn0).
+You must have R installed before installing RStudio. Double click on the the downloaded RStudio installer file. This will start the install process. Usually the default options are fine. 
+
+<!--If you want to watch a step-by-step tutorial on how to install R for Windows, you can watch the video [here](https://www.youtube.com/watch?v=Q1NRj2Dzdn0).
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Q1NRj2Dzdn0?si=a4Kl0R_xAy7qWQAj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 
-</iframe>
+</iframe> -->
 
 ## Download and Installing Rtools
 

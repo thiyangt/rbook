@@ -74,7 +74,7 @@
     "href": "intro.html#installing-r-and-rstudio",
     "title": "1  Introduction to R and RStudio",
     "section": "1.6 Installing R and Rstudio",
-    "text": "1.6 Installing R and Rstudio\nFirst, you should install R. After installation R, you can install RStudio.\n\n1.6.1 Installing R\nDouble click on the the downloaded R installer file. This will start the install process. Usually the default options are fine. If you want to watch a step-by-step tutorial on how to install R for Windows, you can watch the video here.\n\n\n\n\n1.6.2 Installing RStudio\nYou must have R installed before installing RStudio. Double click on the the downloaded RStudio installer file. This will start the install process. Usually the default options are fine. If you want to watch a step-by-step tutorial on how to install R for Windows, you can watch the video here.",
+    "text": "1.6 Installing R and Rstudio\nFirst, you should install R. After installation R, you can install RStudio.\n\n1.6.1 Installing R\nDouble click on the the downloaded R installer file. This will start the install process. Usually the default options are fine.\n\n\n\n1.6.2 Installing RStudio\nYou must have R installed before installing RStudio. Double click on the the downloaded RStudio installer file. This will start the install process. Usually the default options are fine.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to R and RStudio</span>"
     ]
@@ -307,6 +307,116 @@
     "text": "4.4 Exercise\n\nWrite a function to calculate the median.\n\nhelp:\n\n5%%2\n\n[1] 1\n\n4%%2\n\n[1] 0\n\n\n\nWrite a function to calculate the correlation coefficient\n\n\\[r=\\frac{\\sum_{i=1}^{n}(x_i-\\bar{x})(y_i-\\bar{y})}{\\sqrt{\\sum_{i=1}^n(x_i-\\bar{x})^2\\sum_{i=1}^n(y_i-\\bar{y})^2}}\\]",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Writing Your Own Functions</span>"
+    ]
+  },
+  {
+    "objectID": "chap5.html",
+    "href": "chap5.html",
+    "title": "5  Control Structures",
+    "section": "",
+    "text": "5.1 if, else\nConditional executions control the flow of the execution.\nExamples\nif, else\nfor\nwhile\nrepeat\nbreak\nnext\nswitch\nDraw a star on star-shaped cookies and draw a heart on heart-shaped cookies.\nSyntax\nExample\ntest_even_odd &lt;- function(x){\n  if (x %% 2 == 0){\n    print(\"even number\")\n  } else {\n    print(\"odd number\")\n  }\n}\ntest_even_odd(5)\n\n[1] \"odd number\"\n\ntest_even_odd(6)\n\n[1] \"even number\"",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Control Structures</span>"
+    ]
+  },
+  {
+    "objectID": "chap5.html#if-else",
+    "href": "chap5.html#if-else",
+    "title": "5  Control Structures",
+    "section": "",
+    "text": "if (condition) {\n    # do something\n} else {\n    # do something else\n}",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Control Structures</span>"
+    ]
+  },
+  {
+    "objectID": "chap5.html#ifelse-vectorization-with-ifelse",
+    "href": "chap5.html#ifelse-vectorization-with-ifelse",
+    "title": "5  Control Structures",
+    "section": "5.2 ifelse: vectorization with ifelse",
+    "text": "5.2 ifelse: vectorization with ifelse\nifelse(condition, TRUE condition output, FALSE condition output)\nExample\n\ntest_even_odd_v2 &lt;- function(x){\n  \n  ifelse(x %% 2 == 0, \"even number\", \"odd number\")\n  \n}\n\n\ntest_even_odd_v2(5)\n\nFALSE [1] \"odd number\"\n\ntest_even_odd_v2(c(1,6))\n\nFALSE [1] \"odd number\"  \"even number\"\n\n\n\n5.2.1 Difference between if, else and ifelse\nif, else\n\ntest_even_odd &lt;- function(x){\n  if (x %% 2 == 0) {\n    print(\"even number\")\n  } else {\n    print(\"odd number\")\n  }\n}\n\n\ntest_even_odd(5)\n\nFALSE [1] \"odd number\"\n\n\n\ntest_even_odd(c(1,6))\n# returns an error\n\nifelse\n\ntest_even_odd_v2 &lt;- function(x){\n  ifelse (x %% 2 == 0, \"even number\", \"odd number\")\n}\n\ntest_even_odd_v2(5)\n\nFALSE [1] \"odd number\"\n\ntest_even_odd_v2(c(1,6))\n\nFALSE [1] \"odd number\"  \"even number\"",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Control Structures</span>"
+    ]
+  },
+  {
+    "objectID": "chap5.html#nested-if-else",
+    "href": "chap5.html#nested-if-else",
+    "title": "5  Control Structures",
+    "section": "5.3 Nested if-else",
+    "text": "5.3 Nested if-else\n\nMultiple conditions\n\n\ngrade_marks &lt;- function(marks){\n  \n  if (marks &lt; 20) {\n    \"D\"\n  } else if (marks &lt;= 50) {\n    \"C\"\n  } else if (marks &lt;= 60) {\n    \"B\"\n  } else {\n    \"A\"\n  }\n}\n\ngrade_marks(75)\n\n[1] \"A\"",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Control Structures</span>"
+    ]
+  },
+  {
+    "objectID": "chap5.html#if",
+    "href": "chap5.html#if",
+    "title": "5  Control Structures",
+    "section": "5.4 if",
+    "text": "5.4 if\n\ncheck.negative &lt;- function(x){\n\n  if (x &lt; 0 ) {\n  print(\"X is negative\")\n  }\n\n}\n\n\ncheck.negative(-10)\n\n[1] \"X is negative\"\n\ncheck.negative(10)",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Control Structures</span>"
+    ]
+  },
+  {
+    "objectID": "chap5.html#for",
+    "href": "chap5.html#for",
+    "title": "5  Control Structures",
+    "section": "5.5 for",
+    "text": "5.5 for\nFor the first 50 cookies, fill the center of cookies with jam.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Control Structures</span>"
+    ]
+  },
+  {
+    "objectID": "chap5.html#while",
+    "href": "chap5.html#while",
+    "title": "5  Control Structures",
+    "section": "5.6 while",
+    "text": "5.6 while",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Control Structures</span>"
+    ]
+  },
+  {
+    "objectID": "chap5.html#repeat",
+    "href": "chap5.html#repeat",
+    "title": "5  Control Structures",
+    "section": "5.7 repeat",
+    "text": "5.7 repeat",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Control Structures</span>"
+    ]
+  },
+  {
+    "objectID": "chap5.html#break",
+    "href": "chap5.html#break",
+    "title": "5  Control Structures",
+    "section": "5.8 break",
+    "text": "5.8 break",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Control Structures</span>"
+    ]
+  },
+  {
+    "objectID": "chap5.html#next",
+    "href": "chap5.html#next",
+    "title": "5  Control Structures",
+    "section": "5.9 next",
+    "text": "5.9 next",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Control Structures</span>"
+    ]
+  },
+  {
+    "objectID": "chap5.html#switch",
+    "href": "chap5.html#switch",
+    "title": "5  Control Structures",
+    "section": "5.10 switch",
+    "text": "5.10 switch",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Control Structures</span>"
     ]
   },
   {
