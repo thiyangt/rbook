@@ -334,7 +334,7 @@
     "href": "chap6.html",
     "title": "6  Control Structures",
     "section": "",
-    "text": "6.1 if, else\nConditional executions control the flow of the execution.\nExamples\nif, else\nfor\nwhile\nrepeat\nbreak\nnext\nswitch\nDraw a star on star-shaped cookies and draw a heart on heart-shaped cookies.\nSyntax\nExample\ntest_even_odd &lt;- function(x){\n  if (x %% 2 == 0){\n    print(\"even number\")\n  } else {\n    print(\"odd number\")\n  }\n}\ntest_even_odd(5)\n\n[1] \"odd number\"\n\ntest_even_odd(6)\n\n[1] \"even number\"",
+    "text": "6.1 if-else\nConditional executions control the flow of the execution.\nConditional Statements and Loops in R\nTeaching analogy\nDraw a star on star-shaped cookies and draw a heart on heart-shaped cookies.\nSyntax\nIn programming, we use if–else when we need to choose between two possible options:\nExample\ntest_even_odd &lt;- function(x){\n  if (x %% 2 == 0){\n    print(\"even number\")\n  } else {\n    print(\"odd number\")\n  }\n}\ntest_even_odd(5)\n\n[1] \"odd number\"\n\ntest_even_odd(6)\n\n[1] \"even number\"",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Control Structures</span>"
     ]
@@ -344,27 +344,27 @@
     "href": "chap6.html#if-else",
     "title": "6  Control Structures",
     "section": "",
-    "text": "if (condition) {\n    # do something\n} else {\n    # do something else\n}",
+    "text": "The if block executes when the condition is true.\nThe else block executes when the condition is false.\n\nif (condition) {\n    # do something\n} else {\n    # do something else\n}",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Control Structures</span>"
     ]
   },
   {
-    "objectID": "chap6.html#ifelse-vectorization-with-ifelse",
-    "href": "chap6.html#ifelse-vectorization-with-ifelse",
+    "objectID": "chap6.html#vectorization-with-ifelse",
+    "href": "chap6.html#vectorization-with-ifelse",
     "title": "6  Control Structures",
-    "section": "6.2 ifelse: vectorization with ifelse",
-    "text": "6.2 ifelse: vectorization with ifelse\nifelse(condition, TRUE condition output, FALSE condition output)\nExample\n\ntest_even_odd_v2 &lt;- function(x){\n  \n  ifelse(x %% 2 == 0, \"even number\", \"odd number\")\n  \n}\n\n\ntest_even_odd_v2(5)\n\nFALSE [1] \"odd number\"\n\ntest_even_odd_v2(c(1,6))\n\nFALSE [1] \"odd number\"  \"even number\"\n\n\n\n6.2.1 Difference between if, else and ifelse\nif, else\n\ntest_even_odd &lt;- function(x){\n  if (x %% 2 == 0) {\n    print(\"even number\")\n  } else {\n    print(\"odd number\")\n  }\n}\n\n\ntest_even_odd(5)\n\nFALSE [1] \"odd number\"\n\n\n\ntest_even_odd(c(1,6))\n# returns an error\n\nifelse\n\ntest_even_odd_v2 &lt;- function(x){\n  ifelse (x %% 2 == 0, \"even number\", \"odd number\")\n}\n\ntest_even_odd_v2(5)\n\nFALSE [1] \"odd number\"\n\ntest_even_odd_v2(c(1,6))\n\nFALSE [1] \"odd number\"  \"even number\"",
+    "section": "6.2 vectorization with ifelse",
+    "text": "6.2 vectorization with ifelse\nifelse is vectorized, meaning it works on entire vectors at once.\nifelse(condition, TRUE condition output, FALSE condition output)\nExample\n\ntest_even_odd_v2 &lt;- function(x){\n  \n  ifelse(x %% 2 == 0, \"even number\", \"odd number\")\n  \n}\n\n\ntest_even_odd_v2(5)\n\nFALSE [1] \"odd number\"\n\ntest_even_odd_v2(c(1,6))\n\nFALSE [1] \"odd number\"  \"even number\"\n\n\n\n6.2.1 Difference between if-else and ifelse\n\nif-else: Evaluates only on one value, not a whole vector.\nifelse: A vectorized function. It checks the condition for every element in a vector and returns a result of the same length, applying if or else to each element individually.\n\nif-else Example\n\ntest_even_odd &lt;- function(x){\n  if (x %% 2 == 0) {\n    print(\"even number\")\n  } else {\n    print(\"odd number\")\n  }\n}\n\n\ntest_even_odd(5)\n\nFALSE [1] \"odd number\"\n\n\n\ntest_even_odd(c(1,6))\n# returns an error\n\nifelse Example\n\ntest_even_odd_v2 &lt;- function(x){\n  ifelse (x %% 2 == 0, \"even number\", \"odd number\")\n}\n\ntest_even_odd_v2(5)\n\nFALSE [1] \"odd number\"\n\ntest_even_odd_v2(c(1,6))\n\nFALSE [1] \"odd number\"  \"even number\"",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Control Structures</span>"
     ]
   },
   {
-    "objectID": "chap6.html#nested-if-else",
-    "href": "chap6.html#nested-if-else",
+    "objectID": "chap6.html#ifelseifelse",
+    "href": "chap6.html#ifelseifelse",
     "title": "6  Control Structures",
-    "section": "6.3 Nested if-else",
-    "text": "6.3 Nested if-else\n\nMultiple conditions\n\n\ngrade_marks &lt;- function(marks){\n  \n  if (marks &lt; 20) {\n    \"D\"\n  } else if (marks &lt;= 50) {\n    \"C\"\n  } else if (marks &lt;= 60) {\n    \"B\"\n  } else {\n    \"A\"\n  }\n}\n\ngrade_marks(75)\n\n[1] \"A\"",
+    "section": "6.3 if–elseif–else",
+    "text": "6.3 if–elseif–else\nTeaching analogy\nIf the cookie shape is;\n\nstar → draw a star;\nif it’s heart → draw a heart;\nif it’s Christmas tree → draw a tree;\nif it’s shoe → draw a shoe;\nif it’s house → draw a house;\nelse → draw a gingerbread man.\n\n\n\n\n\n\n\n\n\n\nSyntax and example\nWe use if–elseif–else when we want to select one option from more than two possible options.\n\nThe first if condition is checked.\n\nIf it’s TRUE, that block runs, and the rest are skipped.\nIf it’s FALSE, the program checks the next elseif condition.\n\nThis continues until one condition is TRUE, or else the final else block runs (if provided).\n\nif–elseif–else checks one condition after another.\n\ngrade_marks &lt;- function(marks){\n  \n  if (marks &lt; 20) {\n    \"D\"\n  } else if (marks &lt;= 50) {\n    \"C\"\n  } else if (marks &lt;= 60) {\n    \"B\"\n  } else {\n    \"A\"\n  }\n}\n\ngrade_marks(75)\n\n[1] \"A\"",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Control Structures</span>"
     ]
@@ -374,7 +374,7 @@
     "href": "chap6.html#if",
     "title": "6  Control Structures",
     "section": "6.4 if",
-    "text": "6.4 if\n\ncheck.negative &lt;- function(x){\n\n  if (x &lt; 0 ) {\n  print(\"X is negative\")\n  }\n\n}\n\n\ncheck.negative(-10)\n\n[1] \"X is negative\"\n\ncheck.negative(10)",
+    "text": "6.4 if\nIt is possible to use only if statement.\n\ncheck.negative &lt;- function(x){\n\n  if (x &lt; 0 ) {\n  print(\"X is negative\")\n  }\n\n}\n\n\ncheck.negative(-10)\n\n[1] \"X is negative\"\n\ncheck.negative(10)",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Control Structures</span>"
     ]

@@ -5,7 +5,9 @@ project:
 book:
   title: "Programming and Data Analysis with R"
   author: "Thiyanga S. Talagala"
+  google-analytics: "G-P3WZLH486T"
   date: ""
+  page-footer: "Copyright 2025, Thiyanga S. Talagala"
   chapters:
     - index.qmd
     - intro.qmd
@@ -24,9 +26,9 @@ book:
 
 bibliography: references.bib
 
+
 format:
   html:
     theme: cosmo
 
 editor: visual
-

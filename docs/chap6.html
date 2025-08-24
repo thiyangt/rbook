@@ -102,6 +102,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-P3WZLH486T"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-P3WZLH486T', { 'anonymize_ip': true});
+</script>
 
 
 </head>
@@ -234,12 +243,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#if-else" id="toc-if-else" class="nav-link active" data-scroll-target="#if-else"><span class="header-section-number">6.1</span> if, else</a></li>
-  <li><a href="#ifelse-vectorization-with-ifelse" id="toc-ifelse-vectorization-with-ifelse" class="nav-link" data-scroll-target="#ifelse-vectorization-with-ifelse"><span class="header-section-number">6.2</span> <code>ifelse</code>: vectorization with <code>ifelse</code></a>
+  <li><a href="#if-else" id="toc-if-else" class="nav-link active" data-scroll-target="#if-else"><span class="header-section-number">6.1</span> if-else</a></li>
+  <li><a href="#vectorization-with-ifelse" id="toc-vectorization-with-ifelse" class="nav-link" data-scroll-target="#vectorization-with-ifelse"><span class="header-section-number">6.2</span> vectorization with <code>ifelse</code></a>
   <ul class="collapse">
-  <li><a href="#difference-between-if-else-and-ifelse" id="toc-difference-between-if-else-and-ifelse" class="nav-link" data-scroll-target="#difference-between-if-else-and-ifelse"><span class="header-section-number">6.2.1</span> Difference between <code>if, else</code> and <code>ifelse</code></a></li>
+  <li><a href="#difference-between-if-else-and-ifelse" id="toc-difference-between-if-else-and-ifelse" class="nav-link" data-scroll-target="#difference-between-if-else-and-ifelse"><span class="header-section-number">6.2.1</span> Difference between <code>if-else</code> and <code>ifelse</code></a></li>
   </ul></li>
-  <li><a href="#nested-if-else" id="toc-nested-if-else" class="nav-link" data-scroll-target="#nested-if-else"><span class="header-section-number">6.3</span> Nested if-else</a></li>
+  <li><a href="#ifelseifelse" id="toc-ifelseifelse" class="nav-link" data-scroll-target="#ifelseifelse"><span class="header-section-number">6.3</span> if–elseif–else</a></li>
   <li><a href="#if" id="toc-if" class="nav-link" data-scroll-target="#if"><span class="header-section-number">6.4</span> if</a></li>
   <li><a href="#for" id="toc-for" class="nav-link" data-scroll-target="#for"><span class="header-section-number">6.5</span> for</a></li>
   <li><a href="#while" id="toc-while" class="nav-link" data-scroll-target="#while"><span class="header-section-number">6.6</span> while</a></li>
@@ -273,19 +282,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>Conditional executions control the flow of the execution.</p>
-<p>Examples</p>
-<p>if, else</p>
-<p>for</p>
-<p>while</p>
-<p>repeat</p>
-<p>break</p>
-<p>next</p>
-<p>switch</p>
+<p><strong>Conditional Statements and Loops in R</strong></p>
+<ol type="i">
+<li><p><code>if-else</code>: We use when we want to select between two (or more) options.</p></li>
+<li><p><code>for</code>: We use when we want to repeat a block of code a fixed number of times, usually over a sequence.</p></li>
+<li><p><code>while</code>: We use when we want to repeat a block of code as long as a condition is true.</p></li>
+<li><p><code>repeat</code>: We use when we want to repeat a block of code indefinitely until we manually stop it (usually with break).</p></li>
+<li><p><code>break</code>: We use when we want to exit a loop immediately.</p></li>
+<li><p><code>next</code>: We use when we want to skip the current iteration of a loop and continue with the next one.</p></li>
+<li><p><code>switch</code>: We use when we want to select one option from many possible choices, based on a value.</p></li>
+</ol>
 <section id="if-else" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="if-else"><span class="header-section-number">6.1</span> if, else</h2>
+<h2 data-number="6.1" class="anchored" data-anchor-id="if-else"><span class="header-section-number">6.1</span> if-else</h2>
+<p><strong>Teaching analogy</strong></p>
 <p>Draw a star on star-shaped cookies and draw a heart on heart-shaped cookies.</p>
-<p><img src="img/chap5/ifloop.jpeg" class="img-fluid"></p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="img/chap5/ifelse.png" class="img-fluid figure-img" width="405"></p>
+</figure>
+</div>
+</div>
+</div>
 <p><strong>Syntax</strong></p>
+<p>In programming, we use <code>if–else</code> when we need to choose between two possible options:</p>
+<ul>
+<li><p>The <code>if</code> block executes when the condition is true.</p></li>
+<li><p>The <code>else</code> block executes when the condition is false.</p></li>
+</ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (condition) {</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># do something</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
@@ -312,8 +337,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="ifelse-vectorization-with-ifelse" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="ifelse-vectorization-with-ifelse"><span class="header-section-number">6.2</span> <code>ifelse</code>: vectorization with <code>ifelse</code></h2>
+<section id="vectorization-with-ifelse" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="vectorization-with-ifelse"><span class="header-section-number">6.2</span> vectorization with <code>ifelse</code></h2>
+<p><code>ifelse</code> is vectorized, meaning it works on entire vectors at once.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ifelse</span>(condition, <span class="cn">TRUE</span> condition output, <span class="cn">FALSE</span> condition output)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Example</p>
 <div class="cell">
@@ -334,8 +360,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <section id="difference-between-if-else-and-ifelse" class="level3" data-number="6.2.1">
-<h3 data-number="6.2.1" class="anchored" data-anchor-id="difference-between-if-else-and-ifelse"><span class="header-section-number">6.2.1</span> Difference between <code>if, else</code> and <code>ifelse</code></h3>
-<p><strong><code>if, else</code></strong></p>
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="difference-between-if-else-and-ifelse"><span class="header-section-number">6.2.1</span> Difference between <code>if-else</code> and <code>ifelse</code></h3>
+<ul>
+<li><p><code>if-else</code>: Evaluates only on one value, not a whole vector.</p></li>
+<li><p><code>ifelse</code>: A vectorized function. It checks the condition for every element in a vector and returns a result of the same length, applying <code>if</code> or <code>else</code> to each element individually.</p></li>
+</ul>
+<p><strong><code>if-else</code> Example</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>test_even_odd <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>) {</span>
@@ -355,7 +385,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">test_even_odd</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">6</span>))</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># returns an error</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong><code>ifelse</code></strong></p>
+<p><strong><code>ifelse</code> Example</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>test_even_odd_v2 <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ifelse</span> (x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>, <span class="st">"even number"</span>, <span class="st">"odd number"</span>)</span>
@@ -372,11 +402,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="nested-if-else" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="nested-if-else"><span class="header-section-number">6.3</span> Nested if-else</h2>
+<section id="ifelseifelse" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="ifelseifelse"><span class="header-section-number">6.3</span> if–elseif–else</h2>
+<p><strong>Teaching analogy</strong></p>
+<p>If the cookie shape is;</p>
 <ul>
-<li>Multiple conditions</li>
+<li><p>star → draw a star;</p></li>
+<li><p>if it’s heart → draw a heart;</p></li>
+<li><p>if it’s Christmas tree → draw a tree;</p></li>
+<li><p>if it’s shoe → draw a shoe;</p></li>
+<li><p>if it’s house → draw a house;</p></li>
+<li><p>else → draw a gingerbread man.</p></li>
 </ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="img/chap5/multipleif.png" class="img-fluid figure-img" width="360"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Syntax and example</strong></p>
+<p>We use <code>if–elseif–else</code> when we want to select one option from more than two possible options.</p>
+<ul>
+<li><p>The first <code>if</code> condition is checked.</p>
+<ul>
+<li><p>If it’s TRUE, that block runs, and the rest are skipped.</p></li>
+<li><p>If it’s FALSE, the program checks the next elseif condition.</p></li>
+</ul></li>
+<li><p>This continues until one condition is TRUE, or else the final else block runs (if provided).</p></li>
+</ul>
+<p><code>if–elseif–else</code> checks one condition after another.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>grade_marks <span class="ot">&lt;-</span> <span class="cf">function</span>(marks){</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  </span>
@@ -399,6 +456,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="if" class="level2" data-number="6.4">
 <h2 data-number="6.4" class="anchored" data-anchor-id="if"><span class="header-section-number">6.4</span> if</h2>
+<p>It is possible to use only <code>if</code> statement.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>check.negative <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -869,6 +927,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Copyright 2025, Thiyanga S. Talagala</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 
