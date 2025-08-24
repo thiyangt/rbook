@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>10&nbsp; Regression Analysis – Programming and Data Analysis with R</title>
+<title>10&nbsp; Reproducible Documenting with R – Programming and Data Analysis with R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summary.html" rel="next">
+<link href="./chap11.html" rel="next">
 <link href="./chap9.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -81,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chap10.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Regression Analysis</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chap10.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reproducible Documenting with R</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -139,43 +139,49 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chap5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Control Structures</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Logical Operators in R</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chap6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Introduction to Tidyverse</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Control Structures</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chap7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Wrangling</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Introduction to Tidyverse</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chap8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Visualisation with Grammar of Graphics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Wrangling</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chap9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Reproducible Documenting with R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data Visualisation with Grammar of Graphics</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chap10.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Regression Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reproducible Documenting with R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Regression Analysis</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -189,25 +195,15 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">10.1</span> Introduction</a></li>
-  <li><a href="#simple-linear-regression" id="toc-simple-linear-regression" class="nav-link" data-scroll-target="#simple-linear-regression"><span class="header-section-number">10.2</span> Simple Linear Regression</a></li>
-  <li><a href="#multiple-linear-regression" id="toc-multiple-linear-regression" class="nav-link" data-scroll-target="#multiple-linear-regression"><span class="header-section-number">10.3</span> Multiple Linear Regression</a></li>
-  <li><a href="#regression-with-dummy-variables" id="toc-regression-with-dummy-variables" class="nav-link" data-scroll-target="#regression-with-dummy-variables"><span class="header-section-number">10.4</span> Regression with Dummy Variables</a></li>
-  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">10.5</span> Exercise</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Regression Analysis</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reproducible Documenting with R</span></h1>
 </div>
 
 
@@ -224,336 +220,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="introduction" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">10.1</span> Introduction</h2>
-</section>
-<section id="simple-linear-regression" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="simple-linear-regression"><span class="header-section-number">10.2</span> Simple Linear Regression</h2>
-</section>
-<section id="multiple-linear-regression" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="multiple-linear-regression"><span class="header-section-number">10.3</span> Multiple Linear Regression</h2>
-</section>
-<section id="regression-with-dummy-variables" class="level2" data-number="10.4">
-<h2 data-number="10.4" class="anchored" data-anchor-id="regression-with-dummy-variables"><span class="header-section-number">10.4</span> Regression with Dummy Variables</h2>
-</section>
-<section id="exercise" class="level2" data-number="10.5">
-<h2 data-number="10.5" class="anchored" data-anchor-id="exercise"><span class="header-section-number">10.5</span> Exercise</h2>
-<ol type="1">
-<li>To understand the effectiveness of marketing investments, a manager of a company wants to analyze the relationship between marketing expenditures (USD) and the number of sales. Fit a simple linear regression model with marketing spend as the independent variable and sales as the dependent variable. Interpret the outputs. Note that, before fitting a regression model, it is essential to conduct an exploratory analysis.</li>
-</ol>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: center;">Marketing expenditures (USD)</th>
-<th style="text-align: center;">Number of Sales</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">100</td>
-<td style="text-align: center;">522.3</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">115</td>
-<td style="text-align: center;">596.2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">120</td>
-<td style="text-align: center;">617.7</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">132</td>
-<td style="text-align: center;">682.3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">144</td>
-<td style="text-align: center;">740.2</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">154</td>
-<td style="text-align: center;">792.5</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">158</td>
-<td style="text-align: center;">806.4</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">160</td>
-<td style="text-align: center;">813.5</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">170</td>
-<td style="text-align: center;">871.0</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">180</td>
-<td style="text-align: center;">920.6</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">181</td>
-<td style="text-align: center;">927.9</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">190</td>
-<td style="text-align: center;">968.5</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">200</td>
-<td style="text-align: center;">1021.6</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">210</td>
-<td style="text-align: center;">1068.2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">220</td>
-<td style="text-align: center;">1118.9</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">230</td>
-<td style="text-align: center;">1171.2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">240</td>
-<td style="text-align: center;">1217.3</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">250</td>
-<td style="text-align: center;">1272.1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">260</td>
-<td style="text-align: center;">1323.6</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">270</td>
-<td style="text-align: center;">1369.6</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>2.To evaluate the association of marketing expenditures on sales, a company manager aims to analyze the relationship between marketing expenditures and sales across two different locations. Fit a multiple linear regression model with marketing expenditures and location as the independent variables and sales as the dependent variable. Interpret the outputs. Note that, before fitting a regression model, it is essential to conduct an exploratory analysis.</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: center;">Marketing expenditures (USD)</th>
-<th style="text-align: center;">Number of Sales</th>
-<th style="text-align: center;">Location</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">100</td>
-<td style="text-align: center;">522.3</td>
-<td style="text-align: center;">A</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">115</td>
-<td style="text-align: center;">596.2</td>
-<td style="text-align: center;">A</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">120</td>
-<td style="text-align: center;">617.7</td>
-<td style="text-align: center;">A</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">132</td>
-<td style="text-align: center;">682.3</td>
-<td style="text-align: center;">A</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">144</td>
-<td style="text-align: center;">740.2</td>
-<td style="text-align: center;">A</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">154</td>
-<td style="text-align: center;">792.5</td>
-<td style="text-align: center;">A</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">158</td>
-<td style="text-align: center;">806.4</td>
-<td style="text-align: center;">A</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">160</td>
-<td style="text-align: center;">813.5</td>
-<td style="text-align: center;">A</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">170</td>
-<td style="text-align: center;">871.0</td>
-<td style="text-align: center;">A</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">180</td>
-<td style="text-align: center;">920.6</td>
-<td style="text-align: center;">A</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">181</td>
-<td style="text-align: center;">927.9</td>
-<td style="text-align: center;">A</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">190</td>
-<td style="text-align: center;">968.5</td>
-<td style="text-align: center;">A</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">200</td>
-<td style="text-align: center;">1021.6</td>
-<td style="text-align: center;">A</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">210</td>
-<td style="text-align: center;">1068.2</td>
-<td style="text-align: center;">A</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">220</td>
-<td style="text-align: center;">1118.9</td>
-<td style="text-align: center;">A</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">230</td>
-<td style="text-align: center;">1171.2</td>
-<td style="text-align: center;">A</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">240</td>
-<td style="text-align: center;">1217.3</td>
-<td style="text-align: center;">A</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">250</td>
-<td style="text-align: center;">1272.1</td>
-<td style="text-align: center;">A</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">260</td>
-<td style="text-align: center;">1323.6</td>
-<td style="text-align: center;">A</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">270</td>
-<td style="text-align: center;">1369.6</td>
-<td style="text-align: center;">A</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">100</td>
-<td style="text-align: center;">522.3</td>
-<td style="text-align: center;">B</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">115</td>
-<td style="text-align: center;">596.2</td>
-<td style="text-align: center;">B</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">120</td>
-<td style="text-align: center;">617.7</td>
-<td style="text-align: center;">B</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">132</td>
-<td style="text-align: center;">682.3</td>
-<td style="text-align: center;">B</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">144</td>
-<td style="text-align: center;">740.2</td>
-<td style="text-align: center;">B</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">154</td>
-<td style="text-align: center;">792.5</td>
-<td style="text-align: center;">B</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">158</td>
-<td style="text-align: center;">806.4</td>
-<td style="text-align: center;">B</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">160</td>
-<td style="text-align: center;">813.5</td>
-<td style="text-align: center;">B</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">170</td>
-<td style="text-align: center;">871.0</td>
-<td style="text-align: center;">B</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">180</td>
-<td style="text-align: center;">920.6</td>
-<td style="text-align: center;">B</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">181</td>
-<td style="text-align: center;">927.9</td>
-<td style="text-align: center;">B</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">190</td>
-<td style="text-align: center;">968.5</td>
-<td style="text-align: center;">B</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">200</td>
-<td style="text-align: center;">1021.6</td>
-<td style="text-align: center;">B</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">210</td>
-<td style="text-align: center;">1068.2</td>
-<td style="text-align: center;">B</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">220</td>
-<td style="text-align: center;">1118.9</td>
-<td style="text-align: center;">B</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">230</td>
-<td style="text-align: center;">1171.2</td>
-<td style="text-align: center;">B</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">240</td>
-<td style="text-align: center;">1217.3</td>
-<td style="text-align: center;">B</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">250</td>
-<td style="text-align: center;">1272.1</td>
-<td style="text-align: center;">B</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">260</td>
-<td style="text-align: center;">1323.6</td>
-<td style="text-align: center;">B</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">270</td>
-<td style="text-align: center;">1369.6</td>
-<td style="text-align: center;">B</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -975,13 +643,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./chap9.html" class="pagination-link" aria-label="Reproducible Documenting with R">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Reproducible Documenting with R</span></span>
+      <a href="./chap9.html" class="pagination-link" aria-label="Data Visualisation with Grammar of Graphics">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data Visualisation with Grammar of Graphics</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./summary.html" class="pagination-link" aria-label="Summary">
-        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chap11.html" class="pagination-link" aria-label="Regression Analysis">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Regression Analysis</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

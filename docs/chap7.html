@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Data Wrangling – Programming and Data Analysis with R</title>
+<title>7&nbsp; Introduction to Tidyverse – Programming and Data Analysis with R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -81,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chap7.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Wrangling</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chap7.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Introduction to Tidyverse</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -139,43 +139,49 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chap5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Control Structures</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Logical Operators in R</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chap6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Introduction to Tidyverse</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Control Structures</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chap7.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Wrangling</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Introduction to Tidyverse</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chap8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Visualisation with Grammar of Graphics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Wrangling</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chap9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Reproducible Documenting with R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data Visualisation with Grammar of Graphics</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chap10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Regression Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reproducible Documenting with R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Regression Analysis</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -189,21 +195,15 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#exercise" id="toc-exercise" class="nav-link active" data-scroll-target="#exercise"><span class="header-section-number">7.1</span> Exercise</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Wrangling</span></h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Introduction to Tidyverse</span></h1>
 </div>
 
 
@@ -220,270 +220,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="exercise" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="exercise"><span class="header-section-number">7.1</span> Exercise</h2>
-<p>This exercise is based on the <code>DStidy</code> dataset from the <code>DSjobtracker</code> package in R. This dataset was compiled from job advertisements for roles like statisticians and data scientists. It includes information on job roles, required qualifications, technical and soft skills, tools, platforms, and other relevant criteria frequently mentioned in the job advertisements. Write R code to answer each question. Use the provided output to verify the correctness of your code.</p>
-<ol type="1">
-<li>How many job advertisements mention both <code>R</code> and <code>Python</code> as required skills?</li>
-</ol>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 437</code></pre>
-</div>
-</div>
-<ol start="2" type="1">
-<li>Which job categories require R but not Python?</li>
-</ol>
-<p>Help: <code>distinct</code> function</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 20 × 1
-   Job_Category                                   
-   &lt;chr&gt;                                          
- 1 Unimportant                                    
- 2 Data Science                                   
- 3 Data Science and Data Engineering              
- 4 Data Analyst                                   
- 5 &lt;NA&gt;                                           
- 6 AI                                             
- 7 Business/Systems Analysts                      
- 8 Computer/Information Technology                
- 9 Science &amp; Technology                           
-10 Sciences                                       
-11 Statistics                                     
-12 Data science                                   
-13 Information Services                           
-14 Analyst, Engineering and Information Technology
-15 Research, Analyst, and Information Technology  
-16 Analyst                                        
-17 Administrative                                 
-18 Machine Learning                               
-19 Data Analytics                                 
-20 Actuarial Science                              </code></pre>
-</div>
-</div>
-<ol start="3" type="1">
-<li>What is the most common educational qualification required (BSc_needed, MSc_needed, PhD_needed) across all job categories?</li>
-</ol>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 3
-    BSc   MSc   PhD
-  &lt;int&gt; &lt;int&gt; &lt;int&gt;
-1   293   152    71</code></pre>
-</div>
-</div>
-<ol start="4" type="1">
-<li>What is the average salary for job roles that require SQL, grouped by Job_Category?</li>
-</ol>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 26 × 2
-   Job_Category                                  avg_salary
-   &lt;chr&gt;                                              &lt;dbl&gt;
- 1 Unimportant                                    11108498.
- 2 &lt;NA&gt;                                            4689542.
- 3 Machine Learning                                 108000 
- 4 Data Analyst                                     107890 
- 5 Data Science                                     102805.
- 6 AI                                                95000 
- 7 Data Science and Data Engineering                 78500 
- 8 Data science                                      75125.
- 9 Research, Analyst, and Information Technology     70970.
-10 Internet Publishing                               70000 
-# ℹ 16 more rows</code></pre>
-</div>
-</div>
-<ol start="5" type="1">
-<li>Calculate the proportion of job advertisements that require English by City.</li>
-</ol>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 299 × 2
-   City            Prop_English
-   &lt;chr&gt;                  &lt;dbl&gt;
- 1 Anaheim                    1
- 2 Arges                      1
- 3 Athens                     1
- 4 Attiki                     1
- 5 Berlin                     1
- 6 Bugis                      1
- 7 Calgary                    1
- 8 Central Denmark            1
- 9 Chengdu                    1
-10 Darmstadt                  1
-# ℹ 289 more rows</code></pre>
-</div>
-</div>
-<ol start="6" type="1">
-<li>Select only the columns: ID, Job_title, Company, and City.</li>
-</ol>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1,172 × 4
-      ID Job_title                                   Company               City 
-   &lt;dbl&gt; &lt;chr&gt;                                       &lt;chr&gt;                 &lt;chr&gt;
- 1     1 &lt;NA&gt;                                        &lt;NA&gt;                  &lt;NA&gt; 
- 2     2 Junior Data Scientist                       Dialog Axiata PLC     Colo…
- 3     3 Engineer, Analytics &amp; Data Science          London Stock Exchang… Colo…
- 4     4 CI-Statistical Analyst/Business Analyst-CMB E.D. Bullard Company  Colo…
- 5     5 DA-Data Analyst-CMB                         E.D. Bullard Company  Colo…
- 6     6 Data Scientist                              Emirates Center for … Kual…
- 7     7 Principal HR Data Scientist                 BHP Group Limited     Kual…
- 8     8 DV-Data Visualization &amp; QA Specialist-CMB   E.D. Bullard Company  Colo…
- 9     9 Product Manager, Product Data Science       Numerator             Otta…
-10    10 Associate Director, Data Science            Phreesia Inc.         Otta…
-# ℹ 1,162 more rows</code></pre>
-</div>
-</div>
-<ol start="7" type="1">
-<li>Filter the dataset to include only jobs that mention Python as a required skill.</li>
-</ol>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 774 × 109
-      ID Consultant DateRetrieved       DatePublished       Job_title    Company
-   &lt;dbl&gt; &lt;chr&gt;      &lt;dttm&gt;              &lt;dttm&gt;              &lt;chr&gt;        &lt;chr&gt;  
- 1     1 Thiyanga   2020-08-05 00:00:00 NA                  &lt;NA&gt;         &lt;NA&gt;   
- 2     2 Jayani     2020-08-07 00:00:00 2020-07-31 00:00:00 Junior Data… Dialog…
- 3     3 Jayani     2020-08-07 00:00:00 2020-08-06 00:00:00 Engineer, A… London…
- 4     6 Jayani     2020-08-07 00:00:00 2020-08-13 00:00:00 Data Scient… Emirat…
- 5     7 Jayani     2020-08-13 00:00:00 2020-08-13 00:00:00 Principal H… BHP Gr…
- 6    10 Jayani     2020-08-12 00:00:00 2020-08-11 00:00:00 Associate D… Phrees…
- 7    13 Jayani     2020-08-13 00:00:00 2020-08-13 00:00:00 Data Scient… Visier…
- 8    17 Jayani     2020-08-13 00:00:00 2020-08-11 00:00:00 Data Scienc… Clearb…
- 9    18 Jayani     2020-08-13 00:00:00 2020-08-12 00:00:00 Marketing i… Yellow…
-10    20 Jayani     2020-08-13 00:00:00 2020-08-13 00:00:00 Data Analyst Ernst …
-# ℹ 764 more rows
-# ℹ 103 more variables: R &lt;dbl&gt;, SAS &lt;dbl&gt;, SPSS &lt;dbl&gt;, Python &lt;dbl&gt;,
-#   MAtlab &lt;dbl&gt;, Scala &lt;dbl&gt;, `C#` &lt;dbl&gt;, `MS Word` &lt;dbl&gt;, `Ms Excel` &lt;dbl&gt;,
-#   `OLE/DB` &lt;dbl&gt;, `Ms Access` &lt;dbl&gt;, `Ms PowerPoint` &lt;dbl&gt;,
-#   Spreadsheets &lt;dbl&gt;, Data_visualization &lt;dbl&gt;, Presentation_Skills &lt;dbl&gt;,
-#   Communication &lt;dbl&gt;, BigData &lt;dbl&gt;, Data_warehouse &lt;dbl&gt;,
-#   cloud_storage &lt;dbl&gt;, Google_Cloud &lt;dbl&gt;, AWS &lt;dbl&gt;, …</code></pre>
-</div>
-</div>
-<ol start="8" type="1">
-<li>Select all columns related to Microsoft Office tools.</li>
-</ol>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1,172 × 4
-   `MS Word` `Ms Excel` `Ms Access` `Ms PowerPoint`
-       &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;           &lt;dbl&gt;
- 1         0          0           0               0
- 2         0          0           0               0
- 3         0          0           0               0
- 4         0          0           0               0
- 5         1          1           1               1
- 6         0          0           0               0
- 7         0          0           0               0
- 8         1          1           0               1
- 9         0          0           0               0
-10         0          0           0               0
-# ℹ 1,162 more rows</code></pre>
-</div>
-</div>
-<ol start="9" type="1">
-<li>Filter jobs that were published in or after the year 2023.</li>
-</ol>
-<p>Help: use <code>year</code> function in the lubridate package</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 251 × 109
-      ID Consultant DateRetrieved       DatePublished       Job_title    Company
-   &lt;dbl&gt; &lt;chr&gt;      &lt;dttm&gt;              &lt;dttm&gt;              &lt;chr&gt;        &lt;chr&gt;  
- 1     1 Kavya      2023-01-05 18:30:00 2023-01-04 18:30:00 Senior Engi… DFCC B…
- 2     2 Kavya      2023-01-05 18:30:00 2023-01-04 18:30:00 Database En… &lt;NA&gt;   
- 3     3 Kavya      2023-01-05 18:30:00 2023-01-03 18:30:00 Database Ad… Abans  
- 4     4 Kavya      2023-01-05 18:30:00 2023-01-02 18:30:00 Consulting … George…
- 5     6 Kavya      2023-01-05 18:30:00 2023-01-05 18:30:00 Data Scient… LSEG   
- 6     7 Kavya      2023-01-05 18:30:00 2023-01-05 18:30:00 D &amp; A Azure… Ernst …
- 7     8 Kavya      2023-01-05 18:30:00 2023-01-04 18:30:00 Data Analyst Novels…
- 8     9 Kavya      2023-01-05 18:30:00 2023-01-04 18:30:00 Data Analyst ADA    
- 9    10 Kavya      2023-01-05 18:30:00 2023-01-04 18:30:00 Machine Lea… Bestka…
-10    12 Kavya      2023-01-05 18:30:00 2023-01-05 18:30:00 Data Scient… JKH    
-# ℹ 241 more rows
-# ℹ 103 more variables: R &lt;dbl&gt;, SAS &lt;dbl&gt;, SPSS &lt;dbl&gt;, Python &lt;dbl&gt;,
-#   MAtlab &lt;dbl&gt;, Scala &lt;dbl&gt;, `C#` &lt;dbl&gt;, `MS Word` &lt;dbl&gt;, `Ms Excel` &lt;dbl&gt;,
-#   `OLE/DB` &lt;dbl&gt;, `Ms Access` &lt;dbl&gt;, `Ms PowerPoint` &lt;dbl&gt;,
-#   Spreadsheets &lt;dbl&gt;, Data_visualization &lt;dbl&gt;, Presentation_Skills &lt;dbl&gt;,
-#   Communication &lt;dbl&gt;, BigData &lt;dbl&gt;, Data_warehouse &lt;dbl&gt;,
-#   cloud_storage &lt;dbl&gt;, Google_Cloud &lt;dbl&gt;, AWS &lt;dbl&gt;, …</code></pre>
-</div>
-</div>
-<ol start="10" type="1">
-<li>Filter the jobs where both PhD_needed and MSc_needed are 0.</li>
-</ol>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 758 × 109
-      ID Consultant DateRetrieved       DatePublished       Job_title    Company
-   &lt;dbl&gt; &lt;chr&gt;      &lt;dttm&gt;              &lt;dttm&gt;              &lt;chr&gt;        &lt;chr&gt;  
- 1     1 Thiyanga   2020-08-05 00:00:00 NA                  &lt;NA&gt;         &lt;NA&gt;   
- 2     2 Jayani     2020-08-07 00:00:00 2020-07-31 00:00:00 Junior Data… Dialog…
- 3     3 Jayani     2020-08-07 00:00:00 2020-08-06 00:00:00 Engineer, A… London…
- 4     4 Jayani     2020-08-07 00:00:00 2020-07-24 00:00:00 CI-Statisti… E.D. B…
- 5     5 Jayani     2020-08-07 00:00:00 2020-07-24 00:00:00 DA-Data Ana… E.D. B…
- 6     7 Jayani     2020-08-13 00:00:00 2020-08-13 00:00:00 Principal H… BHP Gr…
- 7     8 Jayani     2020-08-07 00:00:00 2020-07-24 00:00:00 DV-Data Vis… E.D. B…
- 8     9 Jayani     2020-08-13 00:00:00 2020-08-13 00:00:00 Product Man… Numera…
- 9    10 Jayani     2020-08-12 00:00:00 2020-08-11 00:00:00 Associate D… Phrees…
-10    11 Jayani     2020-08-13 00:00:00 2020-08-13 00:00:00 Data Engine… SDK    
-# ℹ 748 more rows
-# ℹ 103 more variables: R &lt;dbl&gt;, SAS &lt;dbl&gt;, SPSS &lt;dbl&gt;, Python &lt;dbl&gt;,
-#   MAtlab &lt;dbl&gt;, Scala &lt;dbl&gt;, `C#` &lt;dbl&gt;, `MS Word` &lt;dbl&gt;, `Ms Excel` &lt;dbl&gt;,
-#   `OLE/DB` &lt;dbl&gt;, `Ms Access` &lt;dbl&gt;, `Ms PowerPoint` &lt;dbl&gt;,
-#   Spreadsheets &lt;dbl&gt;, Data_visualization &lt;dbl&gt;, Presentation_Skills &lt;dbl&gt;,
-#   Communication &lt;dbl&gt;, BigData &lt;dbl&gt;, Data_warehouse &lt;dbl&gt;,
-#   cloud_storage &lt;dbl&gt;, Google_Cloud &lt;dbl&gt;, AWS &lt;dbl&gt;, …</code></pre>
-</div>
-</div>
-<ol start="11" type="1">
-<li>Filter out all rows where Salary is missing (NA).</li>
-</ol>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 239 × 109
-      ID Consultant DateRetrieved       DatePublished       Job_title    Company
-   &lt;dbl&gt; &lt;chr&gt;      &lt;dttm&gt;              &lt;dttm&gt;              &lt;chr&gt;        &lt;chr&gt;  
- 1    12 Jayani     2020-08-13 00:00:00 2020-08-13 00:00:00 Data Analyst EPCOR …
- 2    24 Jayani     2020-08-13 00:00:00 2020-08-13 00:00:00 Data Scient… Elabra…
- 3    45 Jayani     2020-08-13 00:00:00 2020-08-11 00:00:00 Associate P… SnapHu…
- 4    52 Thimani    2020-08-07 00:00:00 2020-07-24 00:00:00 Data Scienc… Summit…
- 5    54 Thimani    2020-08-07 00:00:00 2020-08-01 00:00:00 Data Scient… PA con…
- 6    56 Thimani    2020-08-07 00:00:00 2020-07-31 00:00:00 Data Scient… Brilli…
- 7    57 Thimani    2020-08-07 00:00:00 2020-07-14 00:00:00 Data Scient… G-Rese…
- 8    58 Thimani    2020-08-07 00:00:00 2020-07-19 00:00:00 Manager-Dat… Biz2Cr…
- 9    62 Thimani    2020-08-09 00:00:00 2020-07-19 00:00:00 Senior Mana… Britis…
-10    63 Thimani    2020-08-09 00:00:00 2020-07-23 00:00:00 VP, Data Sc… 7Park …
-# ℹ 229 more rows
-# ℹ 103 more variables: R &lt;dbl&gt;, SAS &lt;dbl&gt;, SPSS &lt;dbl&gt;, Python &lt;dbl&gt;,
-#   MAtlab &lt;dbl&gt;, Scala &lt;dbl&gt;, `C#` &lt;dbl&gt;, `MS Word` &lt;dbl&gt;, `Ms Excel` &lt;dbl&gt;,
-#   `OLE/DB` &lt;dbl&gt;, `Ms Access` &lt;dbl&gt;, `Ms PowerPoint` &lt;dbl&gt;,
-#   Spreadsheets &lt;dbl&gt;, Data_visualization &lt;dbl&gt;, Presentation_Skills &lt;dbl&gt;,
-#   Communication &lt;dbl&gt;, BigData &lt;dbl&gt;, Data_warehouse &lt;dbl&gt;,
-#   cloud_storage &lt;dbl&gt;, Google_Cloud &lt;dbl&gt;, AWS &lt;dbl&gt;, …</code></pre>
-</div>
-</div>
-<ol start="12" type="1">
-<li>For each Experience_Category, compute the percentage of jobs that require Presentation_Skills.</li>
-</ol>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 2
-  Experience_Category                prop_presentation
-  &lt;chr&gt;                                          &lt;dbl&gt;
-1 More than 10 years                             0.25 
-2 More than 2 and less than 5 years              0.306
-3 More than 5 and less than 10 years             0.318
-4 Two or less years                              0.275
-5 Unknown or Not needed                          0.360</code></pre>
-</div>
-</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -905,13 +643,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./chap6.html" class="pagination-link" aria-label="Introduction to Tidyverse">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Introduction to Tidyverse</span></span>
+      <a href="./chap6.html" class="pagination-link" aria-label="Control Structures">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Control Structures</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chap8.html" class="pagination-link" aria-label="Data Visualisation with Grammar of Graphics">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Visualisation with Grammar of Graphics</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chap8.html" class="pagination-link" aria-label="Data Wrangling">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Wrangling</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -304,6 +304,8 @@ ggplotly(p1)
 
 ### Vector Operations
 
+Vector operations are performed element by element. 
+
 ```{r}
 a <- 1:10
 b <- rep(10:100, by=10)
@@ -311,6 +313,29 @@ a + b
 a/b
 a*b
 a-b
+```
+
+```{r, comment=NA}
+c(10, 100, 100) + 2 # two is added to every element in the vector
+```
+
+Example for operations between two vectors
+
+```{r, comment=NA}
+v1 <- c(1, 2, 3); v2 <- c(10, 100, 1000)
+v1 + v2
+```
+
+
+**Add two vectors of unequal length**
+
+The short vector repeats until it matches the length of the long vector.
+
+```{r, comment=NA}
+longvec <- seq(10, 100, length=10); shortvec <- c(1, 2, 3, 4, 5)
+
+shortvec + longvec
+
 ```
 
 ## Matrix
