@@ -2,10 +2,9 @@
 
 ## Plotting with R
 
-- with base R
+-   with base R
 
-- ggplot2 package: `ggplot()` function
-
+-   ggplot2 package: `ggplot()` function
 
 ## Grammar of graphics
 
@@ -13,52 +12,44 @@ The Grammar of Graphics is a structured way of thinking about and building data 
 
 **Key Components of the Grammar of Graphics**
 
-Data: the dataset you want to visualize.
+1.  **Data:** the dataset you want to visualize.
+2.  **Aesthetics (aes):** how variables are mapped to visual properties (x, y, color, size, shape).
 
-Aesthetics (aes): how variables are mapped to visual properties (x, y, color, size, shape).
+3. **Geometries (geoms):** the type of plot you draw (points, lines, bars, boxplots).
 
-Geometries (geoms): the type of plot you draw (points, lines, bars, boxplots).
+4. **Scales:** control how data values map to aesthetics (e.g., continuous vs. categorical colors, log scales).
 
-Scales:  control how data values map to aesthetics (e.g., continuous vs. categorical colors, log scales).
+5. **Coordinate system:** the space in which the data is drawn (Cartesian, polar, map projections).
 
+6. **Facets:** splitting data into subplots for comparison.
 
+7. **Statistical transformations (stats):** summaries or transformations (e.g., binning in histograms, smoothing in regression lines).
 
-Coordinate system:  the space in which the data is drawn (Cartesian, polar, map projections).
-
-Facets: splitting data into subplots for comparison.
-
-
-Statistical transformations (stats):  summaries or transformations (e.g., binning in histograms, smoothing in regression lines).
-
-Themes:  non-data elements like fonts, backgrounds, grid lines.
+8. **Themes:** non-data elements like fonts, backgrounds, grid lines.
 
 ## Ingredients for plotting
 
-1. Data
-
+1.  Data
 
 ```{r}
 data("mtcars")
 head(mtcars)
 ```
 
-2. Canvas to draw the plot
+2.  Canvas to draw the plot
 
 ```{r, warning=FALSE, message=FALSE}
 library(tidyverse)
 ggplot()
 ```
 
-
 ## Data + Aesthetics (aes)
-
 
 ```{r, comment=NA, fig.height=5.5, warning=FALSE, message=FALSE}
 ggplot(mtcars,
 aes(x=wt, 
     y= mpg))
 ```
-
 
 ```{r, comment=NA, fig.height=5.5, warning=FALSE, message=FALSE}
 ggplot(mtcars,
@@ -69,7 +60,6 @@ aes(x=wt,
 
 ## Data + Aesthetics (aes) + Geometries (geoms)
 
-
 ```{r, comment=NA,   fig.height=5.5, warning=FALSE, message=FALSE}
 ggplot(mtcars,
 aes(x=wt, 
@@ -77,14 +67,12 @@ aes(x=wt,
   geom_point()
 ```
 
-
 ```{r, comment=NA,   fig.height=5.5, warning=FALSE, message=FALSE}
 ggplot(mtcars,
 aes(x=wt, 
     y= mpg)) +
   geom_point()
 ```
-
 
 ```{r, comment=NA,  fig.height=5.5, warning=FALSE, message=FALSE}
 ggplot(mtcars,
@@ -92,7 +80,6 @@ aes(x=wt,
     y= mpg)) +
   geom_smooth()
 ```
-
 
 ```{r, comment=NA,  fig.height=5.5, warning=FALSE, message=FALSE}
 ggplot(mtcars,
@@ -109,9 +96,7 @@ aes(x=wt,
   geom_point()
 ```
 
-
-## Add  `scale` layer
-
+## Add `scale` layer
 
 ```{r, comment=NA,  fig.height=5.5, warning=FALSE, message=FALSE}
 ggplot(mtcars, aes(x = wt, y = mpg, col = as_factor(cyl))) +
@@ -120,13 +105,11 @@ ggplot(mtcars, aes(x = wt, y = mpg, col = as_factor(cyl))) +
 
 ```
 
-
 ```{r, comment=NA,  fig.height=5.5, warning=FALSE, message=FALSE}
 ggplot(mtcars, aes(x = wt, y = mpg, col = as_factor(cyl))) +
   geom_point() +
   scale_color_manual(values = c("red", "blue", "green"))
 ```
-
 
 ## Add `coord` layer
 
@@ -138,7 +121,6 @@ ggplot(mtcars, aes(x = wt, y = mpg, col = as_factor(cyl))) +
   coord_cartesian(xlim = c(2, 5), ylim = c(10, 35))
 
 ```
-
 
 ```{r}
 ggplot(mtcars, aes(x = wt, y = mpg, col = as_factor(cyl))) +
@@ -165,7 +147,6 @@ ggplot(mtcars, aes(x = wt, y = mpg, col = as_factor(cyl))) +
 ```
 
 ## Add `facet` layer
-
 
 ```{r}
 ggplot(mtcars, aes(x = wt, y = mpg, col = as_factor(cyl))) +
@@ -200,7 +181,6 @@ ggplot(mtcars, aes(x = hp, y = mpg)) +
 
 ```
 
-
 ## theme layer
 
 ```{r}
@@ -228,8 +208,7 @@ library(gapminder)
 data(gapminder)
 ```
 
- Visualize the relationship between life expectancy, GDP per capita and continent in 2007.
-
+Visualize the relationship between life expectancy, GDP per capita and continent in 2007.
 
 ```{r, comment=NA,  fig.height=6, warning=FALSE, message=FALSE}
 gapminder2007 <- gapminder %>%
@@ -242,13 +221,10 @@ labs(title="Relationship between life expectancy and GPD per capita by continent
         x ="life expectancy at birth, in years",
      y = "GDP per capita (US$, inflation-adjusted)")
 ```
-]
 
-
+\]
 
 ### Add a vertical line
-
-
 
 ```{r, comment=NA, fig.height=6, warning=FALSE, message=FALSE}
 gapminder2007 <- gapminder %>%
@@ -260,9 +236,7 @@ aes(x = lifeExp, y = gdpPercap, col=continent)) +
     geom_vline(xintercept = 70)
 ```
 
-
 ### Add a horizontal line
-
 
 ```{r, comment=NA,fig.height=6, warning=FALSE, message=FALSE}
 gapminder2007 <- gapminder %>%
@@ -274,9 +248,7 @@ aes(x = lifeExp, y = gdpPercap, col=continent)) +
     geom_hline(yintercept = 20000)
 ```
 
-
 ### Add a diagonal line
-
 
 ```{r, comment=NA, fig.height=6, warning=FALSE, message=FALSE}
 gapminder2007 <- gapminder %>%
@@ -295,9 +267,7 @@ ls(pattern = '^geom_', env = as.environment('package:ggplot2'))
 
 ```
 
-
 ## geom_boxplot
-
 
 ```{r, comment=NA, fig.height=6, warning=FALSE, message=FALSE}
 ggplot(gapminder2007, aes(x=lifeExp, y=continent))+
@@ -313,46 +283,38 @@ geom_boxplot()
 ggplot(gapminder2007, aes(x=lifeExp, y=continent, fill=continent))+
 geom_boxplot()
 ```
-]
 
+\]
 
 ```{r, comment=NA,   fig.height=6, warning=FALSE, message=FALSE}
 ggplot(gapminder2007, aes(x=lifeExp, y=continent))+
 geom_boxplot(fill="forestgreen")
 ```
-]
 
+\]
 
 ```{r, comment=NA,  fig.height=6, warning=FALSE, message=FALSE}
 ggplot(gapminder2007, aes(x=lifeExp, y=continent))+
 geom_boxplot(fill="forestgreen", alpha=0.5)
 ```
-]
 
+\]
 
 ## geom_point
-
-
 
 ```{r, comment=NA,  echo=FALSE, fig.height=6, warning=FALSE, message=FALSE}
 ggplot(gapminder2007, aes(x=lifeExp, y=continent))+
   geom_point()
 ```
 
-
-
-##  geom_jitter
-
+## geom_jitter
 
 ```{r, comment=NA,  fig.height=6, warning=FALSE, message=FALSE}
 ggplot(gapminder2007, aes(x=lifeExp, y=continent))+
   geom_jitter()
 ```
 
-
-
-##  geom_jitter + geom_boxplot
-
+## geom_jitter + geom_boxplot
 
 ```{r, comment=NA, fig.height=6, warning=FALSE, message=FALSE}
 ggplot(gapminder2007, aes(x=lifeExp, y=continent))+
@@ -366,14 +328,11 @@ ggplot(gapminder2007, aes(x=lifeExp, y=continent))+
   geom_boxplot(alpha=0.5)
 ```
 
-
-
 ```{r, comment=NA, fig.height=6, warning=FALSE, message=FALSE}
 ggplot(gapminder2007, aes(x=lifeExp, y=continent))+
   geom_boxplot() + 
   geom_jitter() 
 ```
-
 
 ```{r}
 ggplot(gapminder2007, aes(x=lifeExp, y=continent, fill=continent))+
@@ -383,15 +342,14 @@ ggplot(gapminder2007, aes(x=lifeExp, y=continent, fill=continent))+
 
 **geom_jitter + geom_boxplot (outlier.shape = NA)**
 
-
 ```{r, comment=NA,  fig.height=6, warning=FALSE, message=FALSE}
 ggplot(gapminder2007, aes(x=lifeExp, y=continent, fill=continent))+
   geom_boxplot(outlier.shape = NA) + 
   geom_jitter(aes(col=continent)) 
 ```
 
+.right-plot\[
 
-.right-plot[
 ```{r, comment=NA,  echo=FALSE, fig.height=6, warning=FALSE, message=FALSE}
 ggplot(gapminder2007, aes(x=lifeExp, y=continent, fill=continent, col=continent))+
   geom_boxplot(outlier.shape = NA) + 
@@ -400,15 +358,13 @@ ggplot(gapminder2007, aes(x=lifeExp, y=continent, fill=continent, col=continent)
 
 Write the code to obtain the following plot.
 
-
 ```{r, comment=NA,  echo=FALSE, fig.height=6, warning=FALSE, message=FALSE}
 ggplot(gapminder2007, 
 aes(x=lifeExp, col=continent, fill=continent))+
   geom_density(alpha=0.5) 
 ```
 
-##  geom_histogram
-
+## geom_histogram
 
 ```{r, comment=NA,  fig.height=6, warning=FALSE, message=FALSE}
 ggplot(gapminder2007, 
@@ -416,9 +372,7 @@ aes(x=lifeExp))+
   geom_histogram() 
 ```
 
-
 ## geom_bar (stat="identity")
-
 
 ```{r, comment=NA}
 cut.percent <- data.frame(cut=c("Fair", "Good", "Very Good", "Premium", 
@@ -426,18 +380,13 @@ cut.percent <- data.frame(cut=c("Fair", "Good", "Very Good", "Premium",
 cut.percent
     
 ```
-
-
 
 ```{r, comment=NA,  fig.height=3, warning=FALSE, message=FALSE}
 ggplot(data=cut.percent, aes(x=cut, y=percent)) +
   geom_bar(stat="identity")
 ```
 
-
 ## geom_col
-
-
 
 ```{r, comment=NA}
 cut.percent <- data.frame(cut=c("Fair", "Good", "Very Good", "Premium", 
@@ -446,17 +395,12 @@ cut.percent
     
 ```
 
-
-
 ```{r, comment=NA,  fig.height=3, warning=FALSE, message=FALSE}
 ggplot(data=cut.percent, aes(x=cut, y=percent)) +
   geom_col()
 ```
 
-
 # geom_line
-
-
 
 ```{r, comment=NA, fig.height=6, warning=FALSE, message=FALSE}
 gapminder %>%
@@ -480,8 +424,6 @@ geom_line() +
        y="GDP per capita (USD, inflation-adjusted)")
 ```
 
-
-
 ## Data Wrangling + Data Visualization
 
 ```{r, comment=NA}
@@ -491,8 +433,6 @@ avglifeExp <- gapminder %>%
 avglifeExp
 ```
 
-
-
 ```{r, comment=NA, message=FALSE, fig.height=5}
 ggplot(avglifeExp, aes(x=year, y=meanlifeExp, col=continent))+
   geom_line() + geom_point()
@@ -500,8 +440,7 @@ ggplot(avglifeExp, aes(x=year, y=meanlifeExp, col=continent))+
 
 ## Exercise
 
-Write an R code to reproduce the plot below. 
-
+Write an R code to reproduce the plot below.
 
 ```{r, comment=NA, message=FALSE, fig.height=5, echo=FALSE}
 gapminder %>%
@@ -515,9 +454,7 @@ gapminder %>%
        x = "GDP per capita")
 ```
 
-
-Write an R code to reproduce the plot below. 
-
+Write an R code to reproduce the plot below.
 
 ```{r, comment=NA, message=FALSE, fig.height=5, echo=FALSE}
 gapminder %>%
@@ -531,10 +468,7 @@ gapminder %>%
        x = "log(GDP per capita)")
 ```
 
-
-
-Write an R code to reproduce the plot below. 
-
+Write an R code to reproduce the plot below.
 
 ```{r, comment=NA, message=FALSE, fig.height=5, echo=FALSE}
 ggplot(gapminder_unfiltered, aes(gdpPercap, lifeExp, color = year)) + 
@@ -542,9 +476,7 @@ geom_point() +
 facet_wrap(~ continent)
 ```
 
-
-Write an R code to reproduce the plot below. 
-
+Write an R code to reproduce the plot below.
 
 ```{r, comment=NA, message=FALSE, fig.height=5, echo=FALSE}
 ggplot(gapminder, aes(y=lifeExp,  x=year)) + 
@@ -552,6 +484,3 @@ geom_smooth() +
   geom_point() + 
 facet_wrap(~ continent)
 ```
-
-
-
