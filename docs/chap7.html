@@ -266,16 +266,11 @@ gtag('config', 'G-P3WZLH486T', { 'anonymize_ip': true});
   <li><a href="#pipe-operator-or" id="toc-pipe-operator-or" class="nav-link" data-scroll-target="#pipe-operator-or"><span class="header-section-number">7.5</span> Pipe operator: %&gt;% or |&gt;</a>
   <ul class="collapse">
   <li><a href="#required-package-magrittr-for" id="toc-required-package-magrittr-for" class="nav-link" data-scroll-target="#required-package-magrittr-for"><span class="header-section-number">7.5.1</span> Required package: <code>magrittr</code> (for %&gt;%)</a></li>
-  </ul></li>
-  <li><a href="#what-does-it-do" id="toc-what-does-it-do" class="nav-link" data-scroll-target="#what-does-it-do"><span class="header-section-number">7.6</span> What does it do?</a></li>
-  <li><a href="#pipe-operator" id="toc-pipe-operator" class="nav-link" data-scroll-target="#pipe-operator"><span class="header-section-number">8</span> Pipe operator: %&gt;%</a>
-  <ul class="collapse">
-  <li><a href="#illustrations" id="toc-illustrations" class="nav-link" data-scroll-target="#illustrations"><span class="header-section-number">8.1</span> Illustrations</a>
-  <ul class="collapse">
-  <li><a href="#why" id="toc-why" class="nav-link" data-scroll-target="#why"><span class="header-section-number">8.1.1</span> Why %&gt;%</a></li>
-  <li><a href="#rules" id="toc-rules" class="nav-link" data-scroll-target="#rules"><span class="header-section-number">8.1.2</span> Rules</a></li>
-  <li><a href="#offline-reading-materials" id="toc-offline-reading-materials" class="nav-link" data-scroll-target="#offline-reading-materials"><span class="header-section-number">8.1.3</span> Offline reading materials</a></li>
-  </ul></li>
+  <li><a href="#what-does-it-do" id="toc-what-does-it-do" class="nav-link" data-scroll-target="#what-does-it-do"><span class="header-section-number">7.5.2</span> What does it do?</a></li>
+  <li><a href="#illustrations" id="toc-illustrations" class="nav-link" data-scroll-target="#illustrations"><span class="header-section-number">7.5.3</span> Illustrations</a></li>
+  <li><a href="#why" id="toc-why" class="nav-link" data-scroll-target="#why"><span class="header-section-number">7.5.4</span> Why %&gt;%</a></li>
+  <li><a href="#rules" id="toc-rules" class="nav-link" data-scroll-target="#rules"><span class="header-section-number">7.5.5</span> Rules</a></li>
+  <li><a href="#offline-reading-materials" id="toc-offline-reading-materials" class="nav-link" data-scroll-target="#offline-reading-materials"><span class="header-section-number">7.5.6</span> Offline reading materials</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -487,7 +482,6 @@ gtag('config', 'G-P3WZLH486T', { 'anonymize_ip': true});
 <ol start="4" type="1">
 <li>In contrast to data frames, the variable names in tibbles can start with a number.</li>
 </ol>
-<p>.pull-left[</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>tbl <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="st">`</span><span class="at">1var</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>))</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>tbl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1048,9 +1042,8 @@ Attaching package: 'magrittr'</code></pre>
 </div>
 </div>
 </section>
-</section>
-<section id="what-does-it-do" class="level2" data-number="7.6">
-<h2 data-number="7.6" class="anchored" data-anchor-id="what-does-it-do"><span class="header-section-number">7.6</span> What does it do?</h2>
+<section id="what-does-it-do" class="level3" data-number="7.5.2">
+<h3 data-number="7.5.2" class="anchored" data-anchor-id="what-does-it-do"><span class="header-section-number">7.5.2</span> What does it do?</h3>
 <p>It takes whatever is on the left-hand-side of the pipe and makes it the first argument of whatever function is on the right-hand-side of the pipe.</p>
 <p>For instance,</p>
 <div class="cell">
@@ -1066,18 +1059,17 @@ Attaching package: 'magrittr'</code></pre>
 <pre><code>[1] 5.5</code></pre>
 </div>
 </div>
-</section>
-<section id="pipe-operator" class="level1" data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span> Pipe operator: %&gt;%</h1>
 <p><img src="pipeillustration.png" class="img-fluid"></p>
-<section id="illustrations" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="illustrations"><span class="header-section-number">8.1</span> Illustrations</h2>
+</section>
+<section id="illustrations" class="level3" data-number="7.5.3">
+<h3 data-number="7.5.3" class="anchored" data-anchor-id="illustrations"><span class="header-section-number">7.5.3</span> Illustrations</h3>
 <ol type="1">
 <li><p><code>x %&gt;% f(y)</code> turns into <code>f(x, y)</code></p></li>
 <li><p><code>x %&gt;% f(y) %&gt;% g(z)</code> turns into <code>g(f(x, y), z)</code></p></li>
 </ol>
-<section id="why" class="level3" data-number="8.1.1">
-<h3 data-number="8.1.1" class="anchored" data-anchor-id="why"><span class="header-section-number">8.1.1</span> Why %&gt;%</h3>
+</section>
+<section id="why" class="level3" data-number="7.5.4">
+<h3 data-number="7.5.4" class="anchored" data-anchor-id="why"><span class="header-section-number">7.5.4</span> Why %&gt;%</h3>
 <ul>
 <li>This helps to make your code more readable.</li>
 </ul>
@@ -1107,8 +1099,8 @@ Attaching package: 'magrittr'</code></pre>
 </div>
 </div>
 </section>
-<section id="rules" class="level3" data-number="8.1.2">
-<h3 data-number="8.1.2" class="anchored" data-anchor-id="rules"><span class="header-section-number">8.1.2</span> Rules</h3>
+<section id="rules" class="level3" data-number="7.5.5">
+<h3 data-number="7.5.5" class="anchored" data-anchor-id="rules"><span class="header-section-number">7.5.5</span> Rules</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb160"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb160-1"><a href="#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># to use as_tibble</span></span>
 <span id="cb160-2"><a href="#cb160-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr) <span class="co"># to use %&gt;%</span></span>
@@ -1142,7 +1134,6 @@ Attaching package: 'magrittr'</code></pre>
 2  2  5</code></pre>
 </div>
 </div>
-<p>]</p>
 <p><strong>Rule 3</strong></p>
 <div class="sourceCode" id="cb166"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb166-1"><a href="#cb166-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df, <span class="at">n =</span> <span class="dv">2</span>)</span>
 <span id="cb166-2"><a href="#cb166-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">%&gt;%</span> <span class="fu">head</span>(df, <span class="at">n =</span> .)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1191,8 +1182,8 @@ Attaching package: 'magrittr'</code></pre>
 </div>
 </div>
 </section>
-<section id="offline-reading-materials" class="level3" data-number="8.1.3">
-<h3 data-number="8.1.3" class="anchored" data-anchor-id="offline-reading-materials"><span class="header-section-number">8.1.3</span> Offline reading materials</h3>
+<section id="offline-reading-materials" class="level3" data-number="7.5.6">
+<h3 data-number="7.5.6" class="anchored" data-anchor-id="offline-reading-materials"><span class="header-section-number">7.5.6</span> Offline reading materials</h3>
 <p>Type the following codes to see more examples:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb176"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb176-1"><a href="#cb176-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vignette</span>(<span class="st">"magrittr"</span>)</span>
@@ -1200,7 +1191,6 @@ Attaching package: 'magrittr'</code></pre>
 </div>
 
 
-</section>
 </section>
 </section>
 

@@ -304,7 +304,7 @@ ggplotly(p1)
 
 ### Vector Operations
 
-Vector operations are performed element by element. 
+Vector operations are performed element by element.
 
 ```{r}
 a <- 1:10
@@ -325,7 +325,6 @@ Example for operations between two vectors
 v1 <- c(1, 2, 3); v2 <- c(10, 100, 1000)
 v1 + v2
 ```
-
 
 **Add two vectors of unequal length**
 

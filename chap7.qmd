@@ -2,17 +2,15 @@
 
 ## What is the tidyverse?
 
-- Collection of essential R packages for data science.
+-   Collection of essential R packages for data science.
 
-- All packages share a common design philosophy, grammar, and data structures.
+-   All packages share a common design philosophy, grammar, and data structures.
 
 ## Setup
 
-
-```r
+``` r
 install.packages("tidyverse") # install tidyverse packages
 library(tidyverse) # load tidyverse packages
-
 ```
 
 ```{r}
@@ -22,10 +20,9 @@ library(tidyverse)
 
 ## Tibble
 
-- Tibble is a modern version of dataframes.
+-   Tibble is a modern version of dataframes.
 
-- A modern re-imagining of data frames.
-
+-   A modern re-imagining of data frames.
 
 ### Create a tibble
 
@@ -39,15 +36,12 @@ first.tbl
 class(first.tbl)
 ```
 
-
-
 ### Convert an existing dataframe to a tibble
 
 ```{r, comment=NA}
 as_tibble(iris)
 
 ```
-
 
 ### Convert a tibble to a dataframe
 
@@ -58,12 +52,9 @@ first.tbl.df <- as.data.frame(first.tbl)
 class(first.tbl.df)
 ```
 
-
-
 ### tibble vs data.frame
 
-1. The way they print output
-
+1.  The way they print output
 
 **tibble**
 
@@ -73,13 +64,13 @@ first.tbl
 ```
 
 **data.frame**
+
 ```{r, comment=NA}
 dataframe <- data.frame(height = c(150, 200, 160), weight = c(45, 60, 51))
 dataframe
 ```
 
-
-2. With tibble you can create new variables that are functions of existing variables.
+2.  With tibble you can create new variables that are functions of existing variables.
 
 **tibble**
 
@@ -96,11 +87,9 @@ df <- data.frame(height = c(150, 200, 160), weight = c(45, 60, 51),
                     bmi = (weight)/height^2) # Not working
 ```
 
-You will get an error message 
+You will get an error message
 
-<span style="color:red">`Error in data.frame(height = c(150, 200, 160), weight = c(45, 60, 51),  : 
-  object 'height' not found.`</span>
-
+[`Error in data.frame(height = c(150, 200, 160), weight = c(45, 60, 51),  :    object 'height' not found.`]{style="color:red"}
 
 With `data.frame` this is how we should create a new variable from the existing columns.
 
@@ -110,8 +99,7 @@ df$bmi <- (df$weight)/(df$height^2)
 df
 ```
 
-
-3. In contrast to data frames, the variable names in tibbles can contain spaces.
+3.  In contrast to data frames, the variable names in tibbles can contain spaces.
 
 **Example 1**
 
@@ -125,38 +113,29 @@ df <- data.frame(`patient id` = c(1, 2, 3))
 df
 ```
 
+4.  In contrast to data frames, the variable names in tibbles can start with a number.
 
-4. In contrast to data frames, the variable names in tibbles can start with a number.
 
-.pull-left[
 ```{r, comment=NA}
 tbl <- tibble(`1var` = c(1, 2, 3))
 tbl
 ```
-
 
 ```{r, comment=NA}
 df <- data.frame(`1var` = c(1, 2, 3))
 df
 ```
 
-
-
 In general, tibbles do not change the names of input variables and do not use row names.
 
-
-
-
-5. A tibble can have columns that are lists.
+5.  A tibble can have columns that are lists.
 
 **tibble**
-
 
 ```{r, comment=NA}
 tbl <- tibble (x = 1:3, y = list(1:3, 1:4, 1:10))
 tbl
 ```
-
 
 **data.frame**
 
@@ -171,15 +150,9 @@ df <- data.frame(x = 1:3, y = list(1:3, 1:4, 1:10)) ## Not working, error
 
 `Error in (function (..., row.names = NULL, check.rows = FALSE, check.names = TRUE,  : arguments imply differing number of rows: 3, 4, 10`
 
-
-
-
 ### Subsetting: tibble vs data.frame
 
-
-
-####  Subsetting single columns
-
+#### Subsetting single columns
 
 **data.frame**
 
@@ -190,7 +163,6 @@ df[, "x"]
 df[, "x", drop=FALSE]
 ```
 
-
 **tibble**
 
 ```{r,  comment=NA, message=FALSE}
@@ -199,8 +171,6 @@ tbl <- tibble(x = 1:3,
 tbl[, "x"]
 ```
 
-
-
 ```{r,  comment=NA, message=FALSE}
 tbl <- tibble(x = 1:3, 
               yz = c(10, 20, 30))
@@ -208,10 +178,6 @@ tbl
 tbl[, "x"]
 
 ```
-
-
-
-
 
 ```{r,  comment=NA, message=FALSE}
 # Method 1
@@ -222,19 +188,13 @@ as.data.frame(tbl)[, "x"]
 
 ```
 
-
 #### Subsetting single rows with the drop argument
-
 
 **data.frame**
 
 ```{r comment=NA, message=FALSE}
 df[1, , drop = TRUE]
 ```
-
-
-
-
 
 **tibble**
 
@@ -243,12 +203,7 @@ tbl[1, , drop = TRUE]
 as.list(tbl[1, ])
 ```
 
-
-
-
 #### Accessing non-existent columns
-
-
 
 **data.frame**
 
@@ -259,8 +214,6 @@ df[["y", exact = FALSE]]
 
 df[["y", exact = TRUE]]
 ```
-
-
 
 **tibble**
 
@@ -274,11 +227,9 @@ tbl[["y", exact = TRUE]]
 
 ```
 
-
-
 ### Some functions that work with both tibbles and dataframes
 
-```r
+``` r
 names(), colnames(), rownames(), ncol(), nrow(), length() # length of the underlying list
 ```
 
@@ -292,7 +243,6 @@ rownames(tb)
 nrow(tb); ncol(tb); length(tb)
 ```
 
-
 **data.frame**
 
 ```{r, comment=NA}
@@ -303,7 +253,6 @@ rownames(df)
 nrow(df); ncol(df); length(df)
 ```
 
-
 However, when using tibble, we can use some additional commands
 
 ```{r, comment=NA}
@@ -311,14 +260,13 @@ is_tibble(tb)
 glimpse(tb)
 ```
 
-
 ## Factors
 
 **factor**
 
-- A vector that is used to store categorical variables.
+-   A vector that is used to store categorical variables.
 
-- It can only contain predefined values. Hence, factors are useful when you know the possible values a variable may take. 
+-   It can only contain predefined values. Hence, factors are useful when you know the possible values a variable may take.
 
 **Creating a factor vector**
 
@@ -333,17 +281,15 @@ Now let's check the class type
 class(grades) # It's a factor
 ```
 
-
 To obtain all levels
 
 ```{r, comment=NA}
 levels(grades)
 ```
 
+### Creating a factor vector
 
-### Creating a factor vector 
-
-- With factors all possible values of the variables can be defined under levels.
+-   With factors all possible values of the variables can be defined under levels.
 
 ```{r, comment=NA}
 grade_factor_vctr <- 
@@ -354,11 +300,9 @@ levels(grade_factor_vctr)
 class(levels(grade_factor_vctr))
 ```
 
-
-
 ### Character vector vs Factor
 
-- Observe the differences in outputs. Factor prints all possible levels of the variable.
+-   Observe the differences in outputs. Factor prints all possible levels of the variable.
 
 **Character vector**
 
@@ -375,9 +319,7 @@ grade_factor_vctr <- factor(c("A", "D", "A", "C", "B"),
 grade_factor_vctr
 ```
 
-
-
-- Factors behave like character vectors but they are actually integers.
+-   Factors behave like character vectors but they are actually integers.
 
 **Character vector**
 
@@ -391,9 +333,7 @@ typeof(grade_character_vctr)
 typeof(grade_factor_vctr)
 ```
 
-
-- Let's create a contingency table with `table` function.
-
+-   Let's create a contingency table with `table` function.
 
 **Character vector output with table function**
 
@@ -401,7 +341,6 @@ typeof(grade_factor_vctr)
 grade_character_vctr <- c("A", "D", "A", "C", "B")
 table(grade_character_vctr)
 ```
-
 
 **Factor vector (with levels) output with table function**
 
@@ -412,12 +351,9 @@ grade_factor_vctr <-
 table(grade_factor_vctr)
 ```
 
+-   Output corresponds to factor prints counts for all possible levels of the variable. Hence, with factors it is obvious when some levels contain no observations.
 
-
-- Output corresponds to factor prints counts for all possible levels of the variable. Hence, with factors it is obvious when some levels contain no observations. 
-
-
-- With factors you can't use values that are not listed in the levels, but with character vectors there is no such restrictions.
+-   With factors you can't use values that are not listed in the levels, but with character vectors there is no such restrictions.
 
 **Character vector**
 
@@ -433,9 +369,7 @@ grade_factor_vctr[2] <- "A+"
 grade_factor_vctr
 ```
 
-
 ### Modify factor levels
-
 
 This our factor
 
@@ -451,7 +385,6 @@ levels(grade_factor_vctr) <-
 grade_factor_vctr
 ```
 
-
 ### Reverse the level arrangement
 
 ```{r, comment=NA}
@@ -459,10 +392,7 @@ levels(grade_factor_vctr) <- rev(levels(grade_factor_vctr))
 grade_factor_vctr
 ```
 
-
-
 ### Order of factor levels
-
 
 **Default order of levels**
 
@@ -484,7 +414,6 @@ library(ggplot2)
 ggplot(df, aes(x=fv2)) + geom_bar()
 ```
 
-
 You can change the order of levels
 
 ```{r, comment=NA, fig.height=2}
@@ -499,7 +428,6 @@ library(ggplot2)
 ggplot(df, aes(x=fv2)) + geom_bar()
 ```
 
-
 Note that tibbles do not change the types of input variables (e.g., strings are not converted to factors by default).
 
 ```{r, comment=NA}
@@ -513,11 +441,9 @@ df
 class(df$x1)
 ```
 
+## Pipe operator: %\>% or \|\>
 
-## Pipe operator: %>% or |>
-
-
-### Required package: `magrittr`  (for %>%)
+### Required package: `magrittr` (for %\>%)
 
 ```{r, eval=FALSE}
 install.packages("magrittr")
@@ -528,10 +454,9 @@ library(magrittr)
 library(magrittr)
 ```
 
-## What does it do? 
+### What does it do?
 
 It takes whatever is on the left-hand-side of the pipe and makes it the first argument of whatever function is on the right-hand-side of the pipe.
-
 
 For instance,
 
@@ -545,20 +470,17 @@ can be written as
 1:10 %>% mean()
 ```
 
-# Pipe operator: %>%
-
 ![](pipeillustration.png)
 
-## Illustrations
+### Illustrations
 
-1. `x %>% f(y)` turns into `f(x, y)`
+1.  `x %>% f(y)` turns into `f(x, y)`
 
-1. `x %>% f(y) %>% g(z)` turns into `g(f(x, y), z)`
+2.  `x %>% f(y) %>% g(z)` turns into `g(f(x, y), z)`
 
+### Why %\>%
 
-### Why %>%
-
-- This helps to make your code more readable.
+-   This helps to make your code more readable.
 
 **Method 1: Without using pipe (hard to read)**
 
@@ -566,7 +488,6 @@ can be written as
 colSums(matrix(c(1, 2, 3, 4, 8, 9, 10, 12), nrow=2))
 
 ```
-
 
 **Method 2: Using pipe (easy to read)**
 
@@ -584,9 +505,6 @@ c(1, 2, 3, 4, 8, 9, 10, 12) %>%
   colSums()
 ```
 
-
-
-
 ### Rules
 
 ```{r, comment=NA}
@@ -596,14 +514,11 @@ df <- data.frame(x1 = 1:3, x2 = 4:6)
 df
 ```
 
-
-
 **Rule 1**
 
-```r
+``` r
 head(df) 
 df %>% head()
-
 ```
 
 ```{r, echo=FALSE, comment=NA}
@@ -614,50 +529,43 @@ df %>% head()
 
 **Rule 2**
 
-```r
+``` r
 head(df, n = 2)  
 df %>% head(n = 2)
-
 ```
 
 ```{r, echo=FALSE, comment=NA}
 df %>% head(n = 2)
 ```
 
-]
 
 
 **Rule 3**
 
-```r
+``` r
 head(df, n = 2)
 2 %>% head(df, n = .)
-
 ```
 
 ```{r, echo=FALSE, comment=NA}
 2 %>% head(df, n = .)
 ```
 
-
 **Rule 4**
 
-```r
+``` r
 head(as_tibble(df), n = 2)
 df %>% as_tibble() %>%
 head(n = 2)
-
 ```
-
 
 ```{r, echo=FALSE, comment=NA}
 df %>% as_tibble() %>% head(n = 2)
 ```
 
-
 **Rule 5: subsetting**
 
-```r
+``` r
 df$x1
 df %>% .$x1
 ```
@@ -666,21 +574,20 @@ df %>% .$x1
 df %>% .$x1
 ```
 
-or 
+or
 
-```r
+``` r
 df[["x1"]]
 df %>% .[["x1"]]
 ```
-
 
 ```{r, echo=FALSE, comment=NA}
 df %>% .[["x1"]]
 ```
 
-or 
+or
 
-```r
+``` r
 df[[1]]
 df %>% .[[1]]
 ```
@@ -688,8 +595,6 @@ df %>% .[[1]]
 ```{r, echo=FALSE, comment=NA}
 df %>% .[[1]]
 ```
-
-
 
 ### Offline reading materials
 
