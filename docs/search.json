@@ -610,6 +610,226 @@
     ]
   },
   {
+    "objectID": "chap9.html",
+    "href": "chap9.html",
+    "title": "9  Data Visualisation with Grammar of Graphics",
+    "section": "",
+    "text": "9.1 Plotting with R",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data Visualisation with Grammar of Graphics</span>"
+    ]
+  },
+  {
+    "objectID": "chap9.html#plotting-with-r",
+    "href": "chap9.html#plotting-with-r",
+    "title": "9  Data Visualisation with Grammar of Graphics",
+    "section": "",
+    "text": "with base R\nggplot2 package: ggplot() function",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data Visualisation with Grammar of Graphics</span>"
+    ]
+  },
+  {
+    "objectID": "chap9.html#grammar-of-graphics",
+    "href": "chap9.html#grammar-of-graphics",
+    "title": "9  Data Visualisation with Grammar of Graphics",
+    "section": "9.2 Grammar of graphics",
+    "text": "9.2 Grammar of graphics\nThe Grammar of Graphics is a structured way of thinking about and building data visualizations\nKey Components of the Grammar of Graphics\nData: the dataset you want to visualize.\nAesthetics (aes): how variables are mapped to visual properties (x, y, color, size, shape).\nGeometries (geoms): the type of plot you draw (points, lines, bars, boxplots).\nScales: control how data values map to aesthetics (e.g., continuous vs. categorical colors, log scales).\nCoordinate system: the space in which the data is drawn (Cartesian, polar, map projections).\nFacets: splitting data into subplots for comparison.\nStatistical transformations (stats): summaries or transformations (e.g., binning in histograms, smoothing in regression lines).\nThemes: non-data elements like fonts, backgrounds, grid lines.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data Visualisation with Grammar of Graphics</span>"
+    ]
+  },
+  {
+    "objectID": "chap9.html#ingredients-for-plotting",
+    "href": "chap9.html#ingredients-for-plotting",
+    "title": "9  Data Visualisation with Grammar of Graphics",
+    "section": "9.3 Ingredients for plotting",
+    "text": "9.3 Ingredients for plotting\n\nData\n\n\ndata(\"mtcars\")\nhead(mtcars)\n\n                   mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1\n\n\n\nCanvas to draw the plot\n\n\nlibrary(tidyverse)\nggplot()",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data Visualisation with Grammar of Graphics</span>"
+    ]
+  },
+  {
+    "objectID": "chap9.html#data-aesthetics-aes",
+    "href": "chap9.html#data-aesthetics-aes",
+    "title": "9  Data Visualisation with Grammar of Graphics",
+    "section": "9.4 Data + Aesthetics (aes)",
+    "text": "9.4 Data + Aesthetics (aes)\n\nggplot(mtcars,\naes(x=wt, \n    y= mpg))\n\n\n\n\n\n\n\n\n\nggplot(mtcars,\naes(x=wt, \n    y= mpg,\n    col=as_factor(cyl)))",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data Visualisation with Grammar of Graphics</span>"
+    ]
+  },
+  {
+    "objectID": "chap9.html#data-aesthetics-aes-geometries-geoms",
+    "href": "chap9.html#data-aesthetics-aes-geometries-geoms",
+    "title": "9  Data Visualisation with Grammar of Graphics",
+    "section": "9.5 Data + Aesthetics (aes) + Geometries (geoms)",
+    "text": "9.5 Data + Aesthetics (aes) + Geometries (geoms)\n\nggplot(mtcars,\naes(x=wt, \n    y= mpg)) +\n  geom_point()\n\n\n\n\n\n\n\n\n\nggplot(mtcars,\naes(x=wt, \n    y= mpg)) +\n  geom_point()\n\n\n\n\n\n\n\n\n\nggplot(mtcars,\naes(x=wt, \n    y= mpg)) +\n  geom_smooth()\n\n\n\n\n\n\n\n\n\nggplot(mtcars,\naes(x=wt, \n    y= mpg)) +\n  geom_density_2d()\n\n\n\n\n\n\n\n\n\nggplot(mtcars,\naes(x=wt, \n    y= mpg)) +\n  geom_density_2d() + \n  geom_point()",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data Visualisation with Grammar of Graphics</span>"
+    ]
+  },
+  {
+    "objectID": "chap9.html#add-scale-layer",
+    "href": "chap9.html#add-scale-layer",
+    "title": "9  Data Visualisation with Grammar of Graphics",
+    "section": "9.6 Add scale layer",
+    "text": "9.6 Add scale layer\n\nggplot(mtcars, aes(x = wt, y = mpg, col = as_factor(cyl))) +\n  geom_point() +\n  scale_color_brewer(palette = \"Set1\")\n\n\n\n\n\n\n\n\n\nggplot(mtcars, aes(x = wt, y = mpg, col = as_factor(cyl))) +\n  geom_point() +\n  scale_color_manual(values = c(\"red\", \"blue\", \"green\"))",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data Visualisation with Grammar of Graphics</span>"
+    ]
+  },
+  {
+    "objectID": "chap9.html#add-coord-layer",
+    "href": "chap9.html#add-coord-layer",
+    "title": "9  Data Visualisation with Grammar of Graphics",
+    "section": "9.7 Add coord layer",
+    "text": "9.7 Add coord layer\n\nggplot(mtcars, aes(x = wt, y = mpg, col = as_factor(cyl))) +\n  geom_point(size = 3) +\n  geom_smooth(se = FALSE) +\n  scale_color_brewer(palette = \"Set1\") +\n  coord_cartesian(xlim = c(2, 5), ylim = c(10, 35))\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\nggplot(mtcars, aes(x = wt, y = mpg, col = as_factor(cyl))) +\n  geom_point(size = 3) +\n  geom_smooth(se = FALSE) +\n  scale_color_brewer(palette = \"Set1\") +\n  coord_fixed(ratio = 3/10)\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\nggplot(mtcars, aes(x = wt, y = mpg, col = as_factor(cyl))) +\n  geom_point(size = 3) +\n  geom_smooth(se = FALSE) +\n  scale_color_brewer(palette = \"Set1\") +\n  coord_flip()\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\nggplot(mtcars, aes(x = wt, y = mpg, col = as_factor(cyl))) +\n  geom_point(size = 3) +\n  scale_color_brewer(palette = \"Set1\") +\n  coord_polar()",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data Visualisation with Grammar of Graphics</span>"
+    ]
+  },
+  {
+    "objectID": "chap9.html#add-facet-layer",
+    "href": "chap9.html#add-facet-layer",
+    "title": "9  Data Visualisation with Grammar of Graphics",
+    "section": "9.8 Add facet layer",
+    "text": "9.8 Add facet layer\n\nggplot(mtcars, aes(x = wt, y = mpg, col = as_factor(cyl))) +\n  geom_point(size = 3) +\n  geom_smooth(se = FALSE) +\n  facet_wrap(~cyl)\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data Visualisation with Grammar of Graphics</span>"
+    ]
+  },
+  {
+    "objectID": "chap9.html#add-stat-layer",
+    "href": "chap9.html#add-stat-layer",
+    "title": "9  Data Visualisation with Grammar of Graphics",
+    "section": "9.9 Add stat layer",
+    "text": "9.9 Add stat layer\n\nggplot(mtcars, aes(x = wt, y = mpg)) +\n  geom_point() +\n  stat_summary(fun = \"mean\", geom = \"point\", size = 5, shape = 18, col=\"red\", alpha=0.5) +\n  scale_color_brewer(palette = \"Set1\")\n\n\n\n\n\n\n\n\n\nggplot(mtcars, aes(x = wt, y = mpg)) +\n  stat_summary(fun = \"mean\", geom = \"point\", size = 5, shape = 18, col=\"red\", alpha=0.5) +\n    geom_point() +\n  scale_color_brewer(palette = \"Set1\")\n\n\n\n\n\n\n\n\n\nggplot(mtcars, aes(x = hp, y = mpg)) +\n  geom_point() +\n  stat_summary(fun = \"mean\", geom = \"point\", size = 5, shape = 18, col=\"green\", alpha=0.5) +\n  scale_color_brewer(palette = \"Set1\")",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data Visualisation with Grammar of Graphics</span>"
+    ]
+  },
+  {
+    "objectID": "chap9.html#theme-layer",
+    "href": "chap9.html#theme-layer",
+    "title": "9  Data Visualisation with Grammar of Graphics",
+    "section": "9.10 theme layer",
+    "text": "9.10 theme layer\n\nggplot(mtcars, aes(x = wt, y = mpg)) +\n  stat_summary(fun = \"mean\", geom = \"point\", size = 5, shape = 18, col=\"red\", alpha=0.5) +\n    geom_point() +\n  scale_color_brewer(palette = \"Set1\") +\n  theme_bw()\n\n\n\n\n\n\n\n\n\nggplot(mtcars, aes(x = wt, y = mpg)) +\n  stat_summary(fun = \"mean\", geom = \"point\", size = 5, shape = 18, col=\"red\", alpha=0.5) +\n    geom_point() +\n  scale_color_brewer(palette = \"Set1\") +\n  theme_dark()",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data Visualisation with Grammar of Graphics</span>"
+    ]
+  },
+  {
+    "objectID": "chap9.html#some-examples-with-gapminder-dataset",
+    "href": "chap9.html#some-examples-with-gapminder-dataset",
+    "title": "9  Data Visualisation with Grammar of Graphics",
+    "section": "9.11 Some examples with gapminder dataset",
+    "text": "9.11 Some examples with gapminder dataset\n\nlibrary(gapminder)\ndata(gapminder)\n\nVisualize the relationship between life expectancy, GDP per capita and continent in 2007.\n\ngapminder2007 &lt;- gapminder %&gt;%\n  filter(year==2007)\nggplot(gapminder2007,\naes(x=lifeExp, y= gdpPercap,\n    col=continent))+ geom_point()+\n  theme(legend.position = \"bottom\") + \nlabs(title=\"Relationship between life expectancy and GPD per capita by continent - 2007\",\n        x =\"life expectancy at birth, in years\",\n     y = \"GDP per capita (US$, inflation-adjusted)\")\n\n\n\n\n\n\n\n\n]\n\n9.11.1 Add a vertical line\n\ngapminder2007 &lt;- gapminder %&gt;%\n  filter(year == 2007)\n  \nggplot(gapminder2007,\naes(x = lifeExp, y = gdpPercap, col=continent)) +\n    geom_point() + \n    geom_vline(xintercept = 70)\n\n\n\n\n\n\n\n\n\n\n9.11.2 Add a horizontal line\n\ngapminder2007 &lt;- gapminder %&gt;%\n  filter(year == 2007)\n  \nggplot(gapminder2007,\naes(x = lifeExp, y = gdpPercap, col=continent)) +\n    geom_point() + \n    geom_hline(yintercept = 20000)\n\n\n\n\n\n\n\n\n\n\n9.11.3 Add a diagonal line\n\ngapminder2007 &lt;- gapminder %&gt;%\n  filter(year == 2007)\n  \nggplot(gapminder2007,\naes(x = lifeExp, y = gdpPercap, col=continent)) +\n    geom_point() + \n    geom_abline(intercept = 20, slope=200)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data Visualisation with Grammar of Graphics</span>"
+    ]
+  },
+  {
+    "objectID": "chap9.html#all-geoms-in-ggplot2",
+    "href": "chap9.html#all-geoms-in-ggplot2",
+    "title": "9  Data Visualisation with Grammar of Graphics",
+    "section": "9.12 All geoms in ggplot2",
+    "text": "9.12 All geoms in ggplot2\n\n\n [1] \"geom_abline\"            \"geom_area\"              \"geom_bar\"              \n [4] \"geom_bin_2d\"            \"geom_bin2d\"             \"geom_blank\"            \n [7] \"geom_boxplot\"           \"geom_col\"               \"geom_contour\"          \n[10] \"geom_contour_filled\"    \"geom_count\"             \"geom_crossbar\"         \n[13] \"geom_curve\"             \"geom_density\"           \"geom_density_2d\"       \n[16] \"geom_density_2d_filled\" \"geom_density2d\"         \"geom_density2d_filled\" \n[19] \"geom_dotplot\"           \"geom_errorbar\"          \"geom_errorbarh\"        \n[22] \"geom_freqpoly\"          \"geom_function\"          \"geom_hex\"              \n[25] \"geom_histogram\"         \"geom_hline\"             \"geom_jitter\"           \n[28] \"geom_label\"             \"geom_line\"              \"geom_linerange\"        \n[31] \"geom_map\"               \"geom_path\"              \"geom_point\"            \n[34] \"geom_pointrange\"        \"geom_polygon\"           \"geom_qq\"               \n[37] \"geom_qq_line\"           \"geom_quantile\"          \"geom_raster\"           \n[40] \"geom_rect\"              \"geom_ribbon\"            \"geom_rug\"              \n[43] \"geom_segment\"           \"geom_sf\"                \"geom_sf_label\"         \n[46] \"geom_sf_text\"           \"geom_smooth\"            \"geom_spoke\"            \n[49] \"geom_step\"              \"geom_text\"              \"geom_tile\"             \n[52] \"geom_violin\"            \"geom_vline\"",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data Visualisation with Grammar of Graphics</span>"
+    ]
+  },
+  {
+    "objectID": "chap9.html#geom_boxplot",
+    "href": "chap9.html#geom_boxplot",
+    "title": "9  Data Visualisation with Grammar of Graphics",
+    "section": "9.13 geom_boxplot",
+    "text": "9.13 geom_boxplot\n\nggplot(gapminder2007, aes(x=lifeExp, y=continent))+\ngeom_boxplot()\n\n\n\n\n\n\n\n\n\nggplot(gapminder2007, aes(x=lifeExp, y=continent, color=continent))+\ngeom_boxplot()\n\n\n\n\n\n\n\n\n\nggplot(gapminder2007, aes(x=lifeExp, y=continent, fill=continent))+\ngeom_boxplot()\n\n\n\n\n\n\n\n\n]\n\nggplot(gapminder2007, aes(x=lifeExp, y=continent))+\ngeom_boxplot(fill=\"forestgreen\")\n\n\n\n\n\n\n\n\n]\n\nggplot(gapminder2007, aes(x=lifeExp, y=continent))+\ngeom_boxplot(fill=\"forestgreen\", alpha=0.5)\n\n\n\n\n\n\n\n\n]",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data Visualisation with Grammar of Graphics</span>"
+    ]
+  },
+  {
+    "objectID": "chap9.html#geom_point",
+    "href": "chap9.html#geom_point",
+    "title": "9  Data Visualisation with Grammar of Graphics",
+    "section": "9.14 geom_point",
+    "text": "9.14 geom_point",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data Visualisation with Grammar of Graphics</span>"
+    ]
+  },
+  {
+    "objectID": "chap9.html#geom_jitter",
+    "href": "chap9.html#geom_jitter",
+    "title": "9  Data Visualisation with Grammar of Graphics",
+    "section": "9.15 geom_jitter",
+    "text": "9.15 geom_jitter\n\nggplot(gapminder2007, aes(x=lifeExp, y=continent))+\n  geom_jitter()",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data Visualisation with Grammar of Graphics</span>"
+    ]
+  },
+  {
+    "objectID": "chap9.html#geom_jitter-geom_boxplot",
+    "href": "chap9.html#geom_jitter-geom_boxplot",
+    "title": "9  Data Visualisation with Grammar of Graphics",
+    "section": "9.16 geom_jitter + geom_boxplot",
+    "text": "9.16 geom_jitter + geom_boxplot\n\nggplot(gapminder2007, aes(x=lifeExp, y=continent))+\n  geom_jitter() +\n  geom_boxplot()\n\n\n\n\n\n\n\n\n\nggplot(gapminder2007, aes(x=lifeExp, y=continent))+\n  geom_jitter() +\n  geom_boxplot(alpha=0.5)\n\n\n\n\n\n\n\n\n\nggplot(gapminder2007, aes(x=lifeExp, y=continent))+\n  geom_boxplot() + \n  geom_jitter() \n\n\n\n\n\n\n\n\n\nggplot(gapminder2007, aes(x=lifeExp, y=continent, fill=continent))+\n  geom_boxplot() + \n  geom_jitter(aes(col=continent)) \n\n\n\n\n\n\n\n\ngeom_jitter + geom_boxplot (outlier.shape = NA)\n\nggplot(gapminder2007, aes(x=lifeExp, y=continent, fill=continent))+\n  geom_boxplot(outlier.shape = NA) + \n  geom_jitter(aes(col=continent)) \n\n\n\n\n\n\n\n\n.right-plot[\n\n\n\n\n\n\n\n\n\nWrite the code to obtain the following plot.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data Visualisation with Grammar of Graphics</span>"
+    ]
+  },
+  {
+    "objectID": "chap9.html#geom_histogram",
+    "href": "chap9.html#geom_histogram",
+    "title": "9  Data Visualisation with Grammar of Graphics",
+    "section": "9.17 geom_histogram",
+    "text": "9.17 geom_histogram\n\nggplot(gapminder2007, \naes(x=lifeExp))+\n  geom_histogram()",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data Visualisation with Grammar of Graphics</span>"
+    ]
+  },
+  {
+    "objectID": "chap9.html#geom_bar-statidentity",
+    "href": "chap9.html#geom_bar-statidentity",
+    "title": "9  Data Visualisation with Grammar of Graphics",
+    "section": "9.18 geom_bar (stat=“identity”)",
+    "text": "9.18 geom_bar (stat=“identity”)\n\ncut.percent &lt;- data.frame(cut=c(\"Fair\", \"Good\", \"Very Good\", \"Premium\", \n                                \"Ideal\"), percent=c(3, 9, 22.4, 25.6, 40))\ncut.percent\n\n        cut percent\n1      Fair     3.0\n2      Good     9.0\n3 Very Good    22.4\n4   Premium    25.6\n5     Ideal    40.0\n\n\n\nggplot(data=cut.percent, aes(x=cut, y=percent)) +\n  geom_bar(stat=\"identity\")",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data Visualisation with Grammar of Graphics</span>"
+    ]
+  },
+  {
+    "objectID": "chap9.html#geom_col",
+    "href": "chap9.html#geom_col",
+    "title": "9  Data Visualisation with Grammar of Graphics",
+    "section": "9.19 geom_col",
+    "text": "9.19 geom_col\n\ncut.percent &lt;- data.frame(cut=c(\"Fair\", \"Good\", \"Very Good\", \"Premium\", \n                                \"Ideal\"), percent=c(3, 9, 22.4, 25.6, 40))\ncut.percent\n\n        cut percent\n1      Fair     3.0\n2      Good     9.0\n3 Very Good    22.4\n4   Premium    25.6\n5     Ideal    40.0\n\n\n\nggplot(data=cut.percent, aes(x=cut, y=percent)) +\n  geom_col()",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data Visualisation with Grammar of Graphics</span>"
+    ]
+  },
+  {
+    "objectID": "chap9.html#data-wrangling-data-visualization",
+    "href": "chap9.html#data-wrangling-data-visualization",
+    "title": "9  Data Visualisation with Grammar of Graphics",
+    "section": "10.1 Data Wrangling + Data Visualization",
+    "text": "10.1 Data Wrangling + Data Visualization\n\navglifeExp &lt;- gapminder %&gt;%\n  group_by(continent, year) %&gt;%\n  summarise(meanlifeExp=mean(lifeExp))\n\n`summarise()` has grouped output by 'continent'. You can override using the\n`.groups` argument.\n\navglifeExp\n\n# A tibble: 60 × 3\n# Groups:   continent [5]\n   continent  year meanlifeExp\n   &lt;fct&gt;     &lt;int&gt;       &lt;dbl&gt;\n 1 Africa     1952        39.1\n 2 Africa     1957        41.3\n 3 Africa     1962        43.3\n 4 Africa     1967        45.3\n 5 Africa     1972        47.5\n 6 Africa     1977        49.6\n 7 Africa     1982        51.6\n 8 Africa     1987        53.3\n 9 Africa     1992        53.6\n10 Africa     1997        53.6\n# ℹ 50 more rows\n\n\n\nggplot(avglifeExp, aes(x=year, y=meanlifeExp, col=continent))+\n  geom_line() + geom_point()",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data Visualisation with Grammar of Graphics</span>"
+    ]
+  },
+  {
+    "objectID": "chap9.html#exercise",
+    "href": "chap9.html#exercise",
+    "title": "9  Data Visualisation with Grammar of Graphics",
+    "section": "10.2 Exercise",
+    "text": "10.2 Exercise\nWrite an R code to reproduce the plot below.\n\n\n\n\n\n\n\n\n\nWrite an R code to reproduce the plot below.\n\n\n\n\n\n\n\n\n\nWrite an R code to reproduce the plot below.\n\n\n\n\n\n\n\n\n\nWrite an R code to reproduce the plot below.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data Visualisation with Grammar of Graphics</span>"
+    ]
+  },
+  {
     "objectID": "chap11.html",
     "href": "chap11.html",
     "title": "11  Regression Analysis",

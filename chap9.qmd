@@ -1,2 +1,557 @@
 # Data Visualisation with Grammar of Graphics
 
+## Plotting with R
+
+- with base R
+
+- ggplot2 package: `ggplot()` function
+
+
+## Grammar of graphics
+
+The Grammar of Graphics is a structured way of thinking about and building data visualizations
+
+**Key Components of the Grammar of Graphics**
+
+Data: the dataset you want to visualize.
+
+Aesthetics (aes): how variables are mapped to visual properties (x, y, color, size, shape).
+
+Geometries (geoms): the type of plot you draw (points, lines, bars, boxplots).
+
+Scales:  control how data values map to aesthetics (e.g., continuous vs. categorical colors, log scales).
+
+
+
+Coordinate system:  the space in which the data is drawn (Cartesian, polar, map projections).
+
+Facets: splitting data into subplots for comparison.
+
+
+Statistical transformations (stats):  summaries or transformations (e.g., binning in histograms, smoothing in regression lines).
+
+Themes:  non-data elements like fonts, backgrounds, grid lines.
+
+## Ingredients for plotting
+
+1. Data
+
+
+```{r}
+data("mtcars")
+head(mtcars)
+```
+
+2. Canvas to draw the plot
+
+```{r, warning=FALSE, message=FALSE}
+library(tidyverse)
+ggplot()
+```
+
+
+## Data + Aesthetics (aes)
+
+
+```{r, comment=NA, fig.height=5.5, warning=FALSE, message=FALSE}
+ggplot(mtcars,
+aes(x=wt, 
+    y= mpg))
+```
+
+
+```{r, comment=NA, fig.height=5.5, warning=FALSE, message=FALSE}
+ggplot(mtcars,
+aes(x=wt, 
+    y= mpg,
+    col=as_factor(cyl)))
+```
+
+## Data + Aesthetics (aes) + Geometries (geoms)
+
+
+```{r, comment=NA,   fig.height=5.5, warning=FALSE, message=FALSE}
+ggplot(mtcars,
+aes(x=wt, 
+    y= mpg)) +
+  geom_point()
+```
+
+
+```{r, comment=NA,   fig.height=5.5, warning=FALSE, message=FALSE}
+ggplot(mtcars,
+aes(x=wt, 
+    y= mpg)) +
+  geom_point()
+```
+
+
+```{r, comment=NA,  fig.height=5.5, warning=FALSE, message=FALSE}
+ggplot(mtcars,
+aes(x=wt, 
+    y= mpg)) +
+  geom_smooth()
+```
+
+
+```{r, comment=NA,  fig.height=5.5, warning=FALSE, message=FALSE}
+ggplot(mtcars,
+aes(x=wt, 
+    y= mpg)) +
+  geom_density_2d()
+```
+
+```{r, comment=NA,  fig.height=5.5, warning=FALSE, message=FALSE}
+ggplot(mtcars,
+aes(x=wt, 
+    y= mpg)) +
+  geom_density_2d() + 
+  geom_point()
+```
+
+
+## Add  `scale` layer
+
+
+```{r, comment=NA,  fig.height=5.5, warning=FALSE, message=FALSE}
+ggplot(mtcars, aes(x = wt, y = mpg, col = as_factor(cyl))) +
+  geom_point() +
+  scale_color_brewer(palette = "Set1")
+
+```
+
+
+```{r, comment=NA,  fig.height=5.5, warning=FALSE, message=FALSE}
+ggplot(mtcars, aes(x = wt, y = mpg, col = as_factor(cyl))) +
+  geom_point() +
+  scale_color_manual(values = c("red", "blue", "green"))
+```
+
+
+## Add `coord` layer
+
+```{r}
+ggplot(mtcars, aes(x = wt, y = mpg, col = as_factor(cyl))) +
+  geom_point(size = 3) +
+  geom_smooth(se = FALSE) +
+  scale_color_brewer(palette = "Set1") +
+  coord_cartesian(xlim = c(2, 5), ylim = c(10, 35))
+
+```
+
+
+```{r}
+ggplot(mtcars, aes(x = wt, y = mpg, col = as_factor(cyl))) +
+  geom_point(size = 3) +
+  geom_smooth(se = FALSE) +
+  scale_color_brewer(palette = "Set1") +
+  coord_fixed(ratio = 3/10)
+
+```
+
+```{r}
+ggplot(mtcars, aes(x = wt, y = mpg, col = as_factor(cyl))) +
+  geom_point(size = 3) +
+  geom_smooth(se = FALSE) +
+  scale_color_brewer(palette = "Set1") +
+  coord_flip()
+```
+
+```{r}
+ggplot(mtcars, aes(x = wt, y = mpg, col = as_factor(cyl))) +
+  geom_point(size = 3) +
+  scale_color_brewer(palette = "Set1") +
+  coord_polar()
+```
+
+## Add `facet` layer
+
+
+```{r}
+ggplot(mtcars, aes(x = wt, y = mpg, col = as_factor(cyl))) +
+  geom_point(size = 3) +
+  geom_smooth(se = FALSE) +
+  facet_wrap(~cyl)
+```
+
+## Add `stat` layer
+
+```{r}
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point() +
+  stat_summary(fun = "mean", geom = "point", size = 5, shape = 18, col="red", alpha=0.5) +
+  scale_color_brewer(palette = "Set1")
+
+```
+
+```{r}
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  stat_summary(fun = "mean", geom = "point", size = 5, shape = 18, col="red", alpha=0.5) +
+    geom_point() +
+  scale_color_brewer(palette = "Set1")
+
+```
+
+```{r}
+ggplot(mtcars, aes(x = hp, y = mpg)) +
+  geom_point() +
+  stat_summary(fun = "mean", geom = "point", size = 5, shape = 18, col="green", alpha=0.5) +
+  scale_color_brewer(palette = "Set1")
+
+```
+
+
+## theme layer
+
+```{r}
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  stat_summary(fun = "mean", geom = "point", size = 5, shape = 18, col="red", alpha=0.5) +
+    geom_point() +
+  scale_color_brewer(palette = "Set1") +
+  theme_bw()
+
+```
+
+```{r}
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  stat_summary(fun = "mean", geom = "point", size = 5, shape = 18, col="red", alpha=0.5) +
+    geom_point() +
+  scale_color_brewer(palette = "Set1") +
+  theme_dark()
+
+```
+
+## Some examples with gapminder dataset
+
+```{r}
+library(gapminder)
+data(gapminder)
+```
+
+ Visualize the relationship between life expectancy, GDP per capita and continent in 2007.
+
+
+```{r, comment=NA,  fig.height=6, warning=FALSE, message=FALSE}
+gapminder2007 <- gapminder %>%
+  filter(year==2007)
+ggplot(gapminder2007,
+aes(x=lifeExp, y= gdpPercap,
+    col=continent))+ geom_point()+
+  theme(legend.position = "bottom") + 
+labs(title="Relationship between life expectancy and GPD per capita by continent - 2007",
+        x ="life expectancy at birth, in years",
+     y = "GDP per capita (US$, inflation-adjusted)")
+```
+]
+
+
+
+### Add a vertical line
+
+
+
+```{r, comment=NA, fig.height=6, warning=FALSE, message=FALSE}
+gapminder2007 <- gapminder %>%
+  filter(year == 2007)
+  
+ggplot(gapminder2007,
+aes(x = lifeExp, y = gdpPercap, col=continent)) +
+    geom_point() + 
+    geom_vline(xintercept = 70)
+```
+
+
+### Add a horizontal line
+
+
+```{r, comment=NA,fig.height=6, warning=FALSE, message=FALSE}
+gapminder2007 <- gapminder %>%
+  filter(year == 2007)
+  
+ggplot(gapminder2007,
+aes(x = lifeExp, y = gdpPercap, col=continent)) +
+    geom_point() + 
+    geom_hline(yintercept = 20000)
+```
+
+
+### Add a diagonal line
+
+
+```{r, comment=NA, fig.height=6, warning=FALSE, message=FALSE}
+gapminder2007 <- gapminder %>%
+  filter(year == 2007)
+  
+ggplot(gapminder2007,
+aes(x = lifeExp, y = gdpPercap, col=continent)) +
+    geom_point() + 
+    geom_abline(intercept = 20, slope=200)
+```
+
+## All geoms in ggplot2
+
+```{r, echo=FALSE, message=FALSE, comment=NA}
+ls(pattern = '^geom_', env = as.environment('package:ggplot2'))
+
+```
+
+
+## geom_boxplot
+
+
+```{r, comment=NA, fig.height=6, warning=FALSE, message=FALSE}
+ggplot(gapminder2007, aes(x=lifeExp, y=continent))+
+geom_boxplot()
+```
+
+```{r, comment=NA,   fig.height=6, warning=FALSE, message=FALSE}
+ggplot(gapminder2007, aes(x=lifeExp, y=continent, color=continent))+
+geom_boxplot()
+```
+
+```{r, comment=NA,  fig.height=6, warning=FALSE, message=FALSE}
+ggplot(gapminder2007, aes(x=lifeExp, y=continent, fill=continent))+
+geom_boxplot()
+```
+]
+
+
+```{r, comment=NA,   fig.height=6, warning=FALSE, message=FALSE}
+ggplot(gapminder2007, aes(x=lifeExp, y=continent))+
+geom_boxplot(fill="forestgreen")
+```
+]
+
+
+```{r, comment=NA,  fig.height=6, warning=FALSE, message=FALSE}
+ggplot(gapminder2007, aes(x=lifeExp, y=continent))+
+geom_boxplot(fill="forestgreen", alpha=0.5)
+```
+]
+
+
+## geom_point
+
+
+
+```{r, comment=NA,  echo=FALSE, fig.height=6, warning=FALSE, message=FALSE}
+ggplot(gapminder2007, aes(x=lifeExp, y=continent))+
+  geom_point()
+```
+
+
+
+##  geom_jitter
+
+
+```{r, comment=NA,  fig.height=6, warning=FALSE, message=FALSE}
+ggplot(gapminder2007, aes(x=lifeExp, y=continent))+
+  geom_jitter()
+```
+
+
+
+##  geom_jitter + geom_boxplot
+
+
+```{r, comment=NA, fig.height=6, warning=FALSE, message=FALSE}
+ggplot(gapminder2007, aes(x=lifeExp, y=continent))+
+  geom_jitter() +
+  geom_boxplot()
+```
+
+```{r, comment=NA,  fig.height=6, warning=FALSE, message=FALSE}
+ggplot(gapminder2007, aes(x=lifeExp, y=continent))+
+  geom_jitter() +
+  geom_boxplot(alpha=0.5)
+```
+
+
+
+```{r, comment=NA, fig.height=6, warning=FALSE, message=FALSE}
+ggplot(gapminder2007, aes(x=lifeExp, y=continent))+
+  geom_boxplot() + 
+  geom_jitter() 
+```
+
+
+```{r}
+ggplot(gapminder2007, aes(x=lifeExp, y=continent, fill=continent))+
+  geom_boxplot() + 
+  geom_jitter(aes(col=continent)) 
+```
+
+**geom_jitter + geom_boxplot (outlier.shape = NA)**
+
+
+```{r, comment=NA,  fig.height=6, warning=FALSE, message=FALSE}
+ggplot(gapminder2007, aes(x=lifeExp, y=continent, fill=continent))+
+  geom_boxplot(outlier.shape = NA) + 
+  geom_jitter(aes(col=continent)) 
+```
+
+
+.right-plot[
+```{r, comment=NA,  echo=FALSE, fig.height=6, warning=FALSE, message=FALSE}
+ggplot(gapminder2007, aes(x=lifeExp, y=continent, fill=continent, col=continent))+
+  geom_boxplot(outlier.shape = NA) + 
+  geom_jitter(aes(col=continent)) 
+```
+
+Write the code to obtain the following plot.
+
+
+```{r, comment=NA,  echo=FALSE, fig.height=6, warning=FALSE, message=FALSE}
+ggplot(gapminder2007, 
+aes(x=lifeExp, col=continent, fill=continent))+
+  geom_density(alpha=0.5) 
+```
+
+##  geom_histogram
+
+
+```{r, comment=NA,  fig.height=6, warning=FALSE, message=FALSE}
+ggplot(gapminder2007, 
+aes(x=lifeExp))+
+  geom_histogram() 
+```
+
+
+## geom_bar (stat="identity")
+
+
+```{r, comment=NA}
+cut.percent <- data.frame(cut=c("Fair", "Good", "Very Good", "Premium", 
+                                "Ideal"), percent=c(3, 9, 22.4, 25.6, 40))
+cut.percent
+    
+```
+
+
+
+```{r, comment=NA,  fig.height=3, warning=FALSE, message=FALSE}
+ggplot(data=cut.percent, aes(x=cut, y=percent)) +
+  geom_bar(stat="identity")
+```
+
+
+## geom_col
+
+
+
+```{r, comment=NA}
+cut.percent <- data.frame(cut=c("Fair", "Good", "Very Good", "Premium", 
+                                "Ideal"), percent=c(3, 9, 22.4, 25.6, 40))
+cut.percent
+    
+```
+
+
+
+```{r, comment=NA,  fig.height=3, warning=FALSE, message=FALSE}
+ggplot(data=cut.percent, aes(x=cut, y=percent)) +
+  geom_col()
+```
+
+
+# geom_line
+
+
+
+```{r, comment=NA, fig.height=6, warning=FALSE, message=FALSE}
+gapminder %>%
+filter(country == "India") %>%
+ggplot(aes(x = year, y = gdpPercap)) +
+geom_line() 
+```
+
+Your turn
+
+Write the code to obtain the following plot.
+
+```{r, comment=NA,  echo=FALSE, fig.height=6, warning=FALSE, message=FALSE}
+gapminder %>%
+filter(country == "India") %>%
+ggplot(aes(x = year, y = gdpPercap)) +
+geom_line() + 
+  geom_point() + 
+  labs(title="Time series plot of GDP per capita",
+       x="Year", 
+       y="GDP per capita (USD, inflation-adjusted)")
+```
+
+
+
+## Data Wrangling + Data Visualization
+
+```{r, comment=NA}
+avglifeExp <- gapminder %>%
+  group_by(continent, year) %>%
+  summarise(meanlifeExp=mean(lifeExp))
+avglifeExp
+```
+
+
+
+```{r, comment=NA, message=FALSE, fig.height=5}
+ggplot(avglifeExp, aes(x=year, y=meanlifeExp, col=continent))+
+  geom_line() + geom_point()
+```
+
+## Exercise
+
+Write an R code to reproduce the plot below. 
+
+
+```{r, comment=NA, message=FALSE, fig.height=5, echo=FALSE}
+gapminder %>%
+  filter(year %in% c(1952, 1957, 1962, 1967, 1972, 1977)) %>%
+  filter(continent %in% c("Asia", "Americas")) %>%
+  ggplot(aes(y=lifeExp, x=gdpPercap, color=continent)) + 
+  geom_point() + 
+  facet_wrap(~year, ncol=3)+
+  labs(title="Life Expectancy vs GDP - America and Asia",
+       y = "Life Expectancy",
+       x = "GDP per capita")
+```
+
+
+Write an R code to reproduce the plot below. 
+
+
+```{r, comment=NA, message=FALSE, fig.height=5, echo=FALSE}
+gapminder %>%
+  filter(year %in% c(1952, 1957, 1962, 1967, 1972, 1977)) %>%
+  filter(continent %in% c("Asia", "Americas")) %>%
+  ggplot(aes(y=log(lifeExp), x=log(gdpPercap), color=continent)) + 
+  geom_point() + 
+  facet_wrap(~year, ncol=3)+
+  labs(title="Life Expectancy vs GDP - America and Asia",
+       y = "log(Life Expectancy)",
+       x = "log(GDP per capita)")
+```
+
+
+
+Write an R code to reproduce the plot below. 
+
+
+```{r, comment=NA, message=FALSE, fig.height=5, echo=FALSE}
+ggplot(gapminder_unfiltered, aes(gdpPercap, lifeExp, color = year)) + 
+geom_point() +
+facet_wrap(~ continent)
+```
+
+
+Write an R code to reproduce the plot below. 
+
+
+```{r, comment=NA, message=FALSE, fig.height=5, echo=FALSE}
+ggplot(gapminder, aes(y=lifeExp,  x=year)) + 
+geom_smooth() +
+  geom_point() + 
+facet_wrap(~ continent)
+```
+
+
+
