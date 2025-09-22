@@ -1,5 +1,8 @@
 # Data Visualisation with Grammar of Graphics
 
+
+![](tidyverse/tv2.png)
+
 ## Plotting with R
 
 -   with base R
@@ -13,19 +16,20 @@ The Grammar of Graphics is a structured way of thinking about and building data 
 **Key Components of the Grammar of Graphics**
 
 1.  **Data:** the dataset you want to visualize.
+
 2.  **Aesthetics (aes):** how variables are mapped to visual properties (x, y, color, size, shape).
 
-3. **Geometries (geoms):** the type of plot you draw (points, lines, bars, boxplots).
+3.  **Geometries (geoms):** the type of plot you draw (points, lines, bars, boxplots).
 
-4. **Scales:** control how data values map to aesthetics (e.g., continuous vs. categorical colors, log scales).
+4.  **Scales:** control how data values map to aesthetics (e.g., continuous vs. categorical colors, log scales).
 
-5. **Coordinate system:** the space in which the data is drawn (Cartesian, polar, map projections).
+5.  **Coordinate system:** the space in which the data is drawn (Cartesian, polar, map projections).
 
-6. **Facets:** splitting data into subplots for comparison.
+6.  **Facets:** splitting data into subplots for comparison.
 
-7. **Statistical transformations (stats):** summaries or transformations (e.g., binning in histograms, smoothing in regression lines).
+7.  **Statistical transformations (stats):** summaries or transformations (e.g., binning in histograms, smoothing in regression lines).
 
-8. **Themes:** non-data elements like fonts, backgrounds, grid lines.
+8.  **Themes:** non-data elements like fonts, backgrounds, grid lines.
 
 ## Ingredients for plotting
 

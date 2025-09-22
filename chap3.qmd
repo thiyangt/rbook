@@ -2,14 +2,13 @@
 
 ## Built-in-Functions
 
-Built-in functions are predefined functions that come with R (or any programming language).
-You don’t need to define them yourself. They are available to use immediately after starting R.
+Built-in functions are predefined functions that come with R (or any programming language). You don’t need to define them yourself. They are available to use immediately after starting R.
 
 ### How Built-in Functions Work
 
 A function call in R is always written as:
 
-```r
+``` r
 function_name(arguments)
 ```
 
@@ -25,18 +24,17 @@ mean(1:10)
 
 To obtain the help file of a function you can type
 
-```
+```         
 ?mean
 ```
 
 or
 
-```
+```         
 help(mean)
 ```
 
 ## Commonly used mathematical functions
-
 
 ### Basic Arithmetic Functions
 
@@ -83,7 +81,6 @@ atan(1)                # Inverse tangent → π/4
 
 ```
 
-
 ### Hyperbolic Functions
 
 ```{r}
@@ -104,8 +101,6 @@ range(1,4,2,5)         # Range → 1 5
 
 ## Commonly used statistics functions
 
-
-
 **Sample data**
 
 ```{r}
@@ -113,14 +108,12 @@ x <- c(5, 7, 9, 10, 12, 15, 18)
 y <- c(2, 4, 6, 8, 10, 12, 14)
 ```
 
-
-### Measures of Central Tendency 
+### Measures of Central Tendency
 
 ```{r}
 mean(x) # mean
 median(x) # median
 ```
-
 
 ### Measures of Spread
 
@@ -131,7 +124,6 @@ range(x) # range
 IQR(x) # Inter Quartile Range
 ```
 
-
 ### Percentiles / Quantiles
 
 ```{r}
@@ -139,8 +131,7 @@ quantile(x, probs = c(0.25, 0.5, 0.75)) # quantiles
 quantile(x, probs = 0.9) # percentiles
 ```
 
-
-### Correlation and Covariance 
+### Correlation and Covariance
 
 ```{r}
 cov(x, y) # Covariance
@@ -149,26 +140,25 @@ cor(x, y) # correlation
 
 ## Probability distribution functions
 
-- Each probability distribution in R is associated with four functions.
+-   Each probability distribution in R is associated with four functions.
 
-- Naming convention for the four functions:
+-   Naming convention for the four functions:
 
     For each function there is a root name. For example, the **root name** for the normal distribution is `norm`. This root is prefixed by one of the letters `d`, `p`, `q`, `r`.
-    
-  - **d** prefix for the **distribution** function
 
-  - **p** prefix for the **cumulative probability**
+    -   **d** prefix for the **distribution** function
 
-  - **q** prefix for the **quantile**
+    -   **p** prefix for the **cumulative probability**
 
-  - **r** prefix for the **random** number generator
+    -   **q** prefix for the **quantile**
 
-- Example: `dnorm`, `pnorm`, `qnorm`, `rnorm`
+    -   **r** prefix for the **random** number generator
+
+-   Example: `dnorm`, `pnorm`, `qnorm`, `rnorm`
 
 ### Illustration with Standard normal distribution
 
 The general formula for the probability density function of the normal distribution with mean $\mu$ and variance $\sigma$ is given by
-
 
 $$
 f_X(x) = \frac{1}{\sigma\sqrt{(2\pi)}} e^{-(x-\mu)^2/2\sigma^2}
@@ -180,8 +170,6 @@ $$
 f_X(x) = \frac{1}{\sqrt{(2\pi)}} e^{-(x)^2/2}
 $$
 
-
-
 $$
 f_X(x) = \frac{1}{\sqrt{(2\pi)}} e^{-(x)^2/2}
 $$
@@ -192,7 +180,6 @@ $$
 
 dnorm(0)
 ```
-
 
 ```{r, echo=FALSE, fig.height=7, fig.cap="Standard normal probability density function: dnorm(0)", warning=FALSE, message=FALSE}
 
@@ -208,14 +195,11 @@ ggplot(data = dat, mapping = aes(x = x, y = y)) +
     
 ```
 
-
-
 ### pnorm
 
 ```{r, comment=NA}
 pnorm(0)
 ```
-
 
 ```{r, echo=FALSE, fig.cap="Standard normal probability density function: pnorm(0)", fig.height=7, warning=FALSE, message=FALSE}
 library(ggplot2)
@@ -229,15 +213,13 @@ ggplot(data = dat, mapping = aes(x = x, y = y)) +
     
 ```
 
-]
+\]
 
 ### qnorm
 
 ```{r, comment=NA}
 qnorm(0.5)
 ```
-
-
 
 ```{r, echo=FALSE, fig.cap="Standard normal probability density function: qnorm(0.5)",  fig.height=7, warning=FALSE, message=FALSE}
 library(ggplot2)
@@ -252,17 +234,16 @@ ggplot(data = dat, mapping = aes(x = x, y = y)) +
     
 ```
 
-
 ## Test and Type conversion functions
 
-|  Test | Convert  |
-|---|---|
-|<img width=400/>|<img width=400/>|
-|  is.numeric() | as.numeric()   |
-| is.character()  |  as.character() |
-|is.vector()| as.vector()|
-|is.matrix()|as.matrix()|
-|is.data.frame()| as.data.frame()|
-|is.factor()| as.factor()|
-|is.logical()|as.logical()|
-|is.na()||
+| Test                | Convert             |
+|---------------------|---------------------|
+| <img width="400/"/> | <img width="400/"/> |
+| is.numeric()        | as.numeric()        |
+| is.character()      | as.character()      |
+| is.vector()         | as.vector()         |
+| is.matrix()         | as.matrix()         |
+| is.data.frame()     | as.data.frame()     |
+| is.factor()         | as.factor()         |
+| is.logical()        | as.logical()        |
+| is.na()             |                     |

@@ -18,6 +18,10 @@ library(tidyverse) # load tidyverse packages
 library(tidyverse)
 ```
 
+## The Tidyverse data analysis workflow 
+
+![](tidyverse/tv1.png)
+
 ## Tibble
 
 -   Tibble is a modern version of dataframes.
@@ -114,7 +118,6 @@ df
 ```
 
 4.  In contrast to data frames, the variable names in tibbles can start with a number.
-
 
 ```{r, comment=NA}
 tbl <- tibble(`1var` = c(1, 2, 3))
@@ -537,8 +540,6 @@ df %>% head(n = 2)
 ```{r, echo=FALSE, comment=NA}
 df %>% head(n = 2)
 ```
-
-
 
 **Rule 3**
 

@@ -2,22 +2,21 @@
 
 Sometimes we need to create our own functions for a specific purpose. They are called user-defined functions.
 
-
 ## Syntax
 
 Functions are created using the `function()`
 
 Main components of a function
 
-- Function name
+-   Function name
 
-- Function inputs
+-   Function inputs
 
-- Function body
+-   Function body
 
-- Function output
+-   Function output
 
-```r
+``` r
 
 name <- function(arg1, aug2, ...){
 
@@ -26,9 +25,7 @@ name <- function(arg1, aug2, ...){
 return(value) 
 
 }
-
 ```
-
 
 **Example**
 
@@ -45,19 +42,19 @@ out # or return(out)
 
 In this case
 
-- Function name: `cal_power`
+-   Function name: `cal_power`
 
-- Function inputs: `x`
+-   Function inputs: `x`
 
-- Function body:
+-   Function body:
 
-```r
+``` r
 a <- x^2; b <- x^3
 out <- c(a, b)
 names(out) <- c("squared", "cubed")
 ```
 
-- Function output: `out`
+-   Function output: `out`
 
 **Evaluation**
 
@@ -67,18 +64,17 @@ cal_power(2)
 
 ## Exercise
 
-1. What are the key factors to consider when selecting a function name in R?
+1.  What are the key factors to consider when selecting a function name in R?
 
-2. How should function argument names be chosen for clarity and usability?
+2.  How should function argument names be chosen for clarity and usability?
 
-3. Is it necessary to explicitly use return() to output a value from a function in R?
+3.  Is it necessary to explicitly use return() to output a value from a function in R?
 
 ## Function with single line
 
-
 **Method 1: with { }**
 
-```r
+``` r
 cal_sqrt <- function(x){
 
 x^2
@@ -86,21 +82,15 @@ x^2
 }
 ```
 
-
-
-
 **Method 2: without { }**
 
-```r
+``` r
 cal_sqrt <- function(x) x^2
 ```
 
-
-
-
 ## Exercise
 
-1. Write a function to calculate the median.
+1.  Write a function to calculate the median.
 
 help:
 
@@ -110,8 +100,6 @@ help:
 4%%2
 ```
 
-
-
-2. Write a function to calculate the correlation coefficient
+2.  Write a function to calculate the correlation coefficient
 
 $$r=\frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}{\sqrt{\sum_{i=1}^n(x_i-\bar{x})^2\sum_{i=1}^n(y_i-\bar{y})^2}}$$

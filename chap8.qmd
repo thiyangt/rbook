@@ -14,6 +14,9 @@
 
 ## Reshaping data with tidyr
 
+
+![](tidyverse/tv4.png)
+
 How to reshape your data in order to make the analysis easier?
 
 We are going to learn four main functions in the `tidyr` package.
@@ -84,7 +87,6 @@ Corona %>%
 
 #### Assign a name to the new dataset
 
-
 ```{r, comment=NA, message=FALSE, warning=FALSE}
 corona_wide_format <- Corona %>% 
   pivot_wider(names_from=status, 
@@ -113,8 +115,6 @@ profit %>%
 pivot_wider(names_from = year, values_from = income)
 ```
 
-
-
 Remove missing values
 
 ```{r,  comment=NA, message=FALSE}
@@ -128,12 +128,9 @@ values_drop_na = TRUE
 )
 ```
 
-
 ### `separate()`
 
 -   Separate one column into several columns.
-
-
 
 ```{r, comment=NA, message=FALSE}
 Melbourne <- 
@@ -166,8 +163,6 @@ tbl %>%
 tbl <- tibble(input = c("a", "a b", "a-b c", NA)); tbl
 ```
 
-
-
 ```{r, comment=NA}
 tbl %>% separate(input, c("Input1", "Input2", "Input3"))
 ```
@@ -194,8 +189,6 @@ projects
 projects %>% unite("Location", c("State", "Country"))
 ```
 
-
-
 Specify the separator that you want to separate
 
 ```{r, comment=NA, warning=FALSE, message=FALSE}
@@ -208,6 +201,9 @@ projects %>% unite("Location", c("State", "Country"),
 ![](tidyr/separate_unite.png)
 
 ## Data minipulation with `dplyr`
+
+
+![](tidyverse/tv3.png)
 
 Under data manipulation with `dplyr` we will learn six main functions in the dplyr package. They are
 
@@ -287,17 +283,13 @@ head(gapminder, 3)
 select(gapminder, year:gdpPercap)
 ```
 
-
 ```{r, comment=NA, message=FALSE, warning=FALSE}
 select(gapminder, year, gdpPercap)
 ```
 
-
-
 ```{r, comment=NA, message=FALSE, warning=FALSE}
 select(gapminder, -c(year, gdpPercap))
 ```
-
 
 ```{r, comment=NA, message=FALSE, warning=FALSE}
 select(gapminder, -(year:gdpPercap))
@@ -486,8 +478,6 @@ first
 second
 
 ```
-
-
 
 ```{r, comment=NA, message=FALSE}
 inner_join(first, second, by="x1")

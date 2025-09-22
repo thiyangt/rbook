@@ -1,12 +1,10 @@
 # Control Structures
 
-Conditional executions control the flow of the execution. 
+Conditional executions control the flow of the execution.
 
 **Conditional Statements and Loops in R**
 
-
-
-i. `if-else`: We use when we want to select between two (or more) options.
+i.  `if-else`: We use when we want to select between two (or more) options.
 
 ii. `for`: We use when we want to repeat a block of code a fixed number of times, usually over a sequence.
 
@@ -14,7 +12,7 @@ iii. `while`: We use when we want to repeat a block of code as long as a conditi
 
 iv. `repeat`: We use when we want to repeat a block of code indefinitely until we manually stop it (usually with break).
 
-v. `break`: We use when we want to exit a loop immediately.
+v.  `break`: We use when we want to exit a loop immediately.
 
 vi. `next`: We use when we want to skip the current iteration of a loop and continue with the next one.
 
@@ -26,7 +24,6 @@ vii. `switch`: We use when we want to select one option from many possible choic
 
 Draw a star on star-shaped cookies and draw a heart on heart-shaped cookies.
 
-
 ```{r, echo=FALSE}
 knitr::include_graphics(here::here("img", "chap5", "ifelse.png"))
 
@@ -37,9 +34,9 @@ knitr::include_graphics(here::here("img", "chap5", "ifelse.png"))
 
 In programming, we use `if–else` when we need to choose between two possible options:
 
-  - The `if` block executes when the condition is true.
+-   The `if` block executes when the condition is true.
 
-  - The `else` block executes when the condition is false.
+-   The `else` block executes when the condition is false.
 
 ``` r
 if (condition) {
@@ -93,9 +90,9 @@ test_even_odd_v2(c(1,6))
 
 ### Difference between `if-else` and `ifelse`
 
-- `if-else`: Evaluates only on one value, not a whole vector.
+-   `if-else`: Evaluates only on one value, not a whole vector.
 
-- `ifelse`: A vectorized function. It checks the condition for every element in a vector and returns a result of the same length, applying `if` or `else` to each element individually.
+-   `ifelse`: A vectorized function. It checks the condition for every element in a vector and returns a result of the same length, applying `if` or `else` to each element individually.
 
 **`if-else` Example**
 
@@ -121,8 +118,6 @@ test_even_odd(c(1,6))
 
 **`ifelse` Example**
 
-
-
 ```{r, comment=FALSE}
 test_even_odd_v2 <- function(x){
   ifelse (x %% 2 == 0, "even number", "odd number")
@@ -139,39 +134,36 @@ test_even_odd_v2(c(1,6))
 
 If the cookie shape is;
 
-  - star → draw a star; 
-  
-  - if it’s heart → draw a heart; 
-  
-  - if it’s Christmas tree → draw a tree; 
-  
-  - if it’s shoe → draw a shoe; 
-  
-  - if it’s house → draw a house; 
+-   star → draw a star;
 
-  - else → draw a gingerbread man.
-  
+-   if it’s heart → draw a heart;
+
+-   if it’s Christmas tree → draw a tree;
+
+-   if it’s shoe → draw a shoe;
+
+-   if it’s house → draw a house;
+
+-   else → draw a gingerbread man.
+
 ```{r, echo=FALSE}
 knitr::include_graphics(here::here("img", "chap5", "multipleif.png"))
 
 ```
 
-
-
 **Syntax and example**
 
 We use `if–elseif–else` when we want to select one option from more than two possible options.
 
- - The first `if` condition is checked.
- 
-    - If it’s TRUE, that block runs, and the rest are skipped.
+-   The first `if` condition is checked.
 
-    - If it’s FALSE, the program checks the next elseif condition.
+    -   If it’s TRUE, that block runs, and the rest are skipped.
 
-- This continues until one condition is TRUE, or else the final else block runs (if provided).
+    -   If it’s FALSE, the program checks the next elseif condition.
+
+-   This continues until one condition is TRUE, or else the final else block runs (if provided).
 
 `if–elseif–else` checks one condition after another.
-
 
 ```{r, comment=NA}
 grade_marks <- function(marks){
