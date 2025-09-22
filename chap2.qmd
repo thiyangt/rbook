@@ -503,7 +503,7 @@ y_n
 1 & x_n
 \end{pmatrix}$
 
-## 3. Array
+## Array
 
 -   data structures for storing **higher** dimensional data.
 
@@ -559,7 +559,7 @@ Create a 3D array with 3 columns, 5 rows, and 2 layers in R, and enter the follo
 1:30
 ```
 
-## 4. Data Frames
+## Data Frames
 
 -   Rectangular arrangement of data with rows corresponding to observational units and columns corresponding to variables.
 
@@ -840,7 +840,7 @@ sum(mtcars$hp > 100)
 cor(mtcars$hp, mtcars$mpg)
 ```
 
-## 5. List
+## List
 
 -   Lists are heterogeneous
 
