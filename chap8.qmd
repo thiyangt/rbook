@@ -14,7 +14,6 @@
 
 ## Reshaping data with tidyr
 
-
 ![](tidyverse/tv4.png)
 
 How to reshape your data in order to make the analysis easier?
@@ -202,7 +201,6 @@ projects %>% unite("Location", c("State", "Country"),
 
 ## Data minipulation with `dplyr`
 
-
 ![](tidyverse/tv3.png)
 
 Under data manipulation with `dplyr` we will learn six main functions in the dplyr package. They are
@@ -234,7 +232,7 @@ glimpse(gapminder)
 ```
 
 ```{r, comment=NA, message=FALSE}
-tbl_df(gapminder)
+as_tibble(gapminder)
 ```
 
 ```{r, comment=NA, out.height="50%", eval=FALSE}
@@ -610,7 +608,7 @@ Help: `distinct` function
 #| warning: false
 #| message: false
 DStidy %>%
-  filter(R == 1, Python == 1) %>%
+  filter(R == 1, Python == 0) %>%
   distinct(Job_Category)
 
 ```
@@ -712,7 +710,7 @@ DStidy %>% filter(PhD_needed == 0, MSc_needed == 0)
 #| echo: false
 #| warning: false
 #| message: false
-DStidy %>% filter(!is.na(Salary))
+DStidy %>% filter(is.na(Salary))
 
 ```
 

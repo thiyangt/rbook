@@ -1,0 +1,32 @@
+---
+title: "Assignment"
+---
+
+## Index number:
+
+## Date:
+
+## Introduction
+
+This is based the dataset published by....The goal of the analysis...
+
+## Data description
+
+# Exploratory data analysis
+
+
+1. Relationship betweet weight and mpg
+
+```{r}
+#| fig-cap: "Figure 1: Scatterplot"
+#| echo: true
+data(mtcars)
+library(ggplot2)
+ggplot(mtcars, aes(x=mpg, y=wt)) + geom_point()
+```
+
+According to the Figure 1 there is negative non-linear relationship between weight and mpg.
+
+
+
+

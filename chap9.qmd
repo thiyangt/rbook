@@ -1,6 +1,5 @@
 # Data Visualisation with Grammar of Graphics
 
-
 ![](tidyverse/tv2.png)
 
 ## Plotting with R
